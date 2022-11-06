@@ -14,6 +14,12 @@ const Nav = () => {
             <li className={navStyles.item}>
               <Link href="/todo">To Do</Link>
             </li>
+            <li className={navStyles.item}>
+              <Link href="/dev">Dev</Link>
+            </li>
+            <li className={navStyles.item}>
+              <Link href="/account">Account</Link>
+            </li>
         </ul>
     </nav>
   )

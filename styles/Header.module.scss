@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  > * {
+    margin-left: 2rem;
+  }
+
+  .title {
+    margin-right: 2rem;
+  }
+  
+  .description {
+    font-size: 1.6rem;
+  }
+}

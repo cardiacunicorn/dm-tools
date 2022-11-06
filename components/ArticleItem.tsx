@@ -3,10 +3,12 @@ import Link from 'next/link'
 
 const ArticleItem = ({ article }) => {
   return (
-    <Link href="/article/[id]" as={`/article/${article.id}`} className={styles.card}>
-      <h3>{article.title} &rarr;</h3>
+    <div className={styles.article}>
+      <Link href="/article/[id]" as={`/article/${article.id}`}>
+        <h3>{article.title} &rarr;</h3>
+      </Link>
       <p>{article.body}</p>
-    </Link>
+    </div>
   )
 }
 

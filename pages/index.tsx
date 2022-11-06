@@ -1,8 +1,9 @@
 import Head from 'next/head'
+// Image no longer used
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 
-export default function Home() {
+export default function Home({articles}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,14 +13,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">DM Tools</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
+        
+        <p>Keeping this page simple for now - main work should be in other pages.</p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>

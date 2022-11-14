@@ -1,9 +1,9 @@
 import styles from '../styles/Todo.module.scss'
 
-const ToDoItem = ({ item }) => {
+const ToDoItem = ( props ) => {
   return (
     <label className={styles.label}>
-        {item}
+        {props.item}
         <input type="checkbox" />
         <span className={styles.checkmark}></span>
     </label>

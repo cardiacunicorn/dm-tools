@@ -11,109 +11,109 @@ export default function Todo() {
             id: 1,
             text: 'Test Task',
             category: 'General',
-            done: true
+            status: 'done'
         },
         {
             id: 2,
             text: 'Finish the ReactJS Crash Course Video',
             category: 'General',
-            done: false
+            status: 'progressing'
         },
         {
             id: 3,
             text: 'Display Player Information',
             category: 'Party View',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 4,
             text: 'Create a Player Block',
             category: 'Party View',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 5,
             text: 'Create a Party View',
             category: 'Party View',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 6,
             text: 'Drag and Drop Player Block Elements',
             category: 'Party View',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 7,
             text: 'Drag and Drop Player Blocks',
             category: 'Party View',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 8,
             text: 'Calculate D.P.R. and damage over rounds with current state',
             category: 'Party View',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 9,
             text: 'Exhaustion or Wounded on knockout',
             category: 'Hardcore',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 10,
             text: 'Rest Location',
             category: 'Hardcore',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 11,
             text: 'Individual Player Rules, not whole party',
             category: 'Hardcore',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 12,
             text: 'Baldur\'s Gate Rules',
             category: 'Hardcore',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 13,
             text: 'Deck of Many Fates',
             category: 'Custom Rules',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 14,
             text: 'Tattoo Spells by Gemstone',
             category: 'Custom Rules',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 15,
             text: 'Naval Combat',
             category: 'Custom Rules',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 16,
             text: 'Notion Walkthrough',
             category: 'Organisation',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 17,
             text: 'World Anvil Walkthrough',
             category: 'Organisation',
-            done: false
+            status: 'incomplete'
         },
         {
             id: 18,
             text: 'Binder Walkthrough',
             category: 'Organisation',
-            done: false
+            status: 'incomplete'
         },
     ])
 
@@ -122,23 +122,40 @@ export default function Todo() {
         setTasks(tasks.filter((task) => task.id !== id))
     }
 
+    // Set Status
+    const setStatus = (id) => {
+        setTasks(tasks.map((task) => {
+            if (task.id === id) {
+                if (task.status === 'done') {
+                    return {...task, status: 'incomplete'}
+                } else if (task.status === 'progressing') {
+                    return {...task, status: 'done'}
+                } else {
+                    return {...task, status: 'progressing'}
+                }
+            } else {
+                return task
+            }
+        }));
+    }
+
     return (
         <div>
             <h1>To Do</h1>
             <Button color='green' text='Check All' />
             <Button color='red' text='Reset' />
             <hr />
-            <TaskCategory category={'General'} tasks={tasks} onDelete={deleteTask} />
-            <TaskCategory category={'Party View'} tasks={tasks} onDelete={deleteTask} />
-            <TaskCategory category={'Encounter View'} tasks={tasks} onDelete={deleteTask} />
-            <TaskCategory category={'Economics'} tasks={tasks} onDelete={deleteTask} />
-            <TaskCategory category={'Maps'} tasks={tasks} onDelete={deleteTask} />
-            <TaskCategory category={'Tools'} tasks={tasks} onDelete={deleteTask} />
-            <TaskCategory category={'Organisation'} tasks={tasks} onDelete={deleteTask} />
-            <TaskCategory category={'Practical'} tasks={tasks} onDelete={deleteTask} />
-            <TaskCategory category={'Custom Rules'} tasks={tasks} onDelete={deleteTask} />
-            <TaskCategory category={'Story'} tasks={tasks} onDelete={deleteTask} />
-            <TaskCategory category={'Hardcore'} tasks={tasks} onDelete={deleteTask} />
+            <TaskCategory category={'General'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
+            <TaskCategory category={'Party View'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
+            <TaskCategory category={'Encounter View'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
+            <TaskCategory category={'Economics'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
+            <TaskCategory category={'Maps'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
+            <TaskCategory category={'Tools'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
+            <TaskCategory category={'Organisation'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
+            <TaskCategory category={'Practical'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
+            <TaskCategory category={'Custom Rules'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
+            <TaskCategory category={'Story'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
+            <TaskCategory category={'Hardcore'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
             <div className={styles.list}>
                 <ToDoItem item={'Create a Monster Block'} />
                 <ToDoItem item={'Dropdown Monster Block Details'} />

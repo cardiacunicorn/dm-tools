@@ -15,6 +15,9 @@ const Nav = () => {
               <Link href="/todo">To Do</Link>
             </li>
             <li className={navStyles.item}>
+              <Link href="/character">Character</Link>
+            </li>
+            <li className={navStyles.item}>
               <Link href="/dev">Dev</Link>
             </li>
             <li className={navStyles.item}>

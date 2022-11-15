@@ -7,9 +7,20 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    margin: 0.5rem 0;
 }
 
+.task_category {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+
+    svg {
+        color: grey;
+    }
+}
 
 /* W3 Schools Checkbox */
 

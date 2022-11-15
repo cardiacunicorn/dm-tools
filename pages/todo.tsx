@@ -3,6 +3,7 @@ import styles from '../styles/Todo.module.scss'
 import ToDoItem from '../components/ToDoItem'
 import Button from '../components/Button'
 import Tasks from '../components/Tasks'
+import { FaChevronDown } from 'react-icons/fa'
 
 export default function Todo() {
 
@@ -21,11 +22,10 @@ export default function Todo() {
 
     return (
         <div>
-            <h1>My To Do List</h1>
+            <h1>To Do Lists</h1>
             <hr />
             <Tasks tasks={tasks} />
-            <hr />
-            <h3>Party View <Button color='pink' text='pink button' /></h3>
+            <h3 className={styles.task_category}>Party View <Button color='pink' text='pink button' /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'Display Player Information'} />
@@ -35,8 +35,7 @@ export default function Todo() {
                 <ToDoItem item={'Drag and Drop Player Blocks'} />
                 <ToDoItem item={'Calculate D.P.R. and damage over rounds with current state'} />
             </div>
-            <hr />
-            <h3>Encounter View <Button text='default button' /></h3>
+            <h3 className={styles.task_category}>Encounter View <Button text='default button' /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'Create a Monster Block'} />
@@ -52,8 +51,7 @@ export default function Todo() {
                 <ToDoItem item={'Rounds to win with D.P.R. considering damage type and resistances'} />
                 <ToDoItem item={'Apply damage and status to multiple'} />
             </div>
-            <hr />
-            <h3>Hardcore Mode</h3>
+            <h3 className={styles.task_category}>Hardcore Mode <FaChevronDown /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'Exhaustion or Wounded on knockout'} />
@@ -61,8 +59,7 @@ export default function Todo() {
                 <ToDoItem item={'Individual Player Rules, not whole party'} />
                 <ToDoItem item={'Baldur\'s Gate Rules'} />
             </div>
-            <hr />
-            <h3>Economics</h3>
+            <h3 className={styles.task_category}>Economics <FaChevronDown /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'Using D.P.R. to determine Magic Item rewards'} />
@@ -70,8 +67,7 @@ export default function Todo() {
                 <ToDoItem item={'Haggling Rules'} />
                 <ToDoItem item={'Simplified Looting & Harvesting'} />
             </div>
-            <hr />
-            <h3>Maps</h3>
+            <h3 className={styles.task_category}>Maps <FaChevronDown /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'Upload file and zoom'} />
@@ -80,16 +76,14 @@ export default function Todo() {
                 <ToDoItem item={'How to hand draw a continent'} />
                 <ToDoItem item={'How to DungeonDraft'} />
             </div>
-            <hr />
-            <h3>Custom Rules</h3>
+            <h3 className={styles.task_category}>Custom Rules <FaChevronDown /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'Deck of Many Fates'} />
                 <ToDoItem item={'Tattoo Spells by Gemstone'} />
                 <ToDoItem item={'Naval Combat'} />
             </div>
-            <hr />
-            <h3>Tools</h3>
+            <h3 className={styles.task_category}>Tools <FaChevronDown /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'Generate town building names'} />
@@ -99,16 +93,14 @@ export default function Todo() {
                 <ToDoItem item={'Build your own Rolltable'} />
                 <ToDoItem item={'Random Encounter Roll Table'} />
             </div>
-            <hr />
-            <h3>Organisation</h3>
+            <h3 className={styles.task_category}>Organisation <FaChevronDown /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'Notion walkthrough'} />
                 <ToDoItem item={'World Anvil walkthrough'} />
                 <ToDoItem item={'Binder walkthrough'} />
             </div>
-            <hr />
-            <h3>Practical</h3>
+            <h3 className={styles.task_category}>Practical <FaChevronDown /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'TV Case Building'} />
@@ -116,8 +108,7 @@ export default function Todo() {
                 <ToDoItem item={'Foundry Setup'} />
                 <ToDoItem item={'Overview of Foundry, Talespire, Roll20'} />
             </div>
-            <hr />
-            <h3>Story</h3>
+            <h3 className={styles.task_category}>Story <FaChevronDown /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'Generating a backstory, with a map, reincarnation and NPC table'} />

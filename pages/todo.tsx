@@ -66,9 +66,11 @@ export default function Todo() {
     return (
         <div>
             <h1>To Do Lists</h1>
+            <Button color='green' text='Check All' />
+            <Button color='red' text='Reset' />
             <hr />
             <Tasks tasks={tasks} onDelete={deleteTask} />
-            <h3 className={styles.task_category}>Party View <Button color='pink' text='pink button' /></h3>
+            <h3 className={styles.task_category}>Party View <FaChevronDown /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'Display Player Information'} />
@@ -78,7 +80,7 @@ export default function Todo() {
                 <ToDoItem item={'Drag and Drop Player Blocks'} />
                 <ToDoItem item={'Calculate D.P.R. and damage over rounds with current state'} />
             </div>
-            <h3 className={styles.task_category}>Encounter View <Button text='default button' /></h3>
+            <h3 className={styles.task_category}>Encounter View <FaChevronDown /></h3>
             <hr />
             <div className={styles.list}>
                 <ToDoItem item={'Create a Monster Block'} />

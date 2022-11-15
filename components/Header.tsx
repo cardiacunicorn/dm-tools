@@ -1,11 +1,10 @@
-import Link from 'next/link'
 import styles from '../styles/Header.module.scss'
 
-const Header = () => {
+const Header = ({ title, description }) => {
   return (
     <header className={styles.header}>
-        <h1 className={styles.title}>Title</h1>
-        <p className={styles.description}>Short description</p>
+        <h1 className={styles.title}>{title}</h1>
+        <p className={styles.description}>{description}</p>
     </header>
   )
 }

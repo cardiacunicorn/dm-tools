@@ -2,6 +2,14 @@
     margin-top: 3rem;
 }
 
+.task {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
 
 /* W3 Schools Checkbox */
 

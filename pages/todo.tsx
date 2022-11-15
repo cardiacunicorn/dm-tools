@@ -1,14 +1,29 @@
+import { useState } from 'react'
 import styles from '../styles/Todo.module.scss'
 import ToDoItem from '../components/ToDoItem'
 import Button from '../components/Button'
+import Tasks from '../components/Tasks'
 
 export default function Todo() {
+
+    const [tasks, setTasks] = useState([
+        {
+            id: 1,
+            text: 'Test Task',
+            done: true
+        },
+        {
+            id: 2,
+            text: 'Finish the ReactJS Crash Course Video',
+            done: false
+        }
+    ])
+
     return (
         <div>
             <h1>My To Do List</h1>
             <hr />
-            <ToDoItem item={'Finish the NextJS Crash Course Video'} />
-            <ToDoItem item={'Convert the About Page to a To Do list'} />
+            <Tasks tasks={tasks} />
             <hr />
             <h3>Party View <Button color='pink' text='pink button' /></h3>
             <hr />

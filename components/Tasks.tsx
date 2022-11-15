@@ -2,11 +2,11 @@ import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 
 import Task from './Task'
 import styles from '../styles/Todo.module.scss'
 
-const Tasks = ({ tasks }) => {
+const Tasks = ({ tasks, onDelete }) => {
   return (
     <>
         {tasks.map((task: { id: number, text: string; done: boolean }) => (
-            <Task key={task.id} task={task} />
+            <Task key={task.id} task={task} onDelete={onDelete} />
         ))}
     </>
   )

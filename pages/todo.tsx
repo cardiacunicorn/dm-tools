@@ -115,6 +115,60 @@ export default function Todo() {
             category: 'Organisation',
             status: 'incomplete'
         },
+        {
+            id: 19,
+            text: 'Using D.P.R. to determine Magic Item rewards',
+            category: 'Economics',
+            status: 'incomplete'
+        },
+        {
+            id: 20,
+            text: 'Loot by Challenge Rating',
+            category: 'Economics',
+            status: 'incomplete'
+        },
+        {
+            id: 21,
+            text: 'Haggling Rules',
+            category: 'Economics',
+            status: 'incomplete'
+        },
+        {
+            id: 22,
+            text: 'Simplified Looting & Harvesting',
+            category: 'Economics',
+            status: 'incomplete'
+        },
+        {
+            id: 23,
+            text: 'Upload file and zoom',
+            category: 'Maps',
+            status: 'incomplete'
+        },
+        {
+            id: 24,
+            text: 'Drop pins and save',
+            category: 'Maps',
+            status: 'incomplete'
+        },
+        {
+            id: 25,
+            text: 'Click pins for details',
+            category: 'Maps',
+            status: 'incomplete'
+        },
+        {
+            id: 26,
+            text: 'How to hand draw a continent',
+            category: 'Maps',
+            status: 'incomplete'
+        },
+        {
+            id: 27,
+            text: 'How to DungeonDraft',
+            category: 'Maps',
+            status: 'incomplete'
+        },
     ])
 
     // Delete Task
@@ -142,8 +196,21 @@ export default function Todo() {
     return (
         <div>
             <h1>To Do</h1>
-            <Button color='green' text='Check All' />
-            <Button color='red' text='Reset' />
+            <input type="text" />
+            <select name="category" id="category">
+                <option value="General">General</option>
+                <option value="Party View" selected>Party View</option>
+                <option value="Encounter View">Encounter View</option>
+                <option value="Economics">Economics</option>
+                <option value="Maps">Maps</option>
+                <option value="Tools">Tools</option>
+                <option value="Organisation">Organisation</option>
+                <option value="Practical">Practical</option>
+                <option value="Custom Rules">Custom Rules</option>
+                <option value="Story">Story</option>
+                <option value="Hardcore">Hardcore</option>
+            </select>
+            <Button color='green' text='Add' />
             <hr />
             <TaskCategory category={'General'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
             <TaskCategory category={'Party View'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
@@ -169,19 +236,6 @@ export default function Todo() {
                 <ToDoItem item={'Rounds to win for each side with current state'} />
                 <ToDoItem item={'Rounds to win with D.P.R. considering damage type and resistances'} />
                 <ToDoItem item={'Apply damage and status to multiple'} />
-            </div>
-            <div className={styles.list}>
-                <ToDoItem item={'Using D.P.R. to determine Magic Item rewards'} />
-                <ToDoItem item={'Rewards by Challenge Rating'} />
-                <ToDoItem item={'Haggling Rules'} />
-                <ToDoItem item={'Simplified Looting & Harvesting'} />
-            </div>
-            <div className={styles.list}>
-                <ToDoItem item={'Upload file and zoom'} />
-                <ToDoItem item={'Drop pins and save'} />
-                <ToDoItem item={'Click pins for details'} />
-                <ToDoItem item={'How to hand draw a continent'} />
-                <ToDoItem item={'How to DungeonDraft'} />
             </div>
             <div className={styles.list}>
                 <ToDoItem item={'Generate town building names'} />

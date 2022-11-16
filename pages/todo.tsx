@@ -349,6 +349,10 @@ export default function Todo() {
         }));
     }
 
+    const addTask = () => {
+
+    }
+
     return (
         <div>
             <h1>To Do</h1>
@@ -366,7 +370,7 @@ export default function Todo() {
                 <option value="Story">Story</option>
                 <option value="Hardcore">Hardcore</option>
             </select>
-            <Button color='green' text='Add' />
+            <Button color='green' text='Add' onClick={addTask} />
             <hr />
             <TaskCategory category={'General'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
             <TaskCategory category={'Party View'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />

@@ -169,6 +169,162 @@ export default function Todo() {
             category: 'Maps',
             status: 'incomplete'
         },
+        {
+            id: 28,
+            text: 'TV Case Building',
+            category: 'Practical',
+            status: 'incomplete'
+        },
+        {
+            id: 29,
+            text: '3D Printing Introduction',
+            category: 'Practical',
+            status: 'incomplete'
+        },
+        {
+            id: 30,
+            text: 'Foundry Setup',
+            category: 'Practical',
+            status: 'incomplete'
+        },
+        {
+            id: 31,
+            text: 'Overview of Foundry, Talespire, Roll20',
+            category: 'Practical',
+            status: 'incomplete'
+        },
+        {
+            id: 32,
+            text: 'Generate town building names',
+            category: 'Tools',
+            status: 'incomplete'
+        },
+        {
+            id: 33,
+            text: 'Populate with NPCs',
+            category: 'Tools',
+            status: 'incomplete'
+        },
+        {
+            id: 34,
+            text: 'Printable Spell Scroll Cards',
+            category: 'Tools',
+            status: 'incomplete'
+        },
+        {
+            id: 35,
+            text: 'Reincarnation Roll Table',
+            category: 'Tools',
+            status: 'incomplete'
+        },
+        {
+            id: 36,
+            text: 'Build your own Rolltable',
+            category: 'Tools',
+            status: 'incomplete'
+        },
+        {
+            id: 37,
+            text: 'Random Encounter Roll Table',
+            category: 'Tools',
+            status: 'incomplete'
+        },
+        {
+            id: 38,
+            text: 'Generating a backstory, with a map, reincarnation and NPC table',
+            category: 'Story',
+            status: 'incomplete'
+        },
+        {
+            id: 39,
+            text: 'Integrating level up features with story',
+            category: 'Story',
+            status: 'incomplete'
+        },
+        {
+            id: 40,
+            text: 'Mapping relationships',
+            category: 'Story',
+            status: 'incomplete'
+        },
+        {
+            id: 41,
+            text: 'Session 0: Level 0 Concept',
+            category: 'Story',
+            status: 'incomplete'
+        },
+        {
+            id: 42,
+            text: 'Create a Monster Block',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
+        {
+            id: 43,
+            text: 'Dropdown Monster Block Details',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
+        {
+            id: 44,
+            text: 'Set HP to Avg, Max Buttons',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
+        {
+            id: 45,
+            text: 'Set Alignment toggle',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
+        {
+            id: 46,
+            text: 'Quick Add +/- 1 CR button',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
+        {
+            id: 47,
+            text: 'Add Racial Traits button',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
+        {
+            id: 48,
+            text: 'Add a Spell or Feature button',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
+        {
+            id: 49,
+            text: 'Suggested Loot in dropdown',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
+        {
+            id: 50,
+            text: 'Optimal D.P.R. for Monsters',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
+        {
+            id: 51,
+            text: 'Rounds to win for each side with current state',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
+        {
+            id: 52,
+            text: 'Rounds to win with D.P.R. considering damage type and resistances',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
+        {
+            id: 53,
+            text: 'Apply damage and status to multiple',
+            category: 'Encounter View',
+            status: 'incomplete'
+        },
     ])
 
     // Delete Task
@@ -223,40 +379,6 @@ export default function Todo() {
             <TaskCategory category={'Custom Rules'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
             <TaskCategory category={'Story'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
             <TaskCategory category={'Hardcore'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
-            <div className={styles.list}>
-                <ToDoItem item={'Create a Monster Block'} />
-                <ToDoItem item={'Dropdown Monster Block Details'} />
-                <ToDoItem item={'Set HP to Avg, Max Buttons'} />
-                <ToDoItem item={'Set Alignment toggle'} />
-                <ToDoItem item={'Quick Add +/- 1 CR button'} />
-                <ToDoItem item={'Add Racial Traits button'} />
-                <ToDoItem item={'Add a Spell or Feature button'} />
-                <ToDoItem item={'Suggested Loot in dropdown'} />
-                <ToDoItem item={'Optimal D.P.R. for Monsters'} />
-                <ToDoItem item={'Rounds to win for each side with current state'} />
-                <ToDoItem item={'Rounds to win with D.P.R. considering damage type and resistances'} />
-                <ToDoItem item={'Apply damage and status to multiple'} />
-            </div>
-            <div className={styles.list}>
-                <ToDoItem item={'Generate town building names'} />
-                <ToDoItem item={'Populate with NPCs'} />
-                <ToDoItem item={'Printable Spell Scroll Cards'} />
-                <ToDoItem item={'Reincarnation Roll Table'} />
-                <ToDoItem item={'Build your own Rolltable'} />
-                <ToDoItem item={'Random Encounter Roll Table'} />
-            </div>
-            <div className={styles.list}>
-                <ToDoItem item={'TV Case Building'} />
-                <ToDoItem item={'3D Printing Introduction'} />
-                <ToDoItem item={'Foundry Setup'} />
-                <ToDoItem item={'Overview of Foundry, Talespire, Roll20'} />
-            </div>
-            <div className={styles.list}>
-                <ToDoItem item={'Generating a backstory, with a map, reincarnation and NPC table'} />
-                <ToDoItem item={'Integrating level up features with story'} />
-                <ToDoItem item={'Mapping relationships'} />
-                <ToDoItem item={'Session 0: Level 0 Concept'} />
-            </div>
         </div>
     )
 }

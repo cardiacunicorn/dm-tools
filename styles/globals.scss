@@ -74,6 +74,10 @@ input {
   background-color: white;
   color: grey;
   font-size: 1.8rem;
+
+  &::selection {
+    background-color: pink;
+  }
 }
 
 select {
@@ -84,6 +88,10 @@ select {
   background-color: white;
   color: grey;
   font-size: 1.8rem;
+
+  option {
+    background-color: pink;
+  }
 }
 
 button {
@@ -93,7 +101,7 @@ button {
   height: 3rem;
   &:hover {
     cursor: pointer;
-    background-color: yellow !important;
-    color: black !important;
+    background-color: steelblue !important;
+    color: white !important;
   }
 }

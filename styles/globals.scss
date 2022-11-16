@@ -65,3 +65,23 @@ h6 {
 hr {
   border: 1px dashed #cc527a;
 }
+
+input {
+  margin: 0.5rem;
+  border: 0;
+  border-radius: 5px;
+  background-color: white;
+}
+
+select {
+  margin: 0.5rem;
+  border: 0;
+  border-radius: 5px;
+  background-color: white;
+  color: grey;
+}
+
+button {
+  border: 0;
+  border-radius: 5px;
+}

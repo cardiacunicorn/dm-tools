@@ -12,7 +12,7 @@ const Nav = () => {
               <Link href="/about">About</Link>
             </li>
             <li className={navStyles.item}>
-              <Link href="/todo">To Do</Link>
+              <Link href="/tasks">Tasks</Link>
             </li>
             <li className={navStyles.item}>
               <Link href="/character">Character</Link>

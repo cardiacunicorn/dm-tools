@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import styles from '../styles/Todo.module.scss'
+import styles from '../styles/Tasks.module.scss'
 import Button from '../components/Button'
 import TaskCategory from '../components/TaskCategory'
 import AddTask from '../components/AddTask'
 
-export default function Todo() {
+export default function Tasks() {
     const categoryLists: JSX.Element[] = []
     const categories = [
         'General',
@@ -375,8 +375,8 @@ export default function Todo() {
     })
 
     return (
-        <div>
-            <h1>To Do</h1>
+        <div id={styles.task_page}>
+            <h1>Tasks</h1>
             <AddTask onAdd={addTask} />
             <hr />
             {categoryLists}

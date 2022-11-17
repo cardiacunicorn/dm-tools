@@ -1,6 +1,7 @@
 #tasks_page {
     display: grid;
     grid-gap: 4rem;
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
     .add_form {
         grid-column-start: span 3;
@@ -9,14 +10,6 @@
         grid-gap: 1rem;
         grid-template-columns: 200px 200px 200px;
         grid-template-rows: auto;
-
-        .form_control {
-            grid-column-start: 1;
-            grid-column-end: 3;
-            input, select {
-                width: 100%;
-            }
-        }
 
         .text_input {
             grid-column-start: 1;

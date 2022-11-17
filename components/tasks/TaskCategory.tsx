@@ -1,6 +1,5 @@
 import Task from './Task'
 import styles from '../../styles/Tasks.module.scss'
-import { FaChevronDown } from 'react-icons/fa'
 
 const TaskCategory = ({ tasks, category, onDelete, onSetStatus }) => {
     const filtered = tasks.filter((task) => {

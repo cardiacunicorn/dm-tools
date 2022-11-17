@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import styles from '../styles/Tasks.module.scss'
-import Button from '../components/Button'
 import TaskCategory from '../components/tasks/TaskCategory'
 import AddTask from '../components/tasks/AddTask'
 
@@ -360,7 +359,7 @@ export default function Tasks() {
     // Add Task
     const addTask = (task: object) => {
         console.log(task)
-        const id = Math.floor(Math.random() * 10000) + 50
+        const id = Math.floor(Math.random() * 10000) + 54
         const newTask = { id, ...task }
         setTasks([...tasks, newTask])
     }
@@ -370,8 +369,8 @@ export default function Tasks() {
         setTasks(tasks.filter((task) => task.id !== id))
     }
 
-    categories.forEach((category) => {
-        categoryLists.push(<TaskCategory category={category} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />)
+    categories.forEach((category, index) => {
+        categoryLists.push(<TaskCategory key={index} category={category} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />)
     })
 
     return (

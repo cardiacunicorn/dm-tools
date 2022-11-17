@@ -329,12 +329,12 @@ export default function Todo() {
     ])
 
     // Delete Task
-    const deleteTask = (id) => {
+    const deleteTask = (id: number) => {
         setTasks(tasks.filter((task) => task.id !== id))
     }
 
     // Set Status
-    const setStatus = (id) => {
+    const setStatus = (id: number) => {
         setTasks(tasks.map((task) => {
             if (task.id === id) {
                 if (task.status === 'done') {
@@ -351,7 +351,7 @@ export default function Todo() {
     }
 
     // Add Task
-    const addTask = (task) => {
+    const addTask = (task: object) => {
         console.log(task)
         const id = Math.floor(Math.random() * 10000) + 50
         const newTask = { id, ...task }

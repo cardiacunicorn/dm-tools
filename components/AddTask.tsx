@@ -6,23 +6,17 @@ const AddTask = ({ onAdd }) => {
     const [category, setCategory] = useState('General')
     const [status, setStatus] = useState('incomplete')
 
-    const onSubmit = (e) => {
+    const onSubmit = (e: Event) => {
         e.preventDefault()
         if(!text) {
             alert('Please add task text')
             return
         }
-
         onAdd({ text, category, status })
-
         setText('')
         setStatus('incomplete')
         setCategory('General')
     }
-
-    // function onChange(e) {
-    //     console.log(category);
-    // }
 
     return (
         <form className={styles.add_form} onSubmit={onSubmit}>

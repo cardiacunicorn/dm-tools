@@ -1,47 +1,83 @@
-.add_form {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 1rem;
-    .form_control {
-        width: 45%;
-        * {
-            width: 100%;
-        }
-    }
-}
+#tasks_page {
+    display: grid;
+    grid-gap: 4rem;
 
-.category {
-    .category_title {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 2rem;
-    
-        svg {
-            color: grey;
+    .add_form {
+        grid-column-start: span 3;
+        display: grid;
+        justify-content: center;
+        grid-gap: 1rem;
+        grid-template-columns: 200px 200px 200px;
+        grid-template-rows: auto;
+
+        .form_control {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            input, select {
+                width: 100%;
+            }
+        }
+
+        .text_input {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            input {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .select_input {
+
+            select {
+                width: 100%;
+            }
+        }
+
+        input[type=submit] {
+            grid-column-start: 2;
+            grid-column-end: 3;
         }
     }
     
-    .category_list {
-        .task {
+    .category {
+        .category_title {
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
             align-items: center;
-            margin: 0.5rem 0;
-            padding-left: 1rem;
+            margin-top: 2rem;
         
-            &.progressing {
-                border-left: 5px solid orange;
+            svg {
+                color: grey;
             }
+        }
         
-            &.done {
-                border-left: 5px solid green;
-            }
-        
-            &.incomplete {
-                border-left: 5px solid red;
+        .category_list {
+            .task {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                margin: 1rem 0;
+                padding-left: 1rem;
+                line-height: 1.5em;
+
+                svg {
+                    margin-left: 1rem;
+                }
+            
+                &.progressing {
+                    border-left: 5px solid orange;
+                }
+            
+                &.done {
+                    border-left: 5px solid green;
+                }
+            
+                &.incomplete {
+                    border-left: 5px solid red;
+                }
             }
         }
     }

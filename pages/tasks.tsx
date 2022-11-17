@@ -30,13 +30,13 @@ export default function Tasks() {
             id: 2,
             text: 'Finish the ReactJS Crash Course Video',
             category: 'General',
-            status: 'progressing'
+            status: 'done'
         },
         {
             id: 3,
             text: 'Display Player Information',
             category: 'Party View',
-            status: 'incomplete'
+            status: 'progressing'
         },
         {
             id: 4,
@@ -340,11 +340,6 @@ export default function Tasks() {
         },
     ])
 
-    // Delete Task
-    const deleteTask = (id: number) => {
-        setTasks(tasks.filter((task) => task.id !== id))
-    }
-
     // Set Status
     const setStatus = (id: number) => {
         setTasks(tasks.map((task) => {
@@ -370,15 +365,19 @@ export default function Tasks() {
         setTasks([...tasks, newTask])
     }
 
-    categories.forEach((data) => {
-        categoryLists.push(<TaskCategory category={data} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />)
+    // Delete Task
+    const deleteTask = (id: number) => {
+        setTasks(tasks.filter((task) => task.id !== id))
+    }
+
+    categories.forEach((category) => {
+        categoryLists.push(<TaskCategory category={category} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />)
     })
 
     return (
-        <div id={styles.task_page}>
+        <div id={styles.tasks_page}>
             <h1>Tasks</h1>
             <AddTask onAdd={addTask} />
-            <hr />
             {categoryLists}
         </div>
     )

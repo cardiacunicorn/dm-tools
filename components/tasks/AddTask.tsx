@@ -14,16 +14,14 @@ const AddTask = ({ onAdd }) => {
         }
         onAdd({ text, category, status })
         setText('')
-        setStatus('incomplete')
-        setCategory('General')
     }
 
     return (
         <form className={styles.add_form} onSubmit={onSubmit}>
-            <div className={styles.form_control}>
+            <div className={styles.text_input}>
                 <input type="text" placeholder="Add Task" value={text} onChange={(e) => setText(e.target.value)} />
             </div>
-            <div className={styles.form_control}>
+            <div className={styles.select_input}>
                 <select name="category" id="category" onChange={(e) => setCategory(e.target.value)}>
                     <option value="General">General</option>
                     <option value="Party View">Party View</option>
@@ -38,9 +36,13 @@ const AddTask = ({ onAdd }) => {
                     <option value="Hardcore">Hardcore</option>
                 </select>
             </div>
-            <div className={styles.form_control}>
-                <input type="checkbox" value={status} onChange={(e) => setStatus('progressing')} />
-                <label htmlFor="">Progressing?</label>
+            <div className={styles.select_input}>
+                <select name="status" id="status" onChange={(e) => setStatus(e.target.value)}>
+                    <option value="incomplete">Incomplete</option>
+                    <option value="progressing">Progressing</option>
+                    <option value="done">Done</option>
+                    <option value="long-term">Long Term</option>
+                </select>
             </div>
             <input type="submit" value="Save Task" />
         </form>

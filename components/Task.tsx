@@ -1,4 +1,4 @@
-import styles from '../styles/Todo.module.scss'
+import styles from '../styles/Tasks.module.scss'
 import { FaTimes } from 'react-icons/fa'
 
 const Task = ({ task, onDelete, onSetStatus }) => {

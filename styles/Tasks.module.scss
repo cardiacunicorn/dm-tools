@@ -10,42 +10,44 @@
     }
 }
 
-.list {
-    margin-top: 3rem;
+.category {
+    .category_title {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+    
+        svg {
+            color: grey;
+        }
+    }
+    
+    .category_list {
+        .task {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.5rem 0;
+            padding-left: 1rem;
+        
+            &.progressing {
+                border-left: 5px solid orange;
+            }
+        
+            &.done {
+                border-left: 5px solid green;
+            }
+        
+            &.incomplete {
+                border-left: 5px solid red;
+            }
+        }
+    }
 }
 
-.task {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.5rem 0;
-    padding-left: 1rem;
 
-    &.progressing {
-        border-left: 5px solid orange;
-    }
-
-    &.done {
-        border-left: 5px solid green;
-    }
-
-    &.incomplete {
-        border-left: 5px solid red;
-    }
-}
-
-.task_category {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
-
-    svg {
-        color: grey;
-    }
-}
 
 /* W3 Schools Checkbox */
 

@@ -1,5 +1,5 @@
 import Task from './Task'
-import styles from '../styles/Todo.module.scss'
+import styles from '../styles/Tasks.module.scss'
 import { FaChevronDown } from 'react-icons/fa'
 
 const TaskCategory = ({ tasks, category, onDelete, onSetStatus }) => {
@@ -8,13 +8,15 @@ const TaskCategory = ({ tasks, category, onDelete, onSetStatus }) => {
     });
 
     return (
-        <>
-            <h3 className={styles.task_category}>{category}</h3>
+        <div className={styles.category}>
+            <h3 className={styles.category_title}>{category}</h3>
             <hr />
-            {filtered.map((task: { id: number, text: string; status: string, category: string }) => (
-                <Task key={task.id} task={task} onDelete={onDelete} onSetStatus={onSetStatus} />
-            ))}
-        </>
+            <div className={styles.category_list}>
+                {filtered.map((task: { id: number, text: string; status: string, category: string }) => (
+                    <Task key={task.id} task={task} onDelete={onDelete} onSetStatus={onSetStatus} />
+                ))}
+            </div>
+        </div>
     )
 }
 

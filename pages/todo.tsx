@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import styles from '../styles/Todo.module.scss'
-import ToDoItem from '../components/ToDoItem'
 import Button from '../components/Button'
 import TaskCategory from '../components/TaskCategory'
 import AddTask from '../components/AddTask'
 
 export default function Todo() {
-
+    const categoryLists: JSX.Element[] = []
     const categories = [
         'General',
         'Party View',
@@ -20,9 +19,6 @@ export default function Todo() {
         'Story',
         'Hardcore'
     ]
-
-    const categoryLists: JSX.Element[] = []
-
     const [tasks, setTasks] = useState([
         {
             id: 1,

@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Header title={'DM Tools'} description={'A little NextJS project by Alex Mills'} />
+      <Header title={'DM Tools'} description={'A NextJS project by Alex Mills'} />
       <Nav />
       <Layout>
         <Component {...pageProps} />

@@ -1,3 +1,15 @@
+.add_form {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    .form_control {
+        width: 45%;
+        * {
+            width: 100%;
+        }
+    }
+}
+
 .list {
     margin-top: 3rem;
 }

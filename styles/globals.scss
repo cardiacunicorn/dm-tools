@@ -66,11 +66,23 @@ hr {
   border: 1px dashed #cc527a;
 }
 
-input {
+button {
   margin: 0.5rem;
-  height: 3rem;
   border: 0;
   border-radius: 5px;
+  height: 3rem;
+  &:hover {
+    cursor: pointer;
+    background-color: steelblue !important;
+    color: white !important;
+  }
+}
+
+input {
+  margin: 0.5rem;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
   background-color: white;
   color: grey;
   font-size: 1.8rem;
@@ -85,23 +97,12 @@ select {
   height: 3rem;
   border: 0;
   border-radius: 5px;
+  padding: 0.5rem;
   background-color: white;
   color: grey;
   font-size: 1.8rem;
 
   option {
     background-color: pink;
-  }
-}
-
-button {
-  margin: 0.5rem;
-  border: 0;
-  border-radius: 5px;
-  height: 3rem;
-  &:hover {
-    cursor: pointer;
-    background-color: steelblue !important;
-    color: white !important;
   }
 }

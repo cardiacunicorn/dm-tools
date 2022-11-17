@@ -3,6 +3,7 @@ import styles from '../styles/Todo.module.scss'
 import ToDoItem from '../components/ToDoItem'
 import Button from '../components/Button'
 import TaskCategory from '../components/TaskCategory'
+import AddTask from '../components/AddTask'
 
 export default function Todo() {
 
@@ -349,28 +350,18 @@ export default function Todo() {
         }));
     }
 
-    const addTask = () => {
-
+    // Add Task
+    const addTask = (task) => {
+        console.log(task)
+        const id = Math.floor(Math.random() * 10000) + 50
+        const newTask = { id, ...task }
+        setTasks([...tasks, newTask])
     }
 
     return (
         <div>
             <h1>To Do</h1>
-            <input type="text" />
-            <select name="category" id="category">
-                <option value="General">General</option>
-                <option value="Party View" selected>Party View</option>
-                <option value="Encounter View">Encounter View</option>
-                <option value="Economics">Economics</option>
-                <option value="Maps">Maps</option>
-                <option value="Tools">Tools</option>
-                <option value="Organisation">Organisation</option>
-                <option value="Practical">Practical</option>
-                <option value="Custom Rules">Custom Rules</option>
-                <option value="Story">Story</option>
-                <option value="Hardcore">Hardcore</option>
-            </select>
-            <Button color='green' text='Add' onClick={addTask} />
+            <AddTask onAdd={addTask} />
             <hr />
             <TaskCategory category={'General'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
             <TaskCategory category={'Party View'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />

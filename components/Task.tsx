@@ -12,11 +12,6 @@ const Task = ({ task, onDelete, onSetStatus }) => {
       id={task.id}
       onClick={() => onSetStatus(task.id)}>
         {task.text}
-        {/* <label className={styles.label}>
-            {task.text}
-            <input type="checkbox" checked={task.done} />
-            <span className={styles.checkmark}></span>
-        </label> */}
         <FaTimes style={{ color: 'red', cursor: 'pointer' }} onDoubleClick={() => onDelete(task.id)} />
     </div>
   )

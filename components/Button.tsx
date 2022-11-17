@@ -1,9 +1,7 @@
-// import styles from '../styles/Layout.module.scss'
-
-const Button = ({ color, text }) => {
+const Button = ({ color, text, type }) => {
   return (
     // not sure why this .pink class isn't found from existing Layout css
-    <button style={{backgroundColor: color}} className={color}>{text}</button>
+    <button type={type} style={{backgroundColor: color}} className={color}>{text}</button>
   )
 }
 

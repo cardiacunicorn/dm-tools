@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from '../../styles/Tasks.module.scss'
+import Button from '../Button'
 
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState('')
@@ -44,7 +45,7 @@ const AddTask = ({ onAdd }) => {
                     <option value="long-term">Long Term</option>
                 </select>
             </div>
-            <input type="submit" value="Save Task" />
+            <Button color={'green'} text={'Save'} type={'submit'} />
         </form>
     )
 }

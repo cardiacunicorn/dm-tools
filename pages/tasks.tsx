@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import styles from '../styles/Tasks.module.scss'
 import Button from '../components/Button'
-import TaskCategory from '../components/TaskCategory'
-import AddTask from '../components/AddTask'
+import TaskCategory from '../components/tasks/TaskCategory'
+import AddTask from '../components/tasks/AddTask'
 
 export default function Tasks() {
     const categoryLists: JSX.Element[] = []

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from '../styles/Tasks.module.scss'
+import styles from '../../styles/Tasks.module.scss'
 
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState('')

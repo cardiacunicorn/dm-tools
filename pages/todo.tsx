@@ -7,6 +7,22 @@ import AddTask from '../components/AddTask'
 
 export default function Todo() {
 
+    const categories = [
+        'General',
+        'Party View',
+        'Encounter View',
+        'Economics',
+        'Maps',
+        'Tools',
+        'Organisation',
+        'Practical',
+        'Custom Rules',
+        'Story',
+        'Hardcore'
+    ]
+
+    const categoryLists: JSX.Element[] = []
+
     const [tasks, setTasks] = useState([
         {
             id: 1,
@@ -358,22 +374,16 @@ export default function Todo() {
         setTasks([...tasks, newTask])
     }
 
+    categories.forEach((data) => {
+        categoryLists.push(<TaskCategory category={data} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />)
+    })
+
     return (
         <div>
             <h1>To Do</h1>
             <AddTask onAdd={addTask} />
             <hr />
-            <TaskCategory category={'General'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
-            <TaskCategory category={'Party View'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
-            <TaskCategory category={'Encounter View'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
-            <TaskCategory category={'Economics'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
-            <TaskCategory category={'Maps'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
-            <TaskCategory category={'Tools'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
-            <TaskCategory category={'Organisation'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
-            <TaskCategory category={'Practical'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
-            <TaskCategory category={'Custom Rules'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
-            <TaskCategory category={'Story'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
-            <TaskCategory category={'Hardcore'} tasks={tasks} onDelete={deleteTask} onSetStatus={setStatus} />
+            {categoryLists}
         </div>
     )
 }

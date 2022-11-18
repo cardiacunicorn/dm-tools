@@ -1,7 +1,12 @@
-.table_head {
-    background-color: steelblue;
+@font-face {
+    font-family: 'MrEaves';
+    src: url('../assets/fonts/Mr\ Eaves\ Small\ Caps.otf');
+    font-weight: 400;
+    font-style: normal;
 }
 
-.table_data {
-    border: 1px solid white;
+.monster_name {
+    color: #822000;
+    font-family: 'MrEaves', serif;
+    font-size: 3.2rem;
 }

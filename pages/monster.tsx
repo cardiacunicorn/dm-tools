@@ -28,7 +28,7 @@ export default function Monster({ }) {
                                     {monster.id}
                                 </td>
                                 <td className={styles.table_data}>
-                                    {monster.name}
+                                    <span className={styles.monster_name}>{monster.name}</span>
                                 </td>
                             </tr>
                         </table>

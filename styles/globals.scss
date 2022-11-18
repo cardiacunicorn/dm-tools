@@ -110,3 +110,18 @@ select {
     background-color: pink;
   }
 }
+
+table {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+th {
+  border: 1px solid black;
+  background-color: steelblue;
+  color: white;
+}
+
+td {
+  border: 1px solid black;
+}

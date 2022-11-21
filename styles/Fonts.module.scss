@@ -4,7 +4,141 @@
     font-weight: 400;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Norse';
+    src: url('../assets/fonts/norse/AnglosaxonRunes1.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Norse';
+    src: url('../assets/fonts/norse/AnglosaxonRunes1.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Norse';
+    src: url('../assets/fonts/norse/AnglosaxonRunes2.ttf');
+    font-weight: 700;
+    font-style: italic;
+}
 
 .norse {
-    font-family: 'Norse';
+    font-family: 'Norse', serif;
+}
+
+@font-face {
+    font-family: 'Davek';
+    src: url('../assets/fonts/davek/Davek.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Davek';
+    src: url('../assets/fonts/davek/Davek\ Italic.otf');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Davek';
+    src: url('../assets/fonts/davek/Davek\ Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Davek';
+    src: url('../assets/fonts/davek/Davek\ Bold\ Italic.otf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+.dwarvish, .giant, .gnomish, .goblin, .primordial {
+    font-family: 'Davek', serif;
+}
+
+@font-face {
+    font-family: 'Rellanic';
+    src: url('../assets/fonts/rellanic/Rellanic.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Rellanic';
+    src: url('../assets/fonts/rellanic/Rellanic\ Italic.otf');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Rellanic';
+    src: url('../assets/fonts/rellanic/Rellanic\ Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Rellanic';
+    src: url('../assets/fonts/rellanic/Rellanic\ Bold\ Italic.otf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+.elvish, .sylvan, .undercommon {
+    font-family: 'Rellanic', serif;
+}
+
+@font-face {
+    font-family: 'Iokharic';
+    src: url('../assets/fonts/iokharic/Iokharic.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Iokharic';
+    src: url('../assets/fonts/iokharic/Iokharic\ Italic.otf');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Iokharic';
+    src: url('../assets/fonts/iokharic/Iokharic\ Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Iokharic';
+    src: url('../assets/fonts/iokharic/Iokharic\ Bold\ Italic.otf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+.draconic, .orc {
+    font-family: 'Iokharic', serif;
+}
+
+@font-face {
+    font-family: 'Barazhad';
+    src: url('../assets/fonts/barazhad/Barazhad.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Barazhad';
+    src: url('../assets/fonts/barazhad/Barazhad\ Italic.otf');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Barazhad';
+    src: url('../assets/fonts/barazhad/Barazhad\ Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Barazhad';
+    src: url('../assets/fonts/barazhad/Barazhad\ Bold\ Italic.otf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+.infernal, .abyssal {
+    font-family: 'Barazhad', serif;
 }

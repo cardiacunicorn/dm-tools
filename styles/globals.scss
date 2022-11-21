@@ -14,6 +14,13 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+@font-face {
+  font-family: 'MrEaves';
+  src: url('../assets/fonts/Mr\ Eaves\ Small\ Caps.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -36,6 +43,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
   margin: 0.4em 0;
   color: #cc527a;
+  font-family: 'MrEaves', serif;
 }
 
 h1 {

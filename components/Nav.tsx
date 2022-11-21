@@ -18,6 +18,9 @@ const Nav = () => {
               <Link href="/character">Character</Link>
             </li>
             <li className={navStyles.item}>
+              <Link href="/monster">Monster</Link>
+            </li>
+            <li className={navStyles.item}>
               <Link href="/dev">Dev</Link>
             </li>
             <li className={navStyles.item}>

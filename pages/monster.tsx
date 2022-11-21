@@ -14,24 +14,20 @@ export default function Monster({ }) {
                 console.log(json.data)
                 displayData = json.data.map(function(monster) {
                     return(
-                        <table key={monster.id}>
-                            <tr>
-                                <th className={styles.table_head}>
-                                    ID
-                                </th>
-                                <th className={styles.table_head}>
-                                    Name
-                                </th>
-                            </tr>
-                            <tr>
-                                <td className={styles.table_data}>
-                                    {monster.id}
-                                </td>
-                                <td className={styles.table_data}>
-                                    <span className={styles.monster_name}>{monster.name}</span>
-                                </td>
-                            </tr>
-                        </table>
+                        <tr key={monster.id}>
+                            <td>
+                                {monster.id}
+                            </td>
+                            <td>
+                                <span className={styles.monster_name}>{monster.name}</span>
+                            </td>
+                            <td>
+                                {monster.challengeRatingId}
+                            </td>
+                            <td>
+                                {monster.armorClass}
+                            </td>
+                        </tr>
                     )
                 })
                 setMonstersData(displayData)
@@ -45,7 +41,23 @@ export default function Monster({ }) {
     return (
         <div>
             <h1>Monsters</h1>
-            {monstersData}
+            <table id="monsters_table">
+                <tr>
+                    <th className={styles.table_head}>
+                        ID
+                    </th>
+                    <th className={styles.table_head}>
+                        Name
+                    </th>
+                    <th className={styles.table_head}>
+                        CR
+                    </th>
+                    <th className={styles.table_head}>
+                        AC
+                    </th>
+                </tr>
+                {monstersData}
+            </table>
         </div>
     )
 }

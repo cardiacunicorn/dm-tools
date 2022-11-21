@@ -5,10 +5,10 @@ export default function Account() {
     return (
         <div>
             <div>
-                Norse Runes:<br /><span className={fonts.norse}>Account Page</span>
+                Norse/Giant Runes:<br /><span className={fonts.norse}>Account Page</span>
             </div>
             <div>
-                Dwarvish/Giant/Gnomish/Goblin/Primordial:<br /><span className={fonts.dwarvish}>Account Page</span>
+                Dwarvish/Gnomish/Goblin/Primordial:<br /><span className={fonts.dwarvish}>Account Page</span>
             </div>
             <div>
                 Draconic/Orc:<br /><span className={fonts.draconic}>Account Page</span>
@@ -18,6 +18,9 @@ export default function Account() {
             </div>
             <div>
                 Elvish/Sylvan/Undercommon:<br /><span className={fonts.elvish}>Account Page</span>
+            </div>
+            <div>
+                Arcane/Celestial:<br /><span className={fonts.arcane}>Account Page</span>
             </div>
         </div>
     )

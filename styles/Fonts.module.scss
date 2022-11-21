@@ -23,7 +23,7 @@
     font-style: italic;
 }
 
-.norse {
+.norse, .giant {
     font-family: 'Norse', serif;
 }
 
@@ -52,7 +52,7 @@
     font-style: italic;
 }
 
-.dwarvish, .giant, .gnomish, .goblin, .primordial {
+.dwarvish, .gnomish, .goblin, .primordial {
     font-family: 'Davek', serif;
 }
 
@@ -141,4 +141,15 @@
 
 .infernal, .abyssal {
     font-family: 'Barazhad', serif;
+}
+
+@font-face {
+    font-family: 'Magi';
+    src: url('../assets/fonts/ALPMAGI.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.arcane, .celestial {
+    font-family: 'Magi', serif;
 }

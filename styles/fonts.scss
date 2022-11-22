@@ -1,0 +1,62 @@
+/* D&D Fonts */
+
+@font-face {
+    font-family: 'Modesto';
+    src: url('../assets/fonts/modesto/Modesto\ Condensed\ Light.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Modesto';
+    src: url('../assets/fonts/modesto/Modesto\ Condensed\ Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.title {
+    font-family: 'Modesto', serif;
+}
+
+@font-face {
+    font-family: 'MrEaves';
+    src: url('../assets/fonts/dnd/Mr\ Eaves\ Small\ Caps.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.headline {
+    font-family: 'MrEaves', serif;
+}
+
+@font-face {
+    font-family: 'Bookmania';
+    src: url('../assets/fonts/bookmania/bookmania-regular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text {
+    font-family: 'Bookmania', serif;
+}
+
+@font-face {
+    font-family: 'ScalaSans';
+    src: url('../assets/fonts/dnd/ScalaSans-Regular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.highlight, .sans {
+    font-family: 'ScalaSans', sans-serif;
+}
+
+@font-face {
+    font-family: 'Dungeon';
+    src: url('../assets/fonts/dungeon.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dungeon {
+    font-family: 'Dungeon';
+}

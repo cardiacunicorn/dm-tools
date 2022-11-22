@@ -1,5 +1,5 @@
 import styles from '../styles/Account.module.scss'
-import fonts from '../styles/Fonts.module.scss'
+import fonts from '../styles/FantasyFonts.module.scss'
 
 export default function Account() {
     return (

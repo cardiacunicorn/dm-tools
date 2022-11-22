@@ -1,9 +1,10 @@
 import '../styles/globals.scss'
+import '../styles/fonts.scss'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import Layout from '../components/Layout'
 import Nav from '../components/Nav'
 import Header from '../components/Header'
-import Head from 'next/head'
 
 export default function App({ Component, pageProps }: AppProps) {
   const title = 'DM Tools'

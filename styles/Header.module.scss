@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
 
   > * {
     margin-left: 2rem;
@@ -12,7 +12,7 @@
     margin-right: 2rem;
   }
   
-  .description {
-    font-size: 1.6rem;
+  p {
+    font-size: 1.8rem;
   }
 }

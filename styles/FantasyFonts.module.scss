@@ -1,3 +1,17 @@
+@import 'variables';
+
+.font_box {
+    margin: 2rem;
+}
+
+.font_descriptor {
+    margin-bottom: 1rem;
+    font-family: $sans;
+    font-size: 1.6rem;
+    color: $lightgrey;
+}
+
+
 /* Fantasy Language Fonts */
 
 @font-face {

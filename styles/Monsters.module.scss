@@ -1,5 +1,7 @@
+@import 'variables';
+
 .monster_name {
-    color: #822000;
-    font-family: 'MrEaves', serif;
+    color: $brown;
+    font-family: $headline;
     font-size: 3.2rem;
 }

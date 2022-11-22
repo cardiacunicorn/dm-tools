@@ -1,6 +1,4 @@
 import '../styles/globals.scss'
-import '../styles/fonts.scss'
-import variables from '../styles/variables.module.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Layout from '../components/Layout'
@@ -19,7 +17,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Header title={title} description={description} />
       <Nav />
       <Layout>
-        <div>{variables.pink}</div>
         <Component {...pageProps} />
       </Layout>
     </>

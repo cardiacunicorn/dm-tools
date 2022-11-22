@@ -1,5 +1,7 @@
+@import 'variables';
+
 .nav {
-    background-color: #474747;
+    background-color: $medgrey;
     .list {
         list-style-type: none;
         margin: 0;
@@ -10,9 +12,9 @@
             a {
                 display: inline-block;
                 margin: 1rem;
-                color: #A8A7A7;
+                color: $lightgrey;
                 &:hover {
-                    color: #e8175d;
+                    color: $secondary;
                 }
             }
         }

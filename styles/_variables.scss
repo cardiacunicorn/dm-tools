@@ -1,0 +1,45 @@
+/* D&D Colours */
+$dnd-red: #E40712;
+$dnd-brown: #822000;
+
+/* Base Colours */
+
+$black: black;
+$white: white;
+$offwhite: #eaeaea;
+$grey: grey;
+$darkgrey: #363636;
+$medgrey: #474747;
+$lightgrey: #A8A7A7;
+$red: $dnd-red;
+$brown: $dnd-brown;
+$orange: orange;
+$pink: #cc527a;
+$darkpink: #e8175d;
+$blue: steelblue;
+
+/* Theme Colours */
+
+$primary: $pink;
+$secondary: $darkpink;
+$dark-bg: $darkgrey;
+$light-bg: $grey;
+
+/* D&D Fonts */
+
+@import 'fonts';
+
+$title: 'Modesto', serif;
+$headline: 'MrEaves', serif;
+$text: 'Bookmania', serif;
+$highlight: 'ScalaSans', sans-serif;
+$sans: 'ScalaSans', sans-serif;
+$dungeon: 'Dungeon', serif;
+
+/* Font Helper Classes */
+
+.title { font-family: $title; }
+.headline { font-family: $headline; }
+.text { font-family: $text; }
+.highlight, .sans {  font-family: $sans; }
+.dungeon { font-family: $dungeon; }

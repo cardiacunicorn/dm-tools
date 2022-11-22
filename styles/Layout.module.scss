@@ -1,5 +1,7 @@
+@import 'variables';
+
 .container {
-  background-color: #363636;
+  background-color: $darkgrey;
   padding: 0 2rem;
 }
 
@@ -10,10 +12,10 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  color: #A8A7A7;
+  color: $lightgrey;
 
   button.pink {
-    background-color: #cc527a;
+    background-color: $pink;
   }
 }
 
@@ -21,7 +23,7 @@
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid $offwhite;
   justify-content: center;
   align-items: center;
 }
@@ -34,7 +36,7 @@
 }
 
 .code {
-  background: #fafafa;
+  background: $offwhite;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -47,11 +49,11 @@
 
   .card,
   .footer {
-      border-color: #222;
+      border-color: $darkgrey;
   }
 
   .code {
-      background: #111;
+      background: $black;
   }
 
   .logo img {

@@ -1,3 +1,5 @@
+@import 'variables';
+
 html {
   font-size: 62.5%;
 }
@@ -10,8 +12,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: $text;
 }
 
 a {
@@ -28,18 +29,19 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: $white;
+    background: $black;
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0.4em 0;
-  color: #cc527a;
-  font-family: 'MrEaves', serif;
+  color: $primary;
+  font-family: $headline;
 }
 
 h1 {
+  font-family: $title;
   font-size: 3.6rem;
 }
 
@@ -64,11 +66,10 @@ h6 {
 }
 
 hr {
-  border: 1px dashed #cc527a;
+  border: 1px dashed $primary;
 }
 
 button {
-  // margin: 0.5rem;
   height: 3rem;
   border: 0;
   border-radius: 5px;
@@ -77,8 +78,8 @@ button {
 
   &:hover {
     cursor: pointer;
-    background-color: #cc527a !important;
-    color: white !important;
+    background-color: $primary !important;
+    color: $white !important;
   }
 }
 
@@ -87,12 +88,12 @@ input {
   border: 0;
   border-radius: 5px;
   padding: 0.5rem 1rem;
-  background-color: white;
-  color: grey;
+  background-color: $white;
+  color: $grey;
   font-size: 1.8rem;
 
   &::selection {
-    background-color: pink;
+    background-color: $primary;
   }
 }
 
@@ -101,12 +102,12 @@ select {
   border: 0;
   border-radius: 5px;
   padding: 0 0.5rem;
-  background-color: white;
-  color: grey;
+  background-color: $white;
+  color: $grey;
   font-size: 1.8rem;
 
   option {
-    background-color: pink;
+    background-color: $pink;
   }
 }
 
@@ -116,11 +117,11 @@ table {
 }
 
 th {
-  border: 1px solid black;
-  background-color: steelblue;
-  color: white;
+  border: 1px solid $black;
+  background-color: $blue;
+  color: $white;
 }
 
 td {
-  border: 1px solid black;
+  border: 1px solid $black;
 }

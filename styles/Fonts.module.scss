@@ -64,6 +64,12 @@
 .norse, .giant {
     font-family: 'Norse', serif;
 }
+.norse {
+    color: steelblue;
+}
+.giant {
+    color: bisque;
+}
 
 @font-face {
     font-family: 'Davek';
@@ -93,6 +99,18 @@
 .dwarvish, .gnomish, .goblin, .primordial {
     font-family: 'Davek', serif;
 }
+.dwarvish {
+    color: steelblue;
+}
+.gnomish {
+    color: brown;
+}
+.goblin {
+    color: burlywood;
+}
+.primordial {
+    color: orange;
+}
 
 @font-face {
     font-family: 'Rellanic';
@@ -121,6 +139,15 @@
 
 .elvish, .sylvan, .undercommon {
     font-family: 'Rellanic', serif;
+}
+.elvish {
+    color: silver;
+}
+.sylvan {
+    color: greenyellow;
+}
+.undercommon {
+    color: brown;
 }
 
 @font-face {
@@ -202,4 +229,10 @@
 
 .arcane, .celestial {
     font-family: 'Magi', serif;
+}
+.arcane {
+    color: violet;
+}
+.celestial {
+    color: gold;
 }

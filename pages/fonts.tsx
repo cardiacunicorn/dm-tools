@@ -4,6 +4,17 @@ export default function Fonts() {
     return (
         <div>
             <div className={styles.font_box}>
+                <div className={styles.font_descriptor}>D&D 5E:</div>
+                <div className="title red">Title</div>
+                <div className="headline brown">Headline</div>
+                <div className="sans">Sans</div>
+                <div className="sans green">Uncommon item</div>
+                <div className="sans blue">Rare item</div>
+                <div className="sans purple">Very rare item</div>
+                <div className="sans gold">Legendary item</div>
+                <div className="text">Text</div>
+            </div>
+            <div className={styles.font_box}>
                 <div className={styles.font_descriptor}>Norse/Giant Runes:</div>
                 <div className={styles.norse}>Norse</div>
                 <div className={styles.giant}>Giant</div>

@@ -1,6 +1,10 @@
 /* D&D Colours */
 $dnd-red: #E40712;
 $dnd-brown: #822000;
+$dnd-uncommon: #1fc219;
+$dnd-rare: #4990e2;
+$dnd-veryrare: #9810e0;
+$dnd-legendary: #fea227;
 
 /* Base Colours */
 
@@ -13,10 +17,23 @@ $medgrey: #474747;
 $lightgrey: #A8A7A7;
 $red: $dnd-red;
 $brown: $dnd-brown;
+$green: $dnd-uncommon;
+$blue: $dnd-rare;
+$purple: $dnd-veryrare;
+$gold: $dnd-legendary;
 $orange: orange;
 $pink: #cc527a;
 $darkpink: #e8175d;
-$blue: steelblue;
+
+/* Helpers */
+.red { color: $red; }
+.brown { color: $brown; }
+.orange { color: $orange; }
+.pink { color: $pink; }
+.blue { color: $blue; }
+.green { color: $green; }
+.purple { color: $purple; }
+.gold { color: $gold; }
 
 /* Theme Colours */
 

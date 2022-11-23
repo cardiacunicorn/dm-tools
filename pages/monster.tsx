@@ -8,29 +8,33 @@ export default function Monster({ }) {
 
     let displayData
     function pullJson() {
-        fetch(monstersURL)
+        fetch(monstersURL, {
+            crossDomain: true,
+            method: 'GET',
+            headers: {'Content-Type':'application/json'}
+        })
             .then(res => res.json())
             .then(json => {
                 console.log(json.data)
-                displayData = json.data.map(function(monster) {
-                    return(
-                        <tr key={monster.id}>
-                            <td>
-                                {monster.id}
-                            </td>
-                            <td>
-                                <span className={styles.monster_name}>{monster.name}</span>
-                            </td>
-                            <td>
-                                {monster.challengeRatingId}
-                            </td>
-                            <td>
-                                {monster.armorClass}
-                            </td>
-                        </tr>
-                    )
-                })
-                setMonstersData(displayData)
+                // displayData = json.data.map(function(monster) {
+                //     return(
+                //         <tr key={monster.id}>
+                //             <td>
+                //                 {monster.id}
+                //             </td>
+                //             <td>
+                //                 <span className={styles.monster_name}>{monster.name}</span>
+                //             </td>
+                //             <td>
+                //                 {monster.challengeRatingId}
+                //             </td>
+                //             <td>
+                //                 {monster.armorClass}
+                //             </td>
+                //         </tr>
+                //     )
+                // })
+                // setMonstersData(displayData)
             })
     }
 
@@ -56,7 +60,7 @@ export default function Monster({ }) {
                         AC
                     </th>
                 </tr>
-                {monstersData}
+                {/* {monstersData} */}
             </table>
         </div>
     )

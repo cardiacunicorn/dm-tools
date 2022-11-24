@@ -8,11 +8,7 @@ export default function Monster({ }) {
 
     let displayData
     function pullJson() {
-        fetch(monstersURL, {
-            crossDomain: true,
-            method: 'GET',
-            headers: {'Content-Type':'application/json'}
-        })
+        fetch(monstersURL)
             .then(res => res.json())
             .then(json => {
                 console.log(json.data)

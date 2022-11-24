@@ -1,51 +1,46 @@
 import { useState, useEffect } from 'react'
-import useSWR from 'swr'
+import styles from '../styles/Character.module.scss'
 
-const characterURL = 'https://character-service.dndbeyond.com/character/v5/character/75936428'
-const [characterData, setCharacterData] = useState([
-  {}
-])
-// const res = await fetch(characterURL)
-// const articles = await res.json()
+// const characterURL = 'https://character-service.dndbeyond.com/character/v5/character/75936428'
+const characterURL = 'https://api.github.com/users/deekshasharma'
 
-// const fetcher = (url: string) => fetch(url).then((res) => res.json());
+export default function Character() {
 
-// useEffect(() => {
-//   fetch(characterURL)
-//       .then(response => response.json())
-//       .then(data => setCharacterData(data.data));
+  const [characterData, setCharacterData] = useState([])
 
-// // empty dependency array means this effect will only run once (like componentDidMount in classes)
-// }, []);
+  let displayData
 
+  const pullJson = async () => {
 
+    const res = await fetch(characterURL);
+    const jsonData = await res.json();
 
-export default function Character({character}) {
+    displayData = jsonData.data.map(function(character) {
+        return(
+            <div>
+              {character.name}
+            </div>
+        )
+    })
+    setCharacterData(displayData);
 
-  // const { data, error } = useSWR(
-  //   characterURL,
-  //   fetcher
-  // );
-  
-  // if (error) return "An error has occurred.";
-  // if (!data) return "Loading...";
+    // fetch(characterURL)
+    //   .then(res => res.json())
+    //   .then(json => {
+    //       console.log(json.data)
+    //       displayData = json.data
+    //       setCharacterData(displayData)
+    //   })
+  }
+
+  useEffect(() => {
+      pullJson();
+  },[]);
 
   return (
     <div>
       <code>{characterURL}</code>
-      <code>{character}</code>
+      <code>{characterData}</code>
     </div>
   )
-}
-
-// Adding data functions
-export const getStaticProps = async () => {
-  const res = await fetch(characterURL)
-  const character = await res.json()
-
-  return {
-      props: {
-          character
-      }
-  }
 }

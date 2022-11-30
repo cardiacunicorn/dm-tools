@@ -1,3 +1,5 @@
+@import 'variables';
+
 #tasks_page {
     display: grid;
     grid-gap: 4rem;
@@ -61,15 +63,15 @@
                 }
             
                 &.progressing {
-                    border-left: 5px solid orange;
+                    border-left: 5px solid $orange;
                 }
             
                 &.done {
-                    border-left: 5px solid green;
+                    border-left: 5px solid $green;
                 }
             
                 &.incomplete {
-                    border-left: 5px solid red;
+                    border-left: 5px solid $red;
                 }
             }
         }
@@ -109,19 +111,19 @@
         left: 0;
         height: 1.6rem;
         width: 1.6rem;
-        background-color: #eee;
+        background-color: $white;
         border-radius: 5px;
     }
 }
 
 /* On mouse-over, add a grey background color */
 .label:hover input~.checkmark {
-    background-color: #ccc;
+    background-color: $lightgrey;
 }
 
-/* When the checkbox is checked, add a blue background */
+/* When the checkbox is checked, add primary colour background */
 .label input:checked~.checkmark {
-    background-color: #e8175d;
+    background-color: $primary;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -142,7 +144,7 @@
     top: 0px;
     width: 5px;
     height: 10px;
-    border: solid white;
+    border: solid $white;
     border-width: 0 2px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);

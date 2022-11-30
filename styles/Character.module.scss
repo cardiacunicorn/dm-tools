@@ -1,1 +1,23 @@
 @import 'variables';
+
+.character {
+    margin: 1rem;
+    border: 1px solid $lightgrey;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    .character_name {
+        margin-bottom: 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .character_tags {
+        display: inline;
+        border: 0;
+        border-radius: 1rem;
+        background-color: $orange;
+        color: $black;
+        padding: 0 0.5rem;
+    }
+}

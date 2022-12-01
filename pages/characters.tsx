@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client'
 import { useEffect } from 'react';
-import styles from '../styles/Character.module.scss'
+import styles from '../styles/Characters.module.scss'
 
 export default function Characters({ results }) {
     useEffect(() => {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import styles from '../styles/Character.module.scss'
+import styles from '../styles/Characters.module.scss'
 
 // const url = 'https://character-service.dndbeyond.com/character/v5/character/75936428'
 const url = 'https://api.github.com/users/deekshasharma'

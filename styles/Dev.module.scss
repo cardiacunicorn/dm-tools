@@ -1,0 +1,16 @@
+@import 'variables';
+
+.output_heading {
+    color: $red;
+    margin-bottom: 4rem;
+}
+
+.output_code {
+    display: block;
+    width: 75vw;
+    border: 1px solid $black;
+    border-radius: 5px;
+    background-color: $lightgrey;
+    color: $darkgrey;
+    padding: 2rem;
+}

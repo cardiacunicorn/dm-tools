@@ -27,23 +27,6 @@ export default function NotionTasks({ results }) {
     const getTasksDisplay = () => {
         let jsx: JSX.Element[] = [];
 
-        // const categories = results.map(task => task.properties.Category.select.name);
-
-        // categories.forEach((category, index) => {
-
-        //     const filtered = results.filter((task) => {
-        //         return task.properties.Category.select.name === category;
-        //     });
-
-        //     jsx.push(
-        //         <div>
-        //             {filtered.properties.Status.status.name}
-        //         </div>
-        //     )
-
-        //     // categoryLists.push(<TaskCategory key={index} category={category} tasks={tasks} />)
-        // })
-
         // Return Filtered Tasks
         jsx.push(<h2>High Priority</h2>)
         {results.filter(task => task.properties.Priority.select.name == "High").map(filteredTask => {

@@ -5,6 +5,20 @@ import { Client } from '@notionhq/client'
 
 export default function NotionTasks({ results }) {
 
+    const categoryLists: JSX.Element[] = []
+    const categories = [
+        'General',
+        'Party View',
+        'Encounter View',
+        'Economics',
+        'Maps',
+        'Tools',
+        'Organisation',
+        'Practical',
+        'Custom Rules',
+        'Story',
+        'Hardcore'
+    ]
 
     useEffect(() => {
         console.log(results);
@@ -12,6 +26,23 @@ export default function NotionTasks({ results }) {
 
     const getTasksDisplay = () => {
         let jsx: JSX.Element[] = [];
+
+        // const categories = results.map(task => task.properties.Category.select.name);
+
+        // categories.forEach((category, index) => {
+
+        //     const filtered = results.filter((task) => {
+        //         return task.properties.Category.select.name === category;
+        //     });
+
+        //     jsx.push(
+        //         <div>
+        //             {filtered.properties.Status.status.name}
+        //         </div>
+        //     )
+
+        //     // categoryLists.push(<TaskCategory key={index} category={category} tasks={tasks} />)
+        // })
 
         // Return Filtered Tasks
         jsx.push(<h2>High Priority</h2>)
@@ -25,27 +56,29 @@ export default function NotionTasks({ results }) {
             )
         })}
 
-        jsx.push(<h2>Medium Priority</h2>)
-        {results.filter(task => task.properties.Priority.select.name == "Medium").map(filteredTask => {
-            jsx.push(
-                <div className="task" key={filteredTask.id}>
-                    <div>{filteredTask.properties.Status.status.name}</div>
-                    <div>{filteredTask.properties.Name.title[0].plain_text}</div>
-                    <div>{filteredTask.properties.Category.select.name}</div>
-                </div>
-            )
-        })}
+        // The below works, but should focus on High Priority any way
 
-        jsx.push(<h2>Low Priority</h2>)
-        {results.filter(task => task.properties.Priority.select.name == "Low").map(filteredTask => {
-            jsx.push(
-                <div className="task" key={filteredTask.id}>
-                    <div>{filteredTask.properties.Status.status.name}</div>
-                    <div>{filteredTask.properties.Name.title[0].plain_text}</div>
-                    <div>{filteredTask.properties.Category.select.name}</div>
-                </div>
-            )
-        })}
+        // jsx.push(<h2>Medium Priority</h2>)
+        // {results.filter(task => task.properties.Priority.select.name == "Medium").map(filteredTask => {
+        //     jsx.push(
+        //         <div className="task" key={filteredTask.id}>
+        //             <div>{filteredTask.properties.Status.status.name}</div>
+        //             <div>{filteredTask.properties.Name.title[0].plain_text}</div>
+        //             <div>{filteredTask.properties.Category.select.name}</div>
+        //         </div>
+        //     )
+        // })}
+
+        // jsx.push(<h2>Low Priority</h2>)
+        // {results.filter(task => task.properties.Priority.select.name == "Low").map(filteredTask => {
+        //     jsx.push(
+        //         <div className="task" key={filteredTask.id}>
+        //             <div>{filteredTask.properties.Status.status.name}</div>
+        //             <div>{filteredTask.properties.Name.title[0].plain_text}</div>
+        //             <div>{filteredTask.properties.Category.select.name}</div>
+        //         </div>
+        //     )
+        // })}
 
         // Return everything
 

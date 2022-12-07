@@ -1,4 +1,5 @@
 import styles from '../styles/Dev.module.scss'
+import { Client } from '@notionhq/client'
 
 export default function Dev({ }) {
     return (

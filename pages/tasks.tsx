@@ -3,6 +3,8 @@ import styles from '../styles/Tasks.module.scss'
 import TaskCategory from '../components/tasks/TaskCategory'
 import AddTask from '../components/tasks/AddTask'
 
+import { Client } from '@notionhq/client'
+
 export default function Tasks() {
     const categoryLists: JSX.Element[] = []
     const categories = [
@@ -337,6 +339,12 @@ export default function Tasks() {
             category: 'Encounter View',
             status: 'incomplete'
         },
+        {
+            id: 54,
+            text: 'Autogenerate relationship between NPC in same location',
+            category: 'Tools',
+            status: 'incomplete'
+        },
     ])
 
     // Set Status
@@ -359,7 +367,7 @@ export default function Tasks() {
     // Add Task
     const addTask = (task: object) => {
         console.log(task)
-        const id = Math.floor(Math.random() * 10000) + 54
+        const id = Math.floor(Math.random() * 10000) + 100
         const newTask = { id, ...task }
         setTasks([...tasks, newTask])
     }

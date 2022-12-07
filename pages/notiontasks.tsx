@@ -28,11 +28,11 @@ export default function NotionTasks({ results }) {
         let jsx: JSX.Element[] = [];
 
         // Return Filtered Tasks
-        jsx.push(<h2>High Priority</h2>)
+        jsx.push(<h2 className={styles.category_title}>High Priority</h2>)
         {results.filter(task => task.properties.Priority.select.name == "High").map(filteredTask => {
             jsx.push(
-                <div className="task" key={filteredTask.id}>
-                    <div>{filteredTask.properties.Status.status.name}</div>
+                <div className={styles.task} key={filteredTask.id}>
+                    {/* <div>{filteredTask.properties.Status.status.name}</div> */}
                     <div>{filteredTask.properties.Name.title[0].plain_text}</div>
                     <div>{filteredTask.properties.Category.select.name}</div>
                 </div>
@@ -83,8 +83,10 @@ export default function NotionTasks({ results }) {
     return (
         <div id={styles.tasks_page}>
             <h1>Notion Tasks</h1>
-            <div>
-                {getTasksDisplay()}
+            <div className={styles.category}>
+                <div className={styles.category_list}>
+                    {getTasksDisplay()}
+                </div>
             </div>
         </div>
     )

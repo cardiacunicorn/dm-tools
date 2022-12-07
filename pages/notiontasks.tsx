@@ -14,11 +14,35 @@ export default function NotionTasks({ results }) {
         let jsx: JSX.Element[] = [];
 
         // Return Filtered Tasks
-
+        jsx.push(<h2>High Priority</h2>)
         {results.filter(task => task.properties.Priority.select.name == "High").map(filteredTask => {
             jsx.push(
-                <div>
-                    {filteredTask.properties.Name.title[0].plain_text}
+                <div className="task" key={filteredTask.id}>
+                    <div>{filteredTask.properties.Status.status.name}</div>
+                    <div>{filteredTask.properties.Name.title[0].plain_text}</div>
+                    <div>{filteredTask.properties.Category.select.name}</div>
+                </div>
+            )
+        })}
+
+        jsx.push(<h2>Medium Priority</h2>)
+        {results.filter(task => task.properties.Priority.select.name == "Medium").map(filteredTask => {
+            jsx.push(
+                <div className="task" key={filteredTask.id}>
+                    <div>{filteredTask.properties.Status.status.name}</div>
+                    <div>{filteredTask.properties.Name.title[0].plain_text}</div>
+                    <div>{filteredTask.properties.Category.select.name}</div>
+                </div>
+            )
+        })}
+
+        jsx.push(<h2>Low Priority</h2>)
+        {results.filter(task => task.properties.Priority.select.name == "Low").map(filteredTask => {
+            jsx.push(
+                <div className="task" key={filteredTask.id}>
+                    <div>{filteredTask.properties.Status.status.name}</div>
+                    <div>{filteredTask.properties.Name.title[0].plain_text}</div>
+                    <div>{filteredTask.properties.Category.select.name}</div>
                 </div>
             )
         })}

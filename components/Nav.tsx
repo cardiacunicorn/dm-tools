@@ -15,6 +15,9 @@ const Nav = () => {
               <Link href="/tasks">Tasks</Link>
             </li>
             <li className={navStyles.item}>
+              <Link href="/notiontasks">NotionTasks</Link>
+            </li>
+            <li className={navStyles.item}>
               <Link href="/character">Character</Link>
             </li>
             <li className={navStyles.item}>

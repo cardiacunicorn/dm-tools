@@ -1,17 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styles from '../styles/Tasks.module.scss'
 import TaskCategory from '../components/tasks/TaskCategory'
 import AddTask from '../components/tasks/AddTask'
-import { Client } from '@notionhq/client'
 
-export default function Tasks({ results }) {
-
-
-    useEffect(() => {
-        console.log(results);
-    });
-
-
+export default function Tasks() {
     const categoryLists: JSX.Element[] = []
     const categories = [
         'General',
@@ -389,31 +381,9 @@ export default function Tasks({ results }) {
 
     return (
         <div id={styles.tasks_page}>
-            <h1>Notion Tasks</h1>
-            <div>
-
-            </div>
             <h1>Tasks</h1>
             <AddTask onAdd={addTask} />
             {categoryLists}
         </div>
     )
-}
-
-// Adding data functions
-export const getStaticProps = async () => {
-    const notion = new Client({ auth: process.env.NOTION_API_KEY });
-    const tasksDB: string = process.env.NOTION_DB_TASKS ?? '';
-
-    const response = await notion.databases.query({
-        database_id: tasksDB,
-    });
-
-    console.log(response);
-
-    return {
-        props: {
-            results: response.results,
-        },
-    };
 }

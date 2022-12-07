@@ -5,7 +5,6 @@ import { Client } from '@notionhq/client'
 
 export default function NotionTasks({ results }) {
 
-    const categoryLists: JSX.Element[] = []
     const categories = [
         'General',
         'Party View',
@@ -29,52 +28,16 @@ export default function NotionTasks({ results }) {
 
         // Return Filtered Tasks
         jsx.push(<h2 className={styles.category_title}>High Priority</h2>)
+        
         {results.filter(task => task.properties.Priority.select.name == "High").map(filteredTask => {
             jsx.push(
                 <div className={styles.task} key={filteredTask.id}>
                     {/* <div>{filteredTask.properties.Status.status.name}</div> */}
-                    <div>{filteredTask.properties.Name.title[0].plain_text}</div>
                     <div>{filteredTask.properties.Category.select.name}</div>
+                    <div>{filteredTask.properties.Name.title[0].plain_text}</div>
                 </div>
             )
         })}
-
-        // The below works, but should focus on High Priority any way
-
-        // jsx.push(<h2>Medium Priority</h2>)
-        // {results.filter(task => task.properties.Priority.select.name == "Medium").map(filteredTask => {
-        //     jsx.push(
-        //         <div className="task" key={filteredTask.id}>
-        //             <div>{filteredTask.properties.Status.status.name}</div>
-        //             <div>{filteredTask.properties.Name.title[0].plain_text}</div>
-        //             <div>{filteredTask.properties.Category.select.name}</div>
-        //         </div>
-        //     )
-        // })}
-
-        // jsx.push(<h2>Low Priority</h2>)
-        // {results.filter(task => task.properties.Priority.select.name == "Low").map(filteredTask => {
-        //     jsx.push(
-        //         <div className="task" key={filteredTask.id}>
-        //             <div>{filteredTask.properties.Status.status.name}</div>
-        //             <div>{filteredTask.properties.Name.title[0].plain_text}</div>
-        //             <div>{filteredTask.properties.Category.select.name}</div>
-        //         </div>
-        //     )
-        // })}
-
-        // Return everything
-
-        // results.forEach((task) => {
-        //     jsx.push(
-        //         <div className="task" key={task.id}>
-        //             <div>{task.properties.Priority.select.name}</div>
-        //             <div>{task.properties.Category.select.name}</div>
-        //             <div>{task.properties.Name.title[0].plain_text}</div>
-        //             <div>{task.properties.Status.status.name}</div>
-        //         </div>
-        //     )
-        // })
 
         return jsx;
     }

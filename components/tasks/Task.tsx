@@ -6,9 +6,9 @@ const Task = ({ task, onDelete, onSetStatus }) => {
     <div
       className={`
         ${styles.task}
-        ${task.status === 'done' ? styles.done : ''}
-        ${task.status === 'incomplete' ? styles.incomplete : ''}
-        ${task.status === 'progressing' ? styles.progressing : ''}`}
+        ${task.status === 'Complete' ? styles.done : ''}
+        ${task.status === 'Not started' ? styles.incomplete : ''}
+        ${task.status === 'In progress' ? styles.progressing : ''}`}
       id={task.id}>
         <div className={styles.task_text} onClick={() => onSetStatus(task.id)}>{task.text}</div>
         <FaTimes style={{ color: 'red', cursor: 'pointer' }} onClick={() => onDelete(task.id)} />

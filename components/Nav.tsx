@@ -27,6 +27,9 @@ const Nav = () => {
               <Link href="/characters">Characters</Link>
             </li>
             <li className={navStyles.item}>
+              <Link href="/characters">Groups</Link>
+            </li>
+            <li className={navStyles.item}>
               <Link href="/party">Party</Link>
             </li>
             <li className={navStyles.item}>

@@ -39,6 +39,9 @@ const Nav = () => {
               <Link href="/monster">Monster</Link>
             </li>
             <li className={navStyles.item}>
+              <Link href="/articles">Articles</Link>
+            </li>
+            <li className={navStyles.item}>
               <Link href="/fonts">Fonts</Link>
             </li>
             <li className={navStyles.item}>

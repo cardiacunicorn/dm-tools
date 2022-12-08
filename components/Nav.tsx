@@ -27,7 +27,7 @@ const Nav = () => {
               <Link href="/characters">Characters</Link>
             </li>
             <li className={navStyles.item}>
-              <Link href="/characters">Groups</Link>
+              <Link href="/groups">Groups</Link>
             </li>
             <li className={navStyles.item}>
               <Link href="/party">Party</Link>

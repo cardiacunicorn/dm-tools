@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import styles from '../styles/Characters.module.scss'
 
+// NOTE: This Grid Library could be exactly what I need for the customisable Character view or the DM Screen:
+// https://react-grid-layout.github.io/react-grid-layout/examples/0-showcase.html
+
 // const url = 'https://character-service.dndbeyond.com/character/v5/character/75936428'
 const url = 'https://api.github.com/users/deekshasharma'
 

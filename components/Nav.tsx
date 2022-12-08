@@ -18,6 +18,9 @@ const Nav = () => {
               <Link href="/notiontasks">NotionTasks</Link>
             </li>
             <li className={navStyles.item}>
+              <Link href="/dm-screen">DM Screen</Link>
+            </li>
+            <li className={navStyles.item}>
               <Link href="/sessions">Sessions</Link>
             </li>
             <li className={navStyles.item}>

@@ -1,0 +1,18 @@
+@import 'variables';
+
+.page {
+    width: 100%;
+}
+
+.grid_item {
+    cursor: pointer;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: $lightgrey;
+
+    .grid_item_content {
+        color: $darkgrey;
+    }
+}

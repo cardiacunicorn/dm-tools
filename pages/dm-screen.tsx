@@ -22,7 +22,7 @@ const layout = [
 export default function DMScreen() {
   return (
     <div className={styles.page}>
-        <h1>DMScreen</h1>
+        <h1>DM Screen</h1>
         <GridLayout layout={layout} cols={5} rowHeight={300} width={1000} compactType={'horizontal'}>
             <div key="blue-eyes-dragon" className={styles.grid_item}>
                 <div className={styles.grid_item_content}>Blue Eyes Dragon</div>

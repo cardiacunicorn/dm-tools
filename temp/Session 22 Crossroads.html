@@ -1,0 +1,710 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Session 22: Crossroads</title>
+		<style>
+			/* cspell:disable-file */
+			/* webkit printing magic: print all background colors */
+			html {
+				-webkit-print-color-adjust: exact;
+			}
+			* {
+				box-sizing: border-box;
+				-webkit-print-color-adjust: exact;
+			}
+
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			@media only screen {
+				body {
+					margin: 2em auto;
+					max-width: 900px;
+					color: rgb(55, 53, 47);
+				}
+			}
+
+			body {
+				line-height: 1.5;
+				white-space: pre-wrap;
+			}
+
+			a,
+			a.visited {
+				color: inherit;
+				text-decoration: underline;
+			}
+
+			.pdf-relative-link-path {
+				font-size: 80%;
+				color: #444;
+			}
+
+			h1,
+			h2,
+			h3 {
+				letter-spacing: -0.01em;
+				line-height: 1.2;
+				font-weight: 600;
+				margin-bottom: 0;
+			}
+
+			.page-title {
+				font-size: 2.5rem;
+				font-weight: 700;
+				margin-top: 0;
+				margin-bottom: 0.75em;
+			}
+
+			h1 {
+				font-size: 1.875rem;
+				margin-top: 1.875rem;
+			}
+
+			h2 {
+				font-size: 1.5rem;
+				margin-top: 1.5rem;
+			}
+
+			h3 {
+				font-size: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.source {
+				border: 1px solid #ddd;
+				border-radius: 3px;
+				padding: 1.5em;
+				word-break: break-all;
+			}
+
+			.callout {
+				border-radius: 3px;
+				padding: 1rem;
+			}
+
+			figure {
+				margin: 1.25em 0;
+				page-break-inside: avoid;
+			}
+
+			figcaption {
+				opacity: 0.5;
+				font-size: 85%;
+				margin-top: 0.5em;
+			}
+
+			mark {
+				background-color: transparent;
+			}
+
+			.indented {
+				padding-left: 1.5em;
+			}
+
+			hr {
+				background: transparent;
+				display: block;
+				width: 100%;
+				height: 1px;
+				visibility: visible;
+				border: none;
+				border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+			}
+
+			img {
+				max-width: 100%;
+			}
+
+			@media only print {
+				img {
+					max-height: 100vh;
+					object-fit: contain;
+				}
+			}
+
+			@page {
+				margin: 1in;
+			}
+
+			.collection-content {
+				font-size: 0.875rem;
+			}
+
+			.column-list {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.column {
+				padding: 0 1em;
+			}
+
+			.column:first-child {
+				padding-left: 0;
+			}
+
+			.column:last-child {
+				padding-right: 0;
+			}
+
+			.table_of_contents-item {
+				display: block;
+				font-size: 0.875rem;
+				line-height: 1.3;
+				padding: 0.125rem;
+			}
+
+			.table_of_contents-indent-1 {
+				margin-left: 1.5rem;
+			}
+
+			.table_of_contents-indent-2 {
+				margin-left: 3rem;
+			}
+
+			.table_of_contents-indent-3 {
+				margin-left: 4.5rem;
+			}
+
+			.table_of_contents-link {
+				text-decoration: none;
+				opacity: 0.7;
+				border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+			}
+
+			table,
+			th,
+			td {
+				border: 1px solid rgba(55, 53, 47, 0.09);
+				border-collapse: collapse;
+			}
+
+			table {
+				border-left: none;
+				border-right: none;
+			}
+
+			th,
+			td {
+				font-weight: normal;
+				padding: 0.25em 0.5em;
+				line-height: 1.5;
+				min-height: 1.5em;
+				text-align: left;
+			}
+
+			th {
+				color: rgba(55, 53, 47, 0.6);
+			}
+
+			ol,
+			ul {
+				margin: 0;
+				margin-block-start: 0.6em;
+				margin-block-end: 0.6em;
+			}
+
+			li > ol:first-child,
+			li > ul:first-child {
+				margin-block-start: 0.6em;
+			}
+
+			ul > li {
+				list-style: disc;
+			}
+
+			ul.to-do-list {
+				text-indent: -1.7em;
+			}
+
+			ul.to-do-list > li {
+				list-style: none;
+			}
+
+			.to-do-children-checked {
+				text-decoration: line-through;
+				opacity: 0.375;
+			}
+
+			ul.toggle > li {
+				list-style: none;
+			}
+
+			ul {
+				padding-inline-start: 1.7em;
+			}
+
+			ul > li {
+				padding-left: 0.1em;
+			}
+
+			ol {
+				padding-inline-start: 1.6em;
+			}
+
+			ol > li {
+				padding-left: 0.2em;
+			}
+
+			.mono ol {
+				padding-inline-start: 2em;
+			}
+
+			.mono ol > li {
+				text-indent: -0.4em;
+			}
+
+			.toggle {
+				padding-inline-start: 0em;
+				list-style-type: none;
+			}
+
+			/* Indent toggle children */
+			.toggle > li > details {
+				padding-left: 1.7em;
+			}
+
+			.toggle > li > details > summary {
+				margin-left: -1.1em;
+			}
+
+			.selected-value {
+				display: inline-block;
+				padding: 0 0.5em;
+				background: rgba(206, 205, 202, 0.5);
+				border-radius: 3px;
+				margin-right: 0.5em;
+				margin-top: 0.3em;
+				margin-bottom: 0.3em;
+				white-space: nowrap;
+			}
+
+			.collection-title {
+				display: inline-block;
+				margin-right: 1em;
+			}
+
+			.simple-table {
+				margin-top: 1em;
+				font-size: 0.875rem;
+				empty-cells: show;
+			}
+			.simple-table td {
+				height: 29px;
+				min-width: 120px;
+			}
+
+			.simple-table th {
+				height: 29px;
+				min-width: 120px;
+			}
+
+			.simple-table-header-color {
+				background: rgb(247, 246, 243);
+				color: black;
+			}
+			.simple-table-header {
+				font-weight: 500;
+			}
+
+			time {
+				opacity: 0.5;
+			}
+
+			.icon {
+				display: inline-block;
+				max-width: 1.2em;
+				max-height: 1.2em;
+				text-decoration: none;
+				vertical-align: text-bottom;
+				margin-right: 0.5em;
+			}
+
+			img.icon {
+				border-radius: 3px;
+			}
+
+			.user-icon {
+				width: 1.5em;
+				height: 1.5em;
+				border-radius: 100%;
+				margin-right: 0.5rem;
+			}
+
+			.user-icon-inner {
+				font-size: 0.8em;
+			}
+
+			.text-icon {
+				border: 1px solid #000;
+				text-align: center;
+			}
+
+			.page-cover-image {
+				display: block;
+				object-fit: cover;
+				width: 100%;
+				max-height: 30vh;
+			}
+
+			.page-header-icon {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+			}
+
+			.page-header-icon-with-cover {
+				margin-top: -0.72em;
+				margin-left: 0.07em;
+			}
+
+			.page-header-icon img {
+				border-radius: 3px;
+			}
+
+			.link-to-page {
+				margin: 1em 0;
+				padding: 0;
+				border: none;
+				font-weight: 500;
+			}
+
+			p > .user {
+				opacity: 0.5;
+			}
+
+			td > .user,
+			td > time {
+				white-space: nowrap;
+			}
+
+			input[type="checkbox"] {
+				transform: scale(1.5);
+				margin-right: 0.6em;
+				vertical-align: middle;
+			}
+
+			p {
+				margin-top: 0.5em;
+				margin-bottom: 0.5em;
+			}
+
+			.image {
+				border: none;
+				margin: 1.5em 0;
+				padding: 0;
+				border-radius: 0;
+				text-align: center;
+			}
+
+			.code,
+			code {
+				background: rgba(135, 131, 120, 0.15);
+				border-radius: 3px;
+				padding: 0.2em 0.4em;
+				border-radius: 3px;
+				font-size: 85%;
+				tab-size: 2;
+			}
+
+			code {
+				color: #eb5757;
+			}
+
+			.code {
+				padding: 1.5em 1em;
+			}
+
+			.code-wrap {
+				white-space: pre-wrap;
+				word-break: break-all;
+			}
+
+			.code > code {
+				background: none;
+				padding: 0;
+				font-size: 100%;
+				color: inherit;
+			}
+
+			blockquote {
+				font-size: 1.25em;
+				margin: 1em 0;
+				padding-left: 1em;
+				border-left: 3px solid rgb(55, 53, 47);
+			}
+
+			.bookmark {
+				text-decoration: none;
+				max-height: 8em;
+				padding: 0;
+				display: flex;
+				width: 100%;
+				align-items: stretch;
+			}
+
+			.bookmark-title {
+				font-size: 0.85em;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				height: 1.75em;
+				white-space: nowrap;
+			}
+
+			.bookmark-text {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.bookmark-info {
+				flex: 4 1 180px;
+				padding: 12px 14px 14px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			.bookmark-image {
+				width: 33%;
+				flex: 1 1 180px;
+				display: block;
+				position: relative;
+				object-fit: cover;
+				border-radius: 1px;
+			}
+
+			.bookmark-description {
+				color: rgba(55, 53, 47, 0.6);
+				font-size: 0.75em;
+				overflow: hidden;
+				max-height: 4.5em;
+				word-break: break-word;
+			}
+
+			.bookmark-href {
+				font-size: 0.75em;
+				margin-top: 0.25em;
+			}
+
+			.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+			.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+			.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+			.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+			.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+			.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+			.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+			.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+			.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+			.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+			.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+			.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+			.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+			.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+			.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+			.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+			.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+			.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+			.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+			.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+			.highlight-default {
+				color: rgba(55, 53, 47, 1);
+			}
+			.highlight-gray {
+				color: rgba(120, 119, 116, 1);
+				fill: rgba(120, 119, 116, 1);
+			}
+			.highlight-brown {
+				color: rgba(159, 107, 83, 1);
+				fill: rgba(159, 107, 83, 1);
+			}
+			.highlight-orange {
+				color: rgba(217, 115, 13, 1);
+				fill: rgba(217, 115, 13, 1);
+			}
+			.highlight-yellow {
+				color: rgba(203, 145, 47, 1);
+				fill: rgba(203, 145, 47, 1);
+			}
+			.highlight-teal {
+				color: rgba(68, 131, 97, 1);
+				fill: rgba(68, 131, 97, 1);
+			}
+			.highlight-blue {
+				color: rgba(51, 126, 169, 1);
+				fill: rgba(51, 126, 169, 1);
+			}
+			.highlight-purple {
+				color: rgba(144, 101, 176, 1);
+				fill: rgba(144, 101, 176, 1);
+			}
+			.highlight-pink {
+				color: rgba(193, 76, 138, 1);
+				fill: rgba(193, 76, 138, 1);
+			}
+			.highlight-red {
+				color: rgba(212, 76, 71, 1);
+				fill: rgba(212, 76, 71, 1);
+			}
+			.highlight-gray_background {
+				background: rgba(241, 241, 239, 1);
+			}
+			.highlight-brown_background {
+				background: rgba(244, 238, 238, 1);
+			}
+			.highlight-orange_background {
+				background: rgba(251, 236, 221, 1);
+			}
+			.highlight-yellow_background {
+				background: rgba(251, 243, 219, 1);
+			}
+			.highlight-teal_background {
+				background: rgba(237, 243, 236, 1);
+			}
+			.highlight-blue_background {
+				background: rgba(231, 243, 248, 1);
+			}
+			.highlight-purple_background {
+				background: rgba(244, 240, 247, 0.8);
+			}
+			.highlight-pink_background {
+				background: rgba(249, 238, 243, 0.8);
+			}
+			.highlight-red_background {
+				background: rgba(253, 235, 236, 1);
+			}
+			.block-color-default {
+				color: inherit;
+				fill: inherit;
+			}
+			.block-color-gray {
+				color: rgba(120, 119, 116, 1);
+				fill: rgba(120, 119, 116, 1);
+			}
+			.block-color-brown {
+				color: rgba(159, 107, 83, 1);
+				fill: rgba(159, 107, 83, 1);
+			}
+			.block-color-orange {
+				color: rgba(217, 115, 13, 1);
+				fill: rgba(217, 115, 13, 1);
+			}
+			.block-color-yellow {
+				color: rgba(203, 145, 47, 1);
+				fill: rgba(203, 145, 47, 1);
+			}
+			.block-color-teal {
+				color: rgba(68, 131, 97, 1);
+				fill: rgba(68, 131, 97, 1);
+			}
+			.block-color-blue {
+				color: rgba(51, 126, 169, 1);
+				fill: rgba(51, 126, 169, 1);
+			}
+			.block-color-purple {
+				color: rgba(144, 101, 176, 1);
+				fill: rgba(144, 101, 176, 1);
+			}
+			.block-color-pink {
+				color: rgba(193, 76, 138, 1);
+				fill: rgba(193, 76, 138, 1);
+			}
+			.block-color-red {
+				color: rgba(212, 76, 71, 1);
+				fill: rgba(212, 76, 71, 1);
+			}
+			.block-color-gray_background {
+				background: rgba(241, 241, 239, 1);
+			}
+			.block-color-brown_background {
+				background: rgba(244, 238, 238, 1);
+			}
+			.block-color-orange_background {
+				background: rgba(251, 236, 221, 1);
+			}
+			.block-color-yellow_background {
+				background: rgba(251, 243, 219, 1);
+			}
+			.block-color-teal_background {
+				background: rgba(237, 243, 236, 1);
+			}
+			.block-color-blue_background {
+				background: rgba(231, 243, 248, 1);
+			}
+			.block-color-purple_background {
+				background: rgba(244, 240, 247, 0.8);
+			}
+			.block-color-pink_background {
+				background: rgba(249, 238, 243, 0.8);
+			}
+			.block-color-red_background {
+				background: rgba(253, 235, 236, 1);
+			}
+			.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+			.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+			.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+			.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+			.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+			.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+			.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+			.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+			.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+			.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+			.checkbox {
+				display: inline-flex;
+				vertical-align: text-bottom;
+				width: 16;
+				height: 16;
+				background-size: 16px;
+				margin-left: 2px;
+				margin-right: 5px;
+			}
+
+			.checkbox-on {
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+			}
+
+			.checkbox-off {
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+			}
+			
+		</style>
+	</head>
+	<body>
+		<article id="04819543-7957-478b-8caa-65e4079dcdc6" class="page sans">
+			<header>
+				<img class="page-cover-image" src="Session%2022%20Crossroads%20048195437957478b8caa65e4079dcdc6/haerarun-v2.webp" style="object-position:center 50.71%"/>
+				<div class="page-header-icon page-header-icon-with-cover"><span class="icon">2️⃣</span></div><h1 class="page-title">Session 22: Crossroads</h1>
+			</header>
+			<div class="page-body">
+				<nav id="8055f038-62bf-4258-adae-f721ca3e771f" class="block-color-gray table_of_contents">
+					<div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ac867d96-ecb7-43c4-9ac0-e84ae1d659f0">Pregame</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#01ed0407-af18-49af-92d0-39175c26a961">Scenes</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d30ffe1a-4751-4c24-a758-c388c0ad7765">Recap &amp; Scene Set</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7abc0462-777c-4465-9406-b86117d51aa3">The Mine</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#191ea73b-304c-405d-8740-4674565c49df"><a href="https://www.notion.so/Haera-Ungorr-54923779ae594ab1bc35b5e2e119c49c">Haera Ungorr</a> </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5dac8284-75d2-4d9a-95d1-6de2a31bd2a8"><a href="https://www.notion.so/The-Greatwood-549caaeb478840e0b2a124714fb5f880">The Greatwood</a> </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#77a3111f-2650-441f-94d7-55005bd07748">Quests</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#db388a5f-8557-4ee8-91c1-725278d6a2bb">Notes</a></div></nav><h1 id="ac867d96-ecb7-43c4-9ac0-e84ae1d659f0" class=""><details open=""><summary>Pregame</summary></details></h1><div class="indented"><div><h2 id="77a32c1e-b584-4509-bea0-ff70cd6bc898" class="">Arc Overview</h2><ul id="539e83ba-1c60-4b46-ba65-9063dfb0c8ec" class="toggle"><li><details open=""><summary><strong>The Adamantium Mine</strong></summary><ul id="b6414375-8175-4847-b638-c7d7761eabb1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Run into the Duergar who are hiding out in the mine, injured and with Quarth &amp; Vertheg</span></li></ul><ul id="f87e205b-99ec-4fd2-b390-08e853313d16" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Quarth drops unconscious and the voice reaches out to him, after Helrek reported back to The Voice, and just tells him to focus his mind, dominate them all.</span><ul id="083d4a5e-2077-4fbc-baef-4e36a7130759" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Touch Vertheg to empower him as a Blood Hunter too.</span></li></ul><ul id="0cc6716b-41c4-4329-bbfe-caa00eb2dcd1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Give him temporary access to some crazy high spell or two: Dominate Person should be fine to get him to have a Duergar on his side, despite being tied up. If he opts for escape rather than combat, it lasts only a minute so it’ll lead to a chase or right with the other players.</span></li></ul></li></ul></details></li></ul><ul id="1e7409c1-b1bf-4da9-a9bd-729651bd4573" class="toggle"><li><details open=""><summary><strong>Other</strong></summary><ul id="9429fcae-0a49-4141-98b3-52ace5af4cd8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>If the party goes South:</strong> the Green Hand finger is killed by the Order any way, and is replaced by Pico’s sister Valentina</span></li></ul><ul id="430e4aa0-cd2d-40dd-a700-87116b88d622" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>If the party goes East:</strong> the werewolves are set loose during the siege of New Trai’vier</span></li></ul><ul id="1d73288d-9929-4c51-a1a2-dcf2f44f27c3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Numwick will receive a message from Undille, prompting him to study the cards further, and to report back if he discovers anything. He’ll discover trace amounts of energy still inside the used ones, connected to other planes.</span></li></ul><ul id="9bfc08c4-c21c-469b-acd0-ed6cc07500ef" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">The players should meet a Patron of a warlock, whether knowingly or not</span></li></ul></details></li></ul><h3 id="e2070f26-febd-42c4-8769-8511f7ad979b" class=""><details open=""><summary>Southward: Mithrandir &amp; Bess</summary></details></h3><div class="indented"><p id="51b6b2c3-f722-423d-921f-e6e3335dabfd" class=""><strong>Idea:</strong> should there be a path through the Underdark that comes out at Mithrandir?<div class="indented"><p id="f51f2278-63b1-43bc-90fa-c3f99d0e9022" class="">Mithrandir could be an old drow or Duergar city</p><p id="67eb07a6-263c-4cd2-93b8-61908f16831c" class="">Could have an underground lake ‘Dark Lake’ and the ‘Deep King’ of the Duergar</p><p id="60a2dd01-b7e4-40da-b94f-172ce73f4e6b" class="">A forked path that seems to have a dead end, for the Mindflayers</p></div></p><ul id="c7b3febf-1e73-4348-ab99-6c497ce1f6a0" class="toggle"><li><details open=""><summary><strong>Mithrandir (24mi Mountains from Mine)</strong></summary><ul id="10690135-d2d6-42b3-905e-deb7be7600d8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Half-speed in difficult terrain, so 2 full days travel.</span></li></ul><ul id="7236c071-8a77-4c3c-9b52-e5f136ef46eb" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">From the Grove: 12mi Forest (0.5 days) + 18mi Mountains (1.5 days)</span></li></ul><ul id="63f0545d-e528-4751-8605-f1bfc7bbed49" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Get mislead about The Institute</span></li></ul><ul id="882321ba-2967-497f-b2c1-5bd5e8a6da01" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Introduction to Dwarven mercenaries &amp; slavers</span></li></ul></details></li></ul><ul id="aabec1fb-1848-46af-b174-9e3b55fe6c62" class="toggle"><li><details open=""><summary><strong>The Khanate</strong></summary><ul id="324709e3-a609-4d7b-9aa1-897b49d63e9d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Naruz taking over: public executions of Ulrok’s followers</span></li></ul><ul id="711b750d-3788-4d9c-8c81-746f7af78588" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Rebellion of Ulrok supporters in Fort Zud</span></li></ul><ul id="4abeda5c-c257-4cb6-8183-48eca6b27b57" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Hunting down the human with Zug Zug’s head</span></li></ul><ul id="56414298-a072-434a-905a-519b251a1621" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Wants to attack the humans, but Fort Zud stands in the way first</span></li></ul></details></li></ul><ul id="5bb11b71-fe8c-4aa7-8699-b0a4ae254d53" class="toggle"><li><details open=""><summary><strong>Bess (36mi Plains &amp; Swamp from Mithrandir)</strong></summary><ul id="18b3f224-7000-4c85-a040-8561bd5081ba" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">1.5 days at a regular pace with a guide</span></li></ul><ul id="7300cd39-279a-4c19-bfdd-4cf638efec9f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">1 days travel + 1 day finding Bess without a guide</span></li></ul></details></li></ul><ul id="de24d47c-fcd8-4616-8be0-135948eaa132" class="toggle"><li><details open=""><summary><strong>Fort Zud (48mi Plains from Mithrandir)</strong></summary><ul id="16422f93-3d8f-400e-be69-cd1b5296477d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Ulrok is working from Fort Zud with the humans to regain power, promising peace and reform</span></li></ul><ul id="2726d2aa-5ec6-4049-b20b-905ad4afa1cd" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Contract out on Ulrok &amp; his supporters</span></li></ul></details></li></ul></div><h3 id="e46e5e4e-5ef2-406f-b235-6aebc9cbf4c1" class=""><details open=""><summary>Eastward: The Grove &amp; New Trai’vier</summary></details></h3><div class="indented"><ul id="e36fce09-a0b1-4bb9-8ccd-8622584cef36" class="toggle"><li><details open=""><summary><strong><strong><strong><strong><strong>The Greatwood</strong></strong></strong></strong></strong></summary><ul id="d610627e-a75f-47ad-a032-0113c576c5dd" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">The Vanishing Order Wood Elves</span><ul id="3ddbc4f3-644e-405c-aa7a-0d60cbb55f64" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">They express their disgust at the Green Hand, and it’s mocking name</span></li></ul><ul id="85af2748-3b95-4d0a-ab40-ebaaa4c0b3d0" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">They could offer Pico a contract, the one he’s been waiting for: a finger off the Green Hand, located somewhere in these forests, robbed a Tiefling food caravan and so now the Tieflings have allowed them to begin hunting in earnest</span></li></ul><ul id="9a6fe1c4-5ad8-45da-b5d0-c5c07d7229d2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Extract information about their leader too</span></li></ul><ul id="d3dd0d6e-f7fa-4d48-a9ea-c35e3c992f8b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">They could be transporting <a href="https://www.notion.so/Hank-The-Chisel-Lightbeard-470ac2b333d64baa9e56eaad47fac1e7">Hank ‘The Chisel’ Lightbeard</a> or we can leave that for if the players end up at Mithrandir</span></li></ul><ul id="a49b9211-f9c6-4869-982f-3672d9191e8d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">They might know <a href="https://www.notion.so/Aspen-Cloudstrider-1cd51d1274d54f4da16ace8c2a912cd8">Aspen Cloudstrider</a> </span></li></ul></li></ul><ul id="1e2705dc-61fe-47ba-8d78-5184c0fd5fc5" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Come across a relic of the Age of Dragons detailing 2 more deities</span><ul id="390d5a50-ab73-4ee6-91f0-a0d9ba6671bb" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Surtur’s Adamantine Forge</span></li></ul><ul id="c63a8a79-ce69-40ae-847f-619f699cf2b4" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Melandir &amp; Hathor giving life to the Sylvari</span></li></ul></li></ul><ul id="8589ce04-24ba-479b-a3a1-30d56321bb01" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Introduction to the elven rebellion</span><ul id="40c9e15d-0152-4dae-a865-02932e09425f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">The wood elves might see an opportunity to reconnect with the Drow to attack the Allied Realms</span></li></ul></li></ul><ul id="6172b9f4-4a05-4282-bcdd-c3ef421a27ec" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Quarth: taken to New Trai’vier</span><ul id="19fed7ce-59cf-48dc-9b0b-9c4c15e1b4fc" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">He’s captured by Xandarin’s Duergar and the party should be racing to get him back, however they want to continue pursuing Numwick &amp; Badger’s stories southward, so the alternative…</span></li></ul></li></ul><ul id="ba355721-ce5e-493e-b294-e1528dda406c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Quarth: taken to Mithrandir</span><ul id="d11c35c3-63ba-47ae-9556-0801abac7f0c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Xandarin knows that the Institute is roughly connected to This One</span></li></ul><ul id="a107a925-fca5-4709-a389-94c09def5084" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Therefore the Duergar take him southward across the mountains to attract the retribution of his patron</span></li></ul><ul id="ce9e9f8d-490d-461a-b100-b6addaa6d8db" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">But this fucks with the idea of Quarth trying to keep his identity secret</span><ul id="8d0e23be-8afc-406f-810b-2130b9a9facf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Unless it’s literally just the Duergar captors who know his identity, and they haven’t told Xandarin yet</span></li></ul><ul id="10b97476-7283-4107-af41-3f10cb47b12c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">They could be going on a monologue about “retrieving the one who got away” when Quarth rejoins the game</span></li></ul></li></ul></li></ul></details></li></ul><ul id="02d83b38-756f-4829-b163-cc687be2f828" class="toggle"><li><details open=""><summary><strong>The Grove (28mi Forest from Mine)</strong></summary><ul id="8e571445-68aa-422f-a4fd-4819b482b151" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Could get there in a day at a Fast Pace, or with an extra hour (Exhaustion)</span></li></ul><ul id="6198a3de-ffea-4ed1-9a3a-711ba861c3ea" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Or 1.5 days at a Slow, Stealthy Pace</span></li></ul><ul id="07ecd2fe-6ad2-450e-bead-4856bc604adb" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Introduction to the Grandmother Tree &amp; the chain of druids</span></li></ul><ul id="8c43f705-3e15-4240-9548-163cfed5d483" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Information about the Sylvari</span></li></ul><ul id="3d78cc7f-3641-4387-9c59-68d0dacd2fdf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Information about the Dwarven Plague</span></li></ul><ul id="48e71672-88ed-4925-ab1b-f10466075757" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Kidnapping of hybrids at the hands of <a href="https://www.notion.so/The-Collectors-of-Xandarin-2ef7391603e14e05baf21d6101d87427">The Collectors [of Xandarin]</a> </span></li></ul><ul id="5a4e0182-f91a-4cb9-a4a6-97e095c83346" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Warlock Patron: Archfey</span></li></ul></details></li></ul><ul id="1434fabc-5b7e-44a1-a66b-5ccf9db4f9d0" class="toggle"><li><details open=""><summary><strong>New Trai’vier (18mi Forest from Grove: 1 day)</strong></summary><ul id="5279bc06-e4b8-4441-b4d9-81839f198305" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Help lumberers being assaulted on the outskirts</span><ul id="56f4c0d7-e2a1-4ca4-a804-3d1b24351de8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">A forest gnome recluse <a href="https://www.notion.so/Bington-Beech-4673f9f61f764e83901886743b2f5d8a">Bington Beech</a>, with unnaturally blue skin, helps out</span></li></ul><ul id="ee6be0f9-dad8-4729-8f51-3f3e0a6952b1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">He produces bursts of Wild Magic, and is seeking an answer in order to harness this power into something more useful</span><ul id="f21d7f6b-37ff-4284-984e-9788eede3f8a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Offering him the Beans and the Chronosphere would allow him to create a Wild Magic Surge Dice</span></li></ul></li></ul></li></ul><ul id="a040ba91-b26d-4cfc-9a6f-ea8503359dcd" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Introduced to the Governor</span><ul id="2725ac4f-57b8-4e95-9800-025dab83a4b6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Picking a side between Daganheimr &amp; Allied Realms</span></li></ul><ul id="b2499129-bb02-4fce-afd3-d34a0172fb7d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Threat from the Orcs</span></li></ul></li></ul><ul id="af78f851-1e29-4c29-9f42-1075f35ae06f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">It’s a Greens vs Reds political situation in the city</span></li></ul><ul id="4b841ed6-cc9c-4351-b490-d8b63e5cd0d0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Run in with the Green Hand</span><ul id="bcad8817-564f-45cd-8229-9c54a837c7c8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">5 Human Leaders in green capes</span><ul id="c75feecb-7f9b-485b-9244-b47fab9bb74f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Knight starts w/ Leadership</span></li></ul><ul id="94f73b77-b2c2-4e8a-a845-5368aeb73992" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Illusionist is mounted on Riding Horse that lasts for the fight</span></li></ul></li></ul></li></ul></details></li></ul></div></div><h2 id="646d4668-6ccb-4ad1-a250-10ae21cf9a37" class=""><details open=""><summary>Checklist</summary></details></h2><div class="indented"><h3 id="9bdc3844-8c38-4c46-bec8-b6a0595fd25f" class=""><details open=""><summary>Status Update</summary></details></h3><div class="indented"><ul id="659dab97-73f9-4fad-aea9-f1b06d84c7d7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>Party Goals &amp; Active Quests</strong></span><ol type="1" id="52006149-810e-4034-9cd6-9abe6aacc4d8" class="numbered-list" start="1"><li></li></ol></li></ul><ul id="eb402da2-1e1a-4ddc-98a7-0a2d321a79b3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>Badger</strong></span><p id="f2137fbd-682f-4594-af36-8d99de7b4811" class="">Wants</p></li></ul><ul id="61cb0ea1-b5cd-4f80-a906-8f8a90a72868" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>Numwick</strong></span><p id="ed0cf3fd-c818-4566-90e0-0cf53a2a8f1c" class="">Wants</p></li></ul><ul id="a8e0eaeb-6c9d-4d4a-a736-b84a7a3c6883" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>Quarth</strong></span><p id="c19862b6-394b-47df-9948-064380d33e0b" class="">Wants</p></li></ul><ul id="5736e8e1-1c55-4216-89fb-e5bc9854b800" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>Zug Zug</strong></span><p id="dfd9214e-0369-453e-83e1-34817efa2f13" class="">Wants</p></li></ul></div><h3 id="9274b25c-44cd-4e10-807d-e0ace36c78bc" class=""><details open=""><summary>Define secrets &amp; clues</summary></details></h3><div class="indented"><ul id="e8f9a42a-74d9-477b-ac13-afad8be96ec0" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div>
+					<h3 id="c3b4a20d-bd7b-428d-8cdd-06a5f9892cfc" class="">
+						<details open=""><summary>Potential Scenes</summary></details>
+					</h3>
+					<div class="indented"><p id="3852f0be-2770-4c24-a542-efaf158aec44" class=""></p></div>
+					<h3 id="0059162c-5143-4cbc-b96a-0e4c045e6569" class=""><details open=""><summary>Descriptive Locations</summary></details></h3><div class="indented"><p id="472d5f7c-01b5-45ee-bb82-af857473a23e" class="">
+	</p></div><h3 id="996acce4-0b20-40d8-97ee-e945fd5500e9" class=""><details open=""><summary>Important NPCs</summary></details></h3><div class="indented"><p id="56961266-6507-4088-9229-81eaa9249670" class="">Name:</p><p id="fde0b3b5-2e7c-41ff-867e-8bdcf5878c6a" class="">Description:</p><p id="882f3e9b-93ef-4dfd-9067-5019b3a7aec7" class="">Interesting:</p></div><h3 id="7b10633d-c6f6-4cd0-b978-ad32cee712f8" class=""><details open=""><summary>Monsters &amp; encounters</summary></details></h3><div class="indented"><p id="2a0d8529-2d96-448d-b3d7-54408297a533" class="">Fixed Fight:</p><p id="c9244744-58b3-428e-bbd5-e209ef05d5f5" class="">Optional Fight:</p><p id="0a911285-bf3f-42d5-b2d2-643fee7a2229" class="">Optional Fight:</p></div><h3 id="71fadbe9-2f05-4c70-a5e5-c7e0769b3f3f" class=""><details open=""><summary>Magic item rewards</summary></details></h3><div class="indented"><p id="cea33d65-5dfc-4cc1-859d-93d981dd1ad9" class="">None</p></div></div><h2 id="a46eb6e9-45ec-4bdd-b3c1-031b8c9d986d" class=""><details open=""><summary>Session Setup</summary></details></h2><div class="indented"><h3 id="cb28c00d-f2ea-4a05-8180-8fd2e13c8212" class=""><details open=""><summary>Digital</summary></details></h3><div class="indented"><ul id="8ea509d1-420a-4a11-9cd8-70b51960ec5d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Encounters in Beyond</span></li></ul><ul id="8afeab9b-08f2-457d-8205-f392b96fad86" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Ambience Soundboard</span></li></ul><ul id="87463927-02b8-463a-906d-376e364fb917" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://bit.ly/3B63x6Z">Combat Soundboard</a></span></li></ul><ul id="5606f1a1-edb8-40c3-9c0a-b409d73ec5de" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Notion Notes</span><ul id="15c4330f-c0e2-43a9-910e-bd5482104754" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="http://192.168.0.17:30000/join">Foundry</a></span></li></ul><ul id="d3fdd55e-2eff-4f18-a45a-1380f903bf5a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">DungeonDraft</span></li></ul></li></ul></div><h3 id="cd96ec42-80b3-43ee-b688-9b37b8b9f4b4" class=""><details open=""><summary>Physical</summary></details></h3><div class="indented"><ul id="6655662c-6d89-4413-91df-b91aa7005584" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Laptop &amp; charger</span><ul id="b50e6d0e-5a20-4d65-808c-c73d15349e98" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Alt computer?</span></li></ul><ul id="ff3a0930-78c3-431f-8fef-a7700b6d7e24" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Monitor, cable &amp; power?</span></li></ul><ul id="d20946dd-acbe-4983-822c-adad4d42cf35" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Projector?</span></li></ul></li></ul><ul id="9a82cc7f-7810-4412-908f-f287233e5eaa" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Dice</span></li></ul><ul id="1dc95aa6-5341-41d4-95bc-7d8da5e54e59" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Notebooks, Pencils &amp; Erasers</span></li></ul><ul id="1dfd241c-87f7-4e3c-b078-9c7f6dff5547" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Speaker</span></li></ul><ul id="c990d98e-f495-4f3c-b589-67e2795f79e2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Minis</span><ul id="c8b162a9-93dc-4208-a07e-0e40db9002d8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Boxes for town buildings</span></li></ul><ul id="7c6f25bd-fc0e-4abc-b00e-440fc919d223" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Zane/Chris terrain for random</span></li></ul></li></ul><ul id="a3d6dd47-a04e-49c3-bed4-71264f8cef20" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Condition Markers</span></li></ul><ul id="6e7fce77-0e65-41dd-a337-c81105da6cef" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Shop supply cards</span><ul id="f4a4b051-cee5-4eec-8afb-39cc9bbe5d83" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Magic item rewards</span></li></ul><ul id="6cd789a8-548c-499b-9a78-41bd5e8dd8d6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">World Map</span></li></ul><ul id="d0f2e8c0-cfb1-4ca5-b69f-0313614dbdc1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Props (if any)</span></li></ul></li></ul><ul id="a15abcb6-2b65-4662-b151-60d56ce6751a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Whiteboard w/ date</span></li></ul><ul id="63b9cf9b-1258-461b-8520-3d6a33818047" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Backup NPC pics &amp; namelists</span></li></ul></div><h3 id="10bc8818-1963-489d-bd38-0eb7ee6cd478" class=""><details open=""><summary>Good Host</summary></details></h3><div class="indented"><ul id="4a447f3e-44b4-44fe-a684-0661f6d1ec3d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Cold beers</span></li></ul><ul id="32b2155e-2f82-4e3d-85b5-4a609b980703" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Chips and dips</span></li></ul><ul id="3ae04068-b083-4301-a2bb-dc60378fad72" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Fan or heater</span></li></ul><ul id="9c697fd1-3801-471c-a436-909ebebf2ab0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Lighting</span></li></ul></div></div><h2 id="d6235fea-aa2d-4fcd-ba83-24b04dd8df68" class=""><details open=""><summary>Rule Clarifications</summary></details></h2><div class="indented"><h3 id="c2057b02-bc6e-4432-b5f4-9c5c382899f3" class=""><details open=""><summary>Mage Armor</summary></details></h3><div class="indented"><p id="41e0be6f-a26a-482b-b7b5-f9435c6d1227" class="">If you ever get to the point of not wanting to be bothered by forgetting it, you can always tell me Numwick wears Mage Armor whenever he’s not resting, or 24 hours a day forevermore, and we’ll just burn those spell slots each morning</p></div><h3 id="36015ccc-fc09-4ab1-b8ed-0eea011a86d5" class=""><details open=""><summary>Poison</summary></details></h3><div class="indented"><p id="15980028-39ef-490f-a413-609cb491eea2" class="">I was wrong about basic poison, I think that one is intended to last a full minute before drying. I was misremembering all the other poisons which are single use when you attack with them.</p></div><h3 id="76911a48-0e53-4ac6-aa55-96c45ee9cccb" class=""><details open=""><summary>Hand of Healing</summary></details></h3><div class="indented"><p id="77e91bc0-a5f0-412f-a6fc-eafef50e8f21" class="">Just got a note here that Hand of Healing replaces one of your flurry strikes, it’s not in addition to them</p></div><h3 id="baacd54f-5e5e-44c0-8f46-af55712e0491" class=""><details open=""><summary>One D&amp;D Cleric</summary></details></h3><div class="indented"><p id="36661fc4-29b3-42da-bd57-4d198df31e3b" class="">Have you checked out the revised version of the Cleric?</p><p id="97af3f2f-70a6-4299-9b57-d10a3dc4af44" class="">Definitely think it’s a big improvement to move Subclasses to L3, but realise it probably changes things for how you want Badger to work. What are you thinking there? Going to keep with the multiclass, or give yourself an extra monk level?</p><ul id="3b3bc9c0-be27-47cf-a99e-0df25cd2286c" class="bulleted-list"><li style="list-style-type:disc">I think it’s a smart move that there’s no more subclassing before Level 3.</li></ul><ul id="a16671c7-5f46-4a0b-84e3-cddc3217a941" class="bulleted-list"><li style="list-style-type:disc">But you get 3 Channel Divinities a day, and the new one does seem very cool.</li></ul><ul id="3738a78d-5bf8-4d1c-b370-aecbc7c5b3e4" class="bulleted-list"><li style="list-style-type:disc">The <strong>Scholar</strong> Holy Order is great in essentially allowing you to use Wisdom for Intelligence skills &amp; Persuasion without having to stat yourself in Intelligence &amp; Charisma.</li></ul><p id="c21ae840-3f0d-4780-a45f-a298cb73320e" class="">If you keep with the multiclass, I was thinking I might give you the occasional breakaway scene, like Quarth has had with his patron, where you can develop a relationship with Moradin in some way.</p></div><h3 id="485bb369-6bc8-437f-ad39-dfef30036ea7" class=""><details open=""><summary>Impossible Situations</summary></details></h3><div class="indented"><p id="4635a895-e813-4691-a819-0ddc7afdfb1c" class="">Sometimes, typically out of combat, you’re gonna want to make a skill check that would be impossible. In standard 5th Edition D&amp;D, what I’d do is just set the DC to 35 or 40 or something, and you could roll, and will inevitably fail. One D&amp;D is playing with the idea that a Nat 20 <strong>always</strong> succeeds, and a Nat 1 <strong>always</strong> fails.</p><p id="fb8847f6-4587-47b6-80ef-16fb2779b710" class="">I guess I’m interested in your thoughts in how you’d like those moments to play out: if one of you wants to do something impossible, what do you think should happen?</p><ul id="49515115-6bad-401e-bd29-b69ea108ed19" class="bulleted-list"><li style="list-style-type:disc">Should I get you to roll, and inevitably fail in your attempt?</li></ul><ul id="b6284769-8547-4e4c-91a0-b50c6dcffb4c" class="bulleted-list"><li style="list-style-type:disc">Should I tell you, you can’t do that? Which has the benefit of your character not attempting something crazy, but robs you of agency and the entertainment value of a failure.</li></ul><ul id="02a79638-d40d-4580-ae0b-c46d50d313f3" class="bulleted-list"><li style="list-style-type:disc">Should I deem a Natural 20 some sort of divine intervention that means it succeeds to some degree?</li></ul></div><h3 id="61a69239-79a8-4225-8b0c-26f90c414c52" class="block-color-gray"><details open=""><summary>Exhaustion or Wounded</summary></details></h3><div class="indented"><p id="ce8d0282-bb70-432c-8899-d7545d94f2dd" class="">I’ve spent a bit of time looking at Pathfinder, which is similar to D&amp;D. It’s got a bunch of interesting mechanics and ideas, one of which is that when a player gets knocked out they gain a Wounded condition when they come back up, like how we use Exhaustion. The Wounded condition applies no penalty to you, and it goes away after a Long Rest, but if you get knocked out again, you automatically fail your 1st Death Save. Hard core. I’m happy with our Exhaustion system, but if you guys want to really introduce some peril, I’ll let you decide whether that’s something you want to implement, even on a player by player basis.</p></div><h3 id="e184f39c-7236-453b-b208-dbcc7836b97e" class="block-color-gray"><details open=""><summary>Pathfinder Highlights</summary></details></h3><div class="indented"><p id="5f6a32b1-c04c-4bb9-83c1-0d5455a55018" class=""><strong>If I were to start a new campaign, I’d probably lean towards using Pathfinder 2E</strong></p><ol type="1" id="1cd52e83-3a1d-4363-9023-37eb6874b4d1" class="numbered-list" start="1"><li>The system is built around balance: I do a lot of work to make sure combat is challenging but fair, and keep an eye on who’s builds I need to factor in, and it’s a really inexact science</li></ol><ol type="1" id="027319ca-ec8d-4e22-9a85-91f80456ab9d" class="numbered-list" start="2"><li>It gives you more to do with your money: magic items have set prices</li></ol><ol type="1" id="9d37374f-bcab-4aec-bd09-1a6f9b433bb4" class="numbered-list" start="3"><li>There’s no Advantage and Disadvantage, but you do still get situational bonuses</li></ol><ol type="1" id="becd9434-291a-4b72-810f-b4df66eb6220" class="numbered-list" start="4"><li>Interestingly, there’s no weird action rules with bonus actions etc. you just get 3 actions per turn, and a reaction. So that could mean on a turn where you don’t move, you can blast off the equivalent of 3 bonus actions. Or attack three times. Some spells require more or less actions to use, or can be varied e.g.<ol type="a" id="6b2886c3-789e-451a-8609-11e47586194d" class="numbered-list" start="1"><li>Spend 1 Action on the Heal spell to touch someone and heal them</li></ol><ol type="a" id="5ef4ed93-baab-4359-a663-b0cc0f591eb6" class="numbered-list" start="2"><li>Or spend 2 Actions to do it at range</li></ol><ol type="a" id="c9369b32-96c9-49f5-836f-c61d3a5b63a0" class="numbered-list" start="3"><li>Or spend 3 Actions to heal in a 30ft sphere</li></ol></li></ol><ol type="1" id="c65b5aa4-e44d-42b2-aff3-8208187ea9b8" class="numbered-list" start="5"><li>Instead of D&amp;D’s simple save or fail, which sucks as a spellcaster, they have 4 results: success or failure as usual, but if you beat the DC by 10 or more, you critically succeed which might mean avoiding damage altogether. Or if you fail by 10 or more you critically fail and take double damage. It also applies to martial attacks too.</li></ol><ol type="1" id="726b6f79-8bf2-4b7c-99d8-88a533453a00" class="numbered-list" start="6"><li>Not everything has an opportunity attack, so there’s a lot more movement around the battlefield, and tactical things you can do</li></ol><ol type="1" id="82612716-6240-4ad8-a167-82bb1cb1de62" class="numbered-list" start="7"><li>There’s 22 classes, all with their own special subclasses, abilities and feats, which is cool. But because you choose from a list of features every single level, all of you could play the same class and play in entirely different ways. It means you could opt to skip the shit aspects of your class and just pick the stuff that enhances how you like to play. You could keep things broad and be a jack of all trades, or really specialise in certain things to be a real expert in your play-style.<ol type="a" id="fef829bc-aea5-4371-bf76-61106f1a4cd9" class="numbered-list" start="1"><li>You could be a wizard that trains in full armor</li></ol><ol type="a" id="fe41aa37-a74a-4ea3-ac39-dc0fe2c60272" class="numbered-list" start="2"><li>Or an alchemist who throws bombs but can heals with a crossbow that launches syringes</li></ol><ol type="a" id="a666b08a-d3d0-45c5-85a9-afa87ac620bc" class="numbered-list" start="3"><li>Or a warlock who summons and rides beasts into battle</li></ol><ol type="a" id="c5eb65eb-b4df-440f-8c2c-57a07909f0b4" class="numbered-list" start="4"><li>Or a barbarian that transforms into a fire-breathing bear when they rage</li></ol></li></ol><ol type="1" id="60fcc0b3-32bf-4c15-85f2-5ff02c1715e0" class="numbered-list" start="8"><li>Even the same creatures have massively different abilities that really give them much more character. D&amp;D martial monsters like the owlbear and a gnoll just feel the same, they run in, they multiattack, and they stay put. In Pathfinder, the owlbear attempts to pin you down and disembowel you with it’s beak, while the gnoll is a skirmisher who runs in attacks, and darts between you, attacking in a frenzy or running away.</li></ol><ol type="1" id="942942c9-c694-43be-961e-6edb6841de9e" class="numbered-list" start="9"><li>It’s got rules and suggestions for awesome things you can do with your skills proficiencies in-between fights:<ol type="a" id="43560a2a-1d87-4f12-bc4a-c3b956237c36" class="numbered-list" start="1"><li>Medicine you can heal and cure poison and disease without needing to be a healing class</li></ol><ol type="a" id="da2bde8b-e29a-4db9-9b9d-bbf0d3579e34" class="numbered-list" start="2"><li>Nature, Arcana or Religion you can just learn an associated spell, even though you’re a rogue or fighter who doesn’t normally cast things</li></ol><ol type="a" id="703ed808-c175-467b-ac2a-090bee90caaf" class="numbered-list" start="3"><li>You can use Deception to feint an attack to gain a bonus to hit</li></ol></li></ol><ol type="1" id="f58eb299-e0af-4135-a80d-29723e16b7a8" class="numbered-list" start="10"><li>There’s rules for your items being damaged over time, which doesn’t sound too thrilling, but it gives you a reason to visit the blacksmith or learn how to repair your own gear</li></ol><ol type="1" id="5696cc8c-6a96-416f-9fd2-8aa0aeced648" class="numbered-list" start="11"><li>Downside: learning a new system</li></ol><ol type="1" id="01b49543-f819-46a4-a609-f985f553bf3a" class="numbered-list" start="12"><li>Downside: once you’ve built a specialised character, you might find yourself doing the same thing over and over again, but that’s a problem with D&amp;D too</li></ol></div></div><div><h2 id="b469abef-e54e-4ce1-ab88-2653ff7b8895" class=""><details open=""><summary>Level 6</summary></details></h2><div class="indented"><p id="1a7caaec-a20c-44e6-8665-fe6c3440bad2" class="">Let’s start with rolling hit points for hitting Level 6.</p><h3 id="92b5a35a-7356-452a-8f86-609d1d0d6296" class=""><details open=""><summary>Badger</summary></details></h3><div class="indented"><p id="38a7c7a0-96e0-47c9-851a-3b0f9aedea2f" class=""><strong>Health:</strong> +2 CON Modifier</p><p id="db5e9522-aef5-47c7-9b15-f4ae944d63c1" class="">Monk 5:<div class="indented"><ul id="74381dff-78de-4403-adc0-6961fd96090a" class="bulleted-list"><li style="list-style-type:disc">Extra attack</li></ul><ul id="8b467962-7562-43d9-aacd-195842b9f761" class="bulleted-list"><li style="list-style-type:disc">Spend Ki 1-3 Ki Points to boost your to hit by 2-6</li></ul><ul id="9212e01a-a4df-4846-beef-fd8066cce8d1" class="bulleted-list"><li style="list-style-type:disc">Stunning Strike with CON Save DC 14</li></ul></div></p></div><h3 id="6fe4b5cd-06c0-4c45-917e-53699ff8ff84" class=""><details open=""><summary>Fen</summary></details></h3><div class="indented"><p id="2e45df74-6a24-4a2e-bd38-efb959c4777a" class=""><strong>Health:</strong> +3 CON Modifier</p><p id="2b682c29-be6b-447b-b872-d71c1f937c0b" class="">Fighter 6:<div class="indented"><ul id="8ccba56c-59a9-4df3-a04f-3dc065bffe82" class="bulleted-list"><li style="list-style-type:disc">Ability Score Increase or a Feat</li></ul></div></p></div><h3 id="287b2b17-6472-47d8-b6be-1b78480afff9" class=""><details open=""><summary>Pico</summary></details></h3><div class="indented"><p id="ad4eaaf0-7164-4c7d-b3b7-87cc2cfa53fc" class=""><strong>Health:</strong> +2 CON Modifier<div class="indented"><ul id="d6ea1e1e-ea47-41d4-94ed-6ffdc8cee68e" class="bulleted-list"><li style="list-style-type:disc">Your speed increases by 5ft</li></ul><ul id="8344d53f-6b3f-43ad-a375-0605041c628e" class="bulleted-list"><li style="list-style-type:disc">You gain a climbing and a swimming speed equal to you walking speed</li></ul><ul id="2af645c1-b35e-4691-b146-4891892e128d" class="bulleted-list"><li style="list-style-type:disc">When you concentrate on your Favored Foe, that extra damage die per turn is now a d6 and I might as well remind us both that it’s only per turn, not per attack</li></ul></div></p></div><h3 id="f5e3ac53-faa6-4205-a6d8-47d2eb649b7c" class=""><details open=""><summary>Quarth</summary></details></h3><div class="indented"><p id="dcc21474-7971-4e6f-a4eb-033fa3f8c789" class=""><strong>Health</strong>: +2 CON Modifier</p><ul id="95349258-e261-4592-816c-a938de10732f" class="bulleted-list"><li style="list-style-type:disc">You get a new spell as usual, and have the option of replacing one of your old ones</li></ul><ul id="ced5478e-89dd-48ea-80b7-2df6df434245" class="bulleted-list"><li style="list-style-type:disc">Entropic Ward means that now once per short rest you can use your reaction to impose disadvantage on an attack roll, noting that it doesn’t have to be melee either. If it then misses you, you’ll have Advantage as you harness that energy and send it back at them on your next turn.</li></ul></div><h3 id="18840d6a-faa8-4244-80f0-6da14db97aca" class=""><details open=""><summary>Numwick</summary></details></h3><div class="indented"><ul id="165ed4a6-8f02-44ec-9f21-089cc488a6eb" class="bulleted-list"><li style="list-style-type:disc">Already rolled health for you</li></ul><ul id="5df58a54-2b2f-4530-b392-5066a5f66976" class="bulleted-list"><li style="list-style-type:disc">2 new spells. What are you going for?</li></ul><ul id="171db338-940f-49c7-a815-b94538f1b022" class="bulleted-list"><li style="list-style-type:disc">Cantrips that have a Save like Toll the Dead now do half damage if they succeed. God knows why, but this only applies to Saving Throw cantrips, not Attack Roll ones.</li></ul></div></div></div></div><h1 id="01ed0407-af18-49af-92d0-39175c26a961" class="">Scenes</h1><h2 id="d30ffe1a-4751-4c24-a758-c388c0ad7765" class=""><details open=""><summary>Recap &amp; Scene Set</summary></details></h2><div class="indented"><p id="56383bec-5b2c-4c1a-a0cb-09ef58ae4da8" class=""><strong>Who do I owe cards?</strong></p><ul id="4bf24f82-45ea-48bb-a01e-c4f44defcb25" class="bulleted-list"><li style="list-style-type:disc">4x Holy Waters</li></ul><ul id="07299f33-4922-4542-b3a4-60d8f776ebb8" class="bulleted-list"><li style="list-style-type:disc">Cards for Fen</li></ul><ul id="7b619b58-4714-4f04-84fd-0f2c4cb07824" class="bulleted-list"><li style="list-style-type:disc">Cards for Pico</li></ul><ul id="a781a058-74d7-46eb-82e0-e2ee92bef0f1" class="bulleted-list"><li style="list-style-type:disc">Spellcards for Level Up</li></ul><p id="e32662df-de1c-474a-b90d-f215db2a6a8c" class="">
+	</p><p id="9f89daf7-27b7-4932-9840-85c14a08d051" class=""><strong>Pre-roll Initiative</strong></p><p id="c3fee372-1357-4663-aac2-6f5017fc0a87" class="">
+	</p><p id="6e8461e7-1397-4581-86b6-081a59d571e4" class=""><strong>What happened last session?</strong></p><ul id="ae441d36-2f00-4b4e-99c1-cb612218b3b6" class="bulleted-list"><li style="list-style-type:disc">You came to a much more favourable agreement with Helrek the Half-Orc, setting your own terms, and signed a contract with him in blood, as is customary for work of a certain value in this area of the world</li></ul><ul id="6a63f67e-e1dd-4176-b32b-0ce61d54459a" class="bulleted-list"><li style="list-style-type:disc">You wrangled your crew together and informed them of the contract you signed with Helrek, giving Tallow a scroll of sending for any emergencies</li></ul><ul id="5315427c-f3c0-464e-8fd9-8508e30e5d0c" class="bulleted-list"><li style="list-style-type:disc">You noted that Vertheg and Quarth weren’t aboard the Harpy</li></ul><ul id="61c52be5-bce4-4bd1-a778-1a3c00bb9865" class="bulleted-list"><li style="list-style-type:disc">You picked up some supplies at the local blacksmith</li></ul><ul id="9f19504e-570f-49aa-a36d-971fd1220745" class="bulleted-list"><li style="list-style-type:disc">You picked up a contract to clear out a recently uncovered mine for the Miner’s Guild, about 30 miles to the west, after a member of the Arcanosmith’s Guild uncovered some co-ordinates on the nearby Runestone Isle</li></ul><ul id="1b822c12-3f33-444f-abc4-3e584b6e9b5e" class="bulleted-list"><li style="list-style-type:disc">You broke in to the suspicious house of Collectors, and after revealing your location you heard some strange telepathic messages where they expressed an interest in Fen, and tried to coerce Badger into joining them, distancing themselves from both Moradin and the Illithid</li></ul><ul id="777b7029-c52b-4f65-b6f1-d8175b989bc6" class="bulleted-list"><li style="list-style-type:disc">You were then ambushed by invisible Duergar, while barred in the dining room, but managed to hold the attackers at bay, clearing the house.</li></ul><ul id="87ab0c2e-66a8-470f-90b6-c1c49e830d24" class="bulleted-list"><li style="list-style-type:disc">You found a Tiefling corpse inside the piano and a list of names, including Marianna, Quarth &amp; Vertheg, which appeared to be crossed out, and deduced that they had been kidnapped by more of these Collectors, but without interrogating them you’re not sure where they might have been taken</li></ul><ul id="5d079821-3db0-43d7-8089-b38dd3982b60" class="bulleted-list"><li style="list-style-type:disc">You delivered the corpse to the Tiefling Royal Trade Company, and they thanked you for letting them know what happened to the previous tenant, and you asked them to let their King know that the Soggy Donkey Boyz should be given full credit for resolving the situation in town</li></ul><p id="6734e985-1c03-4f23-b743-45bdc1d9cdbe" class="">
+	</p><p id="a8f93dc6-05b9-4c02-b2c0-b763c7dc913e" class=""><strong>Datetime:</strong> 5pm on Yssaré, 17th of Tuilë, the Season of Youth (similar to our Spring)</p><p id="e778319a-0e29-44d8-81ed-2fd9868efec2" class="">
+	</p><p id="e8f86b59-9905-45c7-870c-ef863deeb475" class=""><strong>Item Cards &amp; Effects to consider:</strong></p><ul id="00c39edc-7bdd-492b-b835-1b1565926c92" class="bulleted-list"><li style="list-style-type:disc">3 of you should still have Aid applied</li></ul><ul id="d8961429-243d-43ab-b532-2334b365adb5" class="bulleted-list"><li style="list-style-type:disc">Numwick has Mage Armor</li></ul><ul id="7bdabc56-6181-42ca-8599-e5f4e5e5030b" class="bulleted-list"><li style="list-style-type:disc">Understand you’re all probably low on health and resources after the fight with the Kruthiks, and will want to take a short rest, but I’d ask you to hang on a moment while we catch up with Quarth’s perspective.</li></ul></div><h1 id="7abc0462-777c-4465-9406-b86117d51aa3" class=""><details open=""><summary>The Mine</summary></details></h1><div class="indented"><h2 id="eaecc422-5693-423b-8377-df7bdbc31a3c" class=""><details open=""><summary><a href="https://www.notion.so/Lost-Adamantium-Mine-e47a9c77e70f412bbacf306bc6ddec43">Lost Adamantium Mine</a> </summary></details></h2><div class="indented"><p id="36d73db3-55c2-499a-a24b-2ee9dae847d9" class=""><strong><strong><strong><strong><strong><strong><strong><strong>Entrance</strong></strong></strong></strong></strong></strong></strong></strong></p><ul id="baa590fe-ae05-47b5-bf02-12380a82d818" class="bulleted-list"><li style="list-style-type:disc">This part of the structure is drow, and it served as a mine entrance</li></ul><ul id="41e25219-ee83-4141-8123-58f89bd0dd81" class="bulleted-list"><li style="list-style-type:disc">There are dark, smooth stone columns supporting the ceiling, clearly providing more functional than aesthetic value to the room</li></ul><ul id="24e1b9ce-e3ce-47d1-a204-b81b1f1079c4" class="bulleted-list"><li style="list-style-type:disc">There are dancing lights that activate when you enter the chamber, from braziers on each of the columns in each of the room’s six corners</li></ul><ul id="90f0a2c2-46d2-416b-8d26-e87395f2f4eb" class="bulleted-list"><li style="list-style-type:disc">One empty and upright minecart sits on a rail track that leads towards the collapsed part of the wall</li></ul><ul id="54a190ca-7984-4ff0-afb5-5ec1cf8ef9ad" class="bulleted-list"><li style="list-style-type:disc">A few boxes are stacked at the edge of the room<ul id="bbee88c3-1afb-4d7a-a351-9e012f9b3da5" class="bulleted-list"><li style="list-style-type:circle">The larger ones are filled with coal</li></ul><ul id="94cba9cc-2e4a-459f-bc7a-2905082be2b2" class="bulleted-list"><li style="list-style-type:circle">A smaller one is filled with old elven smith’s tools</li></ul><ul id="57395783-e75f-4640-9b4c-58bcc7fd03c9" class="bulleted-list"><li style="list-style-type:circle">The smallest one has an unknown ore</li></ul></li></ul><ul id="ce5c1d13-4ada-4711-8548-485e8239e055" class="bulleted-list"><li style="list-style-type:disc">Investigating, it’s clear that the number of stone bricks near the collapsed part of the walls suggests that the room was entirely sealed off at some point, over the tracks</li></ul><p id="52418361-456d-463f-be08-52a40c9a644e" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>The Shaft</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><ul id="d66039df-f0e6-46c8-9478-e30cafbb6f88" class="bulleted-list"><li style="list-style-type:disc">The walls are stripped bare and it’s not clear what ore they were extracting.</li></ul><ul id="82dcf808-9c40-42e1-bb71-180555e37c12" class="bulleted-list"><li style="list-style-type:disc">The rail-line continues downwards at a gentle slope through this main shaft, although there are occasional paths off to the sides, presumably further into the mines</li></ul><ul id="9f66de6b-0cd2-47c5-9d0f-d6efd06c314b" class="bulleted-list"><li style="list-style-type:disc">You see streaks of blood and dropped pickaxes as you progress down the main track</li></ul><ul id="f128afa8-ecb8-416b-b6fb-5ca8dc42a2d1" class="bulleted-list"><li style="list-style-type:disc">Up ahead you see a pile of rocks, where the tunnel has caved in, and just before it a number of small bodies: a couple rock gnomes, a mountain dwarf, and something you’re not quite sure of, because it’s head is completely crushed by a rock</li></ul><ul id="66e193f9-5962-4a3c-998c-df8743e9ce4b" class="bulleted-list"><li style="list-style-type:disc">You find fresh blood, some dropped pickaxes and the bodies of a few rock gnomes and a mountain dwarf</li></ul><ul id="688d8c26-1f03-41e7-ae3a-025bd239cd1f" class="bulleted-list"><li style="list-style-type:disc">They were killed recently and have gaping wounds all over their body where they were stabbed repeatedly by something large.</li></ul><ul id="ef9ebc45-ea1f-4a4f-ac65-468e8860f946" class="bulleted-list"><li style="list-style-type:disc">The mountain dwarf has died holding a heavy crossbow, and appears to be covered in small needle-like spikes.</li></ul><ul id="4071457b-8edf-4458-aff5-67083afcce98" class="bulleted-list"><li style="list-style-type:disc">There’s a piece of hard chitin in the hand of one of the miners, inspecting it reveals it to be as hard as steel, if not more.</li></ul><ul id="d1bd7da6-2d6c-4613-a0ec-8439b64bcafa" class="bulleted-list"><li style="list-style-type:disc">You hear skittering further down the shaft, and a rapid clicking noise</li></ul><ul id="d268a466-3222-435b-998d-d9e12488fc39" class="bulleted-list"><li style="list-style-type:disc">You feel the ground underneath your feet vibrating a little, and hear an awful noise, like someone grinding rocks with their teeth, as these big pincers break through the solid rock next to you</li></ul></div><h2 id="aa8034e4-2a15-41a4-a9e9-bf9b2edb45f1" class="block-color-red_background"><details open=""><summary><mark class="highlight-red">The Head of the Hive</mark></summary></details></h2><div class="indented"><figure id="42dd43a0-d19f-4107-b50d-9fa23e77ed7e"><a href="https://bit.ly/3B63x6Z" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Custom SoundPad Tool - Tabletop Audio</div><div class="bookmark-description">Interactive audio environments by Tabletop Audio</div></div><div class="bookmark-href"><img src="https://images.tabletopaudio.com/touch-icons/icon.png" class="icon bookmark-icon"/>https://bit.ly/3B63x6Z</div></div><img src="https://images.tabletopaudio.com/sb/og_soundpad_custom_twit.jpg" class="bookmark-image"/></a></figure><figure id="ca7a19b2-d0da-4396-86b8-bffcd7cad904"><a href="https://www.dndbeyond.com/encounters/86b59208-3a9b-45f0-9135-bfb4a0e56f9d" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Encounter Builder for Dungeons &amp; Dragons (D&amp;D) Fifth Edition (5e)</div><div class="bookmark-description">Get to the fun faster by creating encounters in seconds. Easily look up monsters by type and difficulty level, balance your combat, and then track all of the action! Who says being a DM is tough? From Trivial to Deadly, and Everything in Between Create an encounter, check difficulty and laugh maniacally.</div></div><div class="bookmark-href"><img src="https://www.dndbeyond.com/avatars/thumbnails/104/378/32/32/636511944060210307.png" class="icon bookmark-icon"/>https://www.dndbeyond.com/encounters/86b59208-3a9b-45f0-9135-bfb4a0e56f9d</div></div><img src="https://www.dndbeyond.com/Content/skins/waterdeep/images/Waterdeep_opengraph.png" class="bookmark-image"/></a></figure><div><h3 id="edade62b-ceaa-4ed9-ab55-a7eaac900541" class=""><details open=""><summary>Describe Creatures</summary></details></h3><div class="indented"><ol type="1" id="3f191294-9bd6-479e-bdfc-cee625484f70" class="numbered-list" start="1"><li>Size &amp; Shape</li></ol><ol type="1" id="3dfd7be6-dab6-4039-ae12-9bb31712fdc4" class="numbered-list" start="2"><li>Color &amp; Texture</li></ol><ol type="1" id="bb3ecd64-1b93-4a06-a88b-a0839581880a" class="numbered-list" start="3"><li>Features &amp; Threats (Race if known)</li></ol><ol type="1" id="411c8a4b-66d9-4f19-9f79-ae1d32453ade" class="numbered-list" start="4"><li>Sounds &amp; Smells</li></ol><ol type="1" id="5f1fdeef-e7b8-4f69-8cfa-bad56731fc0a" class="numbered-list" start="5"><li>Positioning, Activities</li></ol><ol type="1" id="0391d50f-b202-4f17-a8f3-4f2cc9b8fc4d" class="numbered-list" start="6"><li>Awareness of Players</li></ol></div></div><h3 id="2cb68f68-7520-49ec-ba3b-3900274177c4" class=""><details open=""><summary>Narrative Notes</summary></details></h3><div class="indented"><p id="893bb21c-8ee0-4d6f-9b67-cdc5028e7795" class="">If they go off the track and find the head of the hive, they should face the Kruthik Hive Lords &amp; Roper.</p><p id="9125758c-542d-4b45-ae50-74d069e27f67" class="">But if they don’t, or bypass it, they’ll face a Roper &amp; Salamander.</p></div><h3 id="1d224859-f15c-4145-b0c8-33da3663927a" class=""><details open=""><summary>Tactical Notes</summary></details></h3><div class="indented"><p id="d1c6f60f-700d-4b75-abff-7a87a5f1dbe9" class=""><strong>New Initiative Rules</strong></p><ol type="1" id="0e3c1928-fc63-4b57-84f4-efb01bc56457" class="numbered-list" start="1"><li>Players roll</li></ol><ol type="1" id="4417b3aa-6672-48ee-8f79-394af01a2070" class="numbered-list" start="2"><li>vs an enemy of my choosing to determine who goes first</li></ol><ol type="1" id="3cfb1613-c858-4374-9ba2-d312dff49acc" class="numbered-list" start="3"><li>Alternate player, npc - ties follow ties</li></ol><p id="e3063be5-775c-4f68-bb63-f075425bf4a2" class="">
+	</p><p id="ca1cda71-869e-480a-87c1-17fbd0d6d53a" class="">
+	</p></div><h3 id="c554a385-6c87-40a8-a428-2a2ea668ab28" class=""><details open=""><summary>Loot</summary></details></h3><div class="indented"><p id="d24cee23-4984-4309-8860-1d2677f1ca35" class="">
+	</p></div><p id="254da214-1f2c-4430-9027-0ed5d80993bb" class="">
+	</p></div><h2 id="404b256a-2ac8-4dd3-a36d-d304f681a4f9" class=""><details open=""><summary>Shrine of the Sun</summary></details></h2><div class="indented"><ul id="818667a9-ef63-4ec6-9834-2416c949bd44" class="bulleted-list"><li style="list-style-type:disc">The room is sealed by brick, but brilliant orange light pours through cracks in the mortar</li></ul><ul id="15ba6032-7263-407a-82d7-724b4e5955ef" class="bulleted-list"><li style="list-style-type:disc">Above the brick is Draconic script that reads: “Shrine of the Sun”</li></ul><ul id="76fa1c75-eee9-439f-82c4-aee16ae8df53" class="bulleted-list"><li style="list-style-type:disc">There is a magical Glyph of Warding glowing across the bricks that emanates Evocation magic<ul id="74c8a8d9-8224-4fad-a0cf-c9b6468ff59c" class="bulleted-list"><li style="list-style-type:circle">Touching it deals 5d8 Cold Damage or Half on a DEX 15 Save within 20ft</li></ul></li></ul><ul id="9042b7e1-acf1-45b5-81ad-e21e41a48bff" class="bulleted-list"><li style="list-style-type:disc">Motifs of the Sun fill the room</li></ul><ul id="cb2999de-bc8e-4e8f-affc-021cc42573e1" class="bulleted-list"><li style="list-style-type:disc">Large cylindrical dark-steel drum in the middle of the room</li></ul><ul id="f45bd5a6-088a-4bb4-a677-7726d05aaa7e" class="bulleted-list"><li style="list-style-type:disc">In Draconic: “The Sun and The Moon”</li></ul><ul id="5acd59c9-5fac-4e27-9d84-98838684be25" class="bulleted-list"><li style="list-style-type:disc">Depicts the Sun and the Moon:<ul id="242f4799-eb35-4b01-a316-e588b577c5b7" class="bulleted-list"><li style="list-style-type:circle">The Sun character on the front side looks like a fiery giant. He is speaking to a crowd of people, and showing them how to forge weapons and create metallic order from the chaos of flame.</li></ul><ul id="5ff95e86-5ed3-4d17-b5f3-d4c819eea82c" class="bulleted-list"><li style="list-style-type:circle">Spinning it reveals the far side, where the depictions change</li></ul><ul id="546e531e-5602-4415-a83e-909b62665292" class="bulleted-list"><li style="list-style-type:circle">What appears to be ‘The Moon’ character is a wild looking dwarven man, long scraggly beard. He is depicted sailing the night sky, and below him lycanthropes are howling in the moonlight, attacking the commonfolk in the foreground, sewing chaos and tension, as three large armies clash with one another in the background.<ul id="864622fe-8962-43a8-84e9-6dff2ea4a1f7" class="bulleted-list"><li style="list-style-type:square">The armies are all Dragonborn: Chromatic, Metallic and Gem.</li></ul><ul id="fc66c471-489f-4a85-9126-c4200d802fa2" class="bulleted-list"><li style="list-style-type:square">Upon closer inspection you can see the drum was once painted, but the colours have faded with time, so you really only make out some reds, greens, and silver.</li></ul></li></ul></li></ul><h3 id="a857ffb0-243e-4cba-9d0e-6cba9ae43e06" class=""><details open=""><summary>Loot</summary></details></h3><div class="indented"><p id="01f6aeb6-cf5f-4bb2-aee4-5c444b22bb88" class="">If there was a Salamander<div class="indented"><ul id="da41f291-a8aa-438f-bb4e-4eb6c291cc97" class="bulleted-list"><li style="list-style-type:disc">it can be harvested for a <strong>Potion of Fire Resistance</strong></li></ul><ul id="fd635857-c299-4f58-a6c2-7cbc13a13f81" class="bulleted-list"><li style="list-style-type:disc">a dead drow nearby has a <strong>Scroll of Protection from Elementals</strong> at the tip of their fingers</li></ul><ul id="eb78a6e1-0277-4538-b736-7c6bdfb055da" class="bulleted-list"><li style="list-style-type:disc">they might also have a <strong>Potion of Clairvoyance </strong>which is good for a single  visual or auditory Scrying</li></ul></div></p><p id="e4f1f50a-6fa4-4c51-8b4e-923a0f75947a" class="">There is an <strong>Adamantium set of Full Plate armor:</strong><div class="indented"><ul id="ec09570d-8e29-4acd-8923-95656f864459" class="bulleted-list"><li style="list-style-type:disc">Identifying it reveals it to be harder than steel and made from the dark green ore elsewhere in the room</li></ul><ul id="e3832af0-7969-4566-b5e4-f37cf8fb8ac8" class="bulleted-list"><li style="list-style-type:disc">Adamantium armor makes the wearer immune to critical hits<ul id="74749b61-3e7a-48df-8551-430df7d9bbfe" class="bulleted-list"><li style="list-style-type:circle">As Fen already has full plate armor, he’s able to take this better version</li></ul><ul id="a90dfa00-995f-45a8-ae17-23c3a7abf952" class="bulleted-list"><li style="list-style-type:circle">Or you could decide to take apart one or both of those sets of full plate armor to have Half Plate or Breastplate i.e. Medium Armor that Pico could equip</li></ul></li></ul></div></p><p id="efa3b38d-7670-4fa4-86a9-8ac2c7e4f427" class="">Tome of Balance +1/-1 to any two abilities</p><p id="29e056f9-f320-4224-b782-9e482d01e50c" class="">Spellbook that diagrams the components of spellcraft, with this and enough time, you may be able to create your own spells</p><p id="91b8f6d3-c676-409a-9fae-ec1331c588a4" class=""><strong>Drow Poisons</strong></p><p id="160d53d7-6d27-48ea-b16f-acba96133016" class="">Propped up against it are 2 vials of dark green fluid. One of the bolts has a vial attached to it that matches this dark green hue.<div class="indented"><ul id="d02a557c-6aeb-4ceb-8615-b0e74aa37901" class="bulleted-list"><li style="list-style-type:disc">The 2 vials and the bolt contain Drow Poison: a creature subjected to it needs to make a DC 13 Con Save or be Poisoned for 1 hour, and if they fail by 5 or more (i.e. 8 or lower) they fall unconscious too.</li></ul></div></p><p id="18b6aa6a-fcb9-4cfa-8cf0-c22798242310" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Quiver of Ehlonna &amp; custom bolts</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><p id="b71b2e37-baad-42ec-a190-e13688085795" class="">There is a dark quiver in the corner of the room, and out the top of it sits an array of bolts with various attachments, styles and colours.</p><h3 id="391c767f-ac21-4af8-9fee-ad885878e938" class=""><details open=""><summary>Custom Bolts</summary></details></h3><div class="indented"><p id="5f266a94-b1dd-4f5b-9e1d-19972eea7767" class="">Some of the bolts have a glass bulb near the tip of the bolt’s head</p><ul id="b2bb5fb5-2d30-4c7b-962f-1d933a30889f" class="bulleted-list"><li style="list-style-type:disc">3x Orange vials of Alchemist’s Fire:<ul id="f571048c-fcc5-4964-b5f4-7d0ef8a7ee9b" class="bulleted-list"><li style="list-style-type:circle">These bolts have a glass bulb near the tip of the bolt’s head</li></ul><ul id="ba077b2e-f9c5-4e4b-b3ca-e3bc01f22f45" class="bulleted-list"><li style="list-style-type:circle">+1d4 Fire Damage on impact, and 1d4 at the start of each of the target’s turns, they have to make a DC 12 Dex Save at the end of their turn to put the fire out.</li></ul></li></ul><ul id="3ce9a4ae-14a2-49ab-9b85-e6a9c3e3eb79" class="bulleted-list"><li style="list-style-type:disc">3x Black vials of Acid:<ul id="83ffe57f-e066-4917-9ce2-52eb8e30aca3" class="bulleted-list"><li style="list-style-type:circle">+2d6 Acid Damage on impact</li></ul></li></ul><ul id="3bd65491-cea4-4172-84f5-71e1fe760b84" class="bulleted-list"><li style="list-style-type:disc">6x Silver (Light) bolt:<ul id="f56664e5-e386-4333-9071-3edfd57a316d" class="bulleted-list"><li style="list-style-type:circle">These bolts are covered in a strange powder that’s adhered to the metal surface of the bolt’s head, giving it a sandy, coarse texture</li></ul><ul id="857b3d54-659d-4d70-bbe7-8c542edf397c" class="bulleted-list"><li style="list-style-type:circle">Waving it around, the head of the arrow sparks slightly, and you’re able to guess that with enough speed, these guys will glow briefly when they land in a target</li></ul><ul id="14cb79f0-effa-4834-b74e-7c210eed6782" class="bulleted-list"><li style="list-style-type:circle">20ft of Bright Light, 20ft of Dim Light</li></ul><ul id="5783940b-c339-453d-ac23-33ca387a271f" class="bulleted-list"><li style="list-style-type:circle">Attack deals Lightning Damage</li></ul><ul id="29b61432-b319-4647-bcd1-fa8324918074" class="bulleted-list"><li style="list-style-type:circle">Advantage for the next attack to hit that target</li></ul></li></ul><ul id="2dbfe95f-7033-4b55-bb4e-e2cbf87bc897" class="bulleted-list"><li style="list-style-type:disc">3x Purple Poison gas-canister bolt:<ul id="55a8cb7a-71a5-48f3-baff-d3847ad27ff7" class="bulleted-list"><li style="list-style-type:circle">A transparent green gas in inside a canister attached to this bolt, and you imagine on a hit the gas will be released around the target, potentially harming multiple enemies</li></ul><ul id="3b8c5bd7-8660-4bff-bc79-d20b52281480" class="bulleted-list"><li style="list-style-type:circle">DC 12 Con Save or 1d6 poison damage in 15ft radius, including friendlies</li></ul></li></ul><ul id="7914f041-7551-482a-af59-42449328def1" class="bulleted-list"><li style="list-style-type:disc">3x Explosive bolt:<ul id="ce42ae99-625a-48eb-ad27-5d9ebae66608" class="bulleted-list"><li style="list-style-type:circle">A final bolt stands out, it’s got a small metal chamber at its tip, and gently shaking it, you realise the chamber contains some sort of powder. Some falls free, and it’s a black and grey mixture, sooty to the touch and smells faintly of sulphur.</li></ul><ul id="fef4ca5d-b46a-4c68-9f9f-b0d4459ff157" class="bulleted-list"><li style="list-style-type:circle">On a hit it doesn’t deal it’s usual physical damage, but instead explodes on impact.</li></ul><ul id="72112310-0a7e-46e9-9d75-dcf458136b65" class="bulleted-list"><li style="list-style-type:circle">The target takes 4d6 Bludgeoning Damage</li></ul><ul id="c9cf34c8-451d-408f-b70f-68284a490952" class="bulleted-list"><li style="list-style-type:circle">All creatures within 20ft, including the target, make a DC 15 Dex Save, or take an additional 4d6 Fire Damage on a failure, or half that on a success.</li></ul></li></ul></div></div></div><h2 id="123a6990-9709-4c74-9fd7-06f0cd70d596" class=""><details open=""><summary>Long Rest: Beastlands</summary></details></h2><div class="indented"><p id="f430ff08-7651-4b5f-b714-2d201ac89375" class="">
+	</p><p id="7ea0bcc2-337c-4d48-aa01-d9c6c4ac1613" class=""><strong>How does Hathor, Melandir &amp; Yssa play into this?</strong></p><p id="a0ce1460-a2e1-4f78-bbf6-6f16fb909a31" class="">Numwick drew Yssa: The Innocent</p><p id="97b400a1-3d70-41e2-9bf9-fba84a7eb7dd" class="">Badger drew Hathor: The Priest</p><p id="10c25f4f-0090-4a3a-a3ba-8af336b6c45a" class="">Daro drew Melandir: The Shepherd</p><p id="f050dbce-e100-4977-a007-0537a137d50d" class="">Potentially each of the three of them has some aspect or form that represents each of the deities. Or they just appear in the sky.</p><p id="34d98c4c-e613-4892-987b-6a5c14766f6d" class="">
+	</p><p id="d70f10fd-1d45-4472-93f3-be20f7d82c0c" class="">As you rest for the evening, Badger and Numwick, you drift off into a restless sleep unlike any you’ve had before. As you dream, you both find yourselves in a strange, grassy landscape, and make eye contact with one another across a vast field.</p><p id="0aadff75-9e94-4421-b513-d0146a421730" class="">Badger, you see another figure making their way down a hill. Slender, black and covered in fur. A Khajiit. Numwick, you know this figure as your friend who left in weeks past. D’aro Fairwhiskers. He is walking alongside a dragon, larger than when you first saw it, but recognisably the same as the one that appeared in the arena almost a month ago now.</p><p id="952046bf-ad3d-42a4-831a-3c46c7114fe6" class=""><strong>Both make a Nature or Religion Check to Identify the Beastlands</strong></p><p id="ffd277c0-eb8d-40c0-bd8c-aaf5e5c8f760" class="">The Beastlands is a plane of nature unbound, of forests ranging from moss-hung mangroves to snow-laden pines, of thick jungles where the branches are woven so tight that no light penetrates, of vast plains where grains and wildflowers wave in the wind with vibrant life. The plane embodies nature’s wildness and beauty, but it also speaks to the animal within all living things.</p><p id="c8441d28-9fbe-4e94-a945-488995abd582" class="">You walk together a while, over these grassy plains, and witness a variety of large beasts who call this place home. Numwick introduces Badger to D’aro, and the three of you decide to go on a little hunt for old times’ sake.</p><p id="e88bf2fd-dbb7-4026-a817-1d4cbb223413" class=""><strong>While in the Beastlands, you make Perception, Survival &amp; Animal Handling checks with Advantage</strong></p><p id="d46b0fbe-d1e3-4922-a946-4eda511a0e60" class="">You see a forest ahead of you, and it shifts into more of a jungle further to your right, but there is also a marsh to your left, and there is of course the grassy plains behind you. So describe for us what you’re doing on this hunt, what sort of creature you’re on the lookout for.</p><p id="041eaa75-0de7-4ad0-be3b-3c5a82694a02" class="">Creatures available to hunt:</p><ul id="94231bea-43f5-4f6a-8ca2-e9e1924fcb07" class="bulleted-list"><li style="list-style-type:disc">Triceratops CR5</li></ul><ul id="71671986-77c8-4512-88a3-3ef167024add" class="bulleted-list"><li style="list-style-type:disc">Giant Crocodile CR5</li></ul><ul id="aa1c997d-208a-427b-9e47-acdc5474cde3" class="bulleted-list"><li style="list-style-type:disc">Elephant CR4</li></ul><ul id="c8608289-044b-42ca-9550-f019be7d8a9a" class="bulleted-list"><li style="list-style-type:disc">Cave Bear CR2</li></ul><ul id="1ba09f53-51c5-4e38-ac96-944a3a9fc51e" class="bulleted-list"><li style="list-style-type:disc">Rhinoceros CR2</li></ul><p id="2cc4ce13-cb06-4628-ac30-e43ff56d226f" class="">You battle the creature, and defeat it handedly. It was never any match for the group of you. But…</p><ul id="88a31111-18eb-4f56-9982-b73513eb30aa" class="toggle"><li><details open=""><summary><strong>Make a DC 10 Charisma Save</strong></summary><p id="98315277-0d65-4612-8d64-8ea1a992952b" class="">Anyone who fails is polymorphed into the creature, but retains intelligence and ability to speak. Repeat the save every 24 hours. 3 failures and it becomes something you’ll need to remove with Remove Curse or Dispel Magic.</p></details></li></ul><p id="c84753c6-0d50-4407-9d61-9004753663b8" class="">With the hunt concluded, your dream fades, and you wake, startled where you fell asleep - making eye contact with one another, it’s clear you both know you experienced the same thing. Badger, you would notice a glow coming from your bag, and touching it, there is a small amount of heat coming off of it. Numwick you sense something pulling at the Weave of magic in the air, the very magical energy you harness for your spells.</p><ul id="ae35489c-9b84-4111-a336-0079e787d790" class="bulleted-list"><li style="list-style-type:disc">Detect Magic would be Abjuration</li></ul><ul id="3ac12198-bd0c-4e72-bfef-192424f05d09" class="bulleted-list"><li style="list-style-type:disc">The runes at the base of each of the cards are now glowing an olive green colour.</li></ul></div></div><h1 id="191ea73b-304c-405d-8740-4674565c49df" class=""><details open=""><summary><a href="https://www.notion.so/Haera-Ungorr-54923779ae594ab1bc35b5e2e119c49c">Haera Ungorr</a> </summary></details></h1><div class="indented"><h2 id="7f5f26b1-2654-48f2-b939-f5925d559316" class=""><details open=""><summary>The Low Pass</summary></details></h2><div class="indented"><p id="954de0c4-13f3-4430-9e3a-dfe32b497d92" class="">The mountain range is really only just beginning, and the altitude of the pass isn’t formidable, but it’s the giants and snow beasts that make it difficult - paired with the fact the roads aren’t patrolled (being on a border) and the foot traffic is low.</p><p id="7e69ff84-4044-403e-a6af-c5be19b7e038" class="">
+	</p><ul id="3c229d0d-4c98-405e-bfeb-57b1771796bc" class="bulleted-list"><li style="list-style-type:disc">Making it up the mountain is easy enough</li></ul><ul id="e0a5aaed-5f53-4fa7-a544-9c02b00cbae0" class="bulleted-list"><li style="list-style-type:disc">Approaching the top the path leads between two peaks covered in a light dusting of snow</li></ul><ul id="b350b04b-15ad-4488-bf5f-a87281147451" class="bulleted-list"><li style="list-style-type:disc">Pico’s passive perception means he’ll notice the heads of two giants waiting to ambush behind a large rock up ahead, and another on the other side of the pass<ul id="7692d899-7367-4e7a-a4ac-08777c9c16b4" class="bulleted-list"><li style="list-style-type:circle">Encounter: 3x Hill Giants, more difficult than usual, but dumb and at a distance<ul id="6fd60366-503e-4411-9994-f1591a49d7e0" class="bulleted-list"><li style="list-style-type:square">Huge creatures can’t be grappled, shoved or knocked prone unless Badger is Enlarged</li></ul></li></ul></li></ul><ul id="2b6e4f68-0226-4938-b9c4-d7626d3d9367" class="bulleted-list"><li style="list-style-type:disc">At the peak, make a Perception check to notice a large army making it’s way up from the south<ul id="b6055af2-0e02-440d-8236-2285b1948e59" class="bulleted-list"><li style="list-style-type:circle">10+ to notice giant turtles, covered in small structures, with figures darting around on their backs</li></ul><ul id="938dba11-1995-49d8-b7d0-98a74ff71793" class="bulleted-list"><li style="list-style-type:circle">20+ to notice Ogres, red banners of the Khanate, some of the Ogres also have platforms on their backs</li></ul><ul id="d2a8c047-e6f7-4345-8675-2dd0ee4bff82" class="bulleted-list"><li style="list-style-type:circle">A small group of Orcs is ahead of the army, making their way up through the foothills a few miles ahead of you, but headed in your general direction</li></ul><ul id="ae1ad0d1-9c39-42bd-b74d-4d16b0365efc" class="bulleted-list"><li style="list-style-type:circle">There is a ridgeline you could feasibly follow further up into the higher mountains that might avoid contact with the scouts<ul id="045fc67e-ab57-40b2-b907-9037aad67c2f" class="bulleted-list"><li style="list-style-type:square">Encounter: Bullette</li></ul></li></ul><ul id="dc4685b4-87a3-4eb0-bcaa-aaf24d382d9b" class="bulleted-list"><li style="list-style-type:circle">But the path you’re on clearly continues downwards to where this vanguard or group of scouts is coming from<ul id="87f50dd3-24fb-4345-8257-32009285c29d" class="bulleted-list"><li style="list-style-type:square">Encounter: Khanate Scouting Party</li></ul></li></ul></li></ul></div><p id="bdd3fade-229c-4775-8f87-f64ee4a2a9ce" class="">
+	</p></div><h1 id="5dac8284-75d2-4d9a-95d1-6de2a31bd2a8" class=""><details open=""><summary><a href="https://www.notion.so/The-Greatwood-549caaeb478840e0b2a124714fb5f880">The Greatwood</a> </summary></details></h1><div class="indented"><h2 id="dc403aa2-ed42-4987-b807-c731fd161e7c" class=""><details open=""><summary>The Ritual Stone</summary></details></h2><div class="indented"><p id="547076d7-f3fa-4fcd-a795-7e36feedb25a" class="">Alien monolith</p><p id="7c7c3ccf-c532-41b6-9139-a8ee24a88604" class="">Ahead, you spy a mossy knoll rising out of the marsh with a curious standing stone at its center. A jagged, eight-foot-tall monolith of black rock, the stone is laced with veins of crystal that shimmer with a strange light.</p><p id="457228d2-a136-45aa-883b-3dbc0a294377" class="">Roughly 3 feet across, this enchanted menhir glows with a pale radiance under moonlight, shedding dim light in a 5-foot radius. Any character who succeeds on a DC 15 Intelligence (Arcana) check or a DC 18 Intelligence (Religion) check understands that this ritual stone is an ancient monument to some dark, primordial god, and that it serves modern spellcasters by acting as a focus for illicit rituals and dark incantations. (<a href="https://5e.tools/bestiary.html#bol&#x27;bara_egw">Bol&#x27;bara</a> was using the stone to commune with her patron when she was beset by soldiers of Fort Venture.)</p><h3 id="975cabd8-2424-4631-b83d-3af53f27fdaa" class=""><strong>Rite of Communion</strong></h3><p id="e297686b-8d21-4022-8faf-5f74b8c276cc" class="">Any spellcaster who spends a short or long rest attuning to the ritual stone can use an action to cast the <a href="https://5e.tools/spells.html#commune_phb">commune</a> spell. Once used, this property of the ritual stone can&#x27;t be used again until the next full moon. Any warlock who uses the ritual stone to commune with their otherworldly patron gains inspiration and acts as if under the effect of the <a href="https://5e.tools/spells.html#guidance_phb">guidance</a> cantrip for 1d2 + 1 days.</p><h3 id="856c82ae-fd85-4320-9eb3-a40f6a098c85" class=""><strong>Ritual Stone Fragments</strong></h3><p id="3d05cf40-a0dd-46db-811b-13252c251638" class="">Any character who succeeds on a DC 16 Wisdom (Perception) check made to inspect the ritual stone discovers that three naturally loosened fragments of the stone can be easily removed and replaced. A fragment carries a semblance of the stone&#x27;s magic, allowing the character who carries it to cast the <a href="https://5e.tools/spells.html#augury_phb">augury</a> spell. Once used, this property of the fragment can&#x27;t be used again until the next dusk.</p><p id="35a0cfdb-d07c-4605-a03a-4c0a4fb70e66" class="">If a fragment is taken more than 10 feet from the ritual stone, its magic fades and it ceases to function after 1d3 + 1 days. A character who attempts to chip away a piece of the ritual stone in addition to the three fragments must succeed on a DC 20 Charisma saving throw or take 3 (1d6) psychic damage.</p></div></div><h1 id="77a3111f-2650-441f-94d7-55005bd07748" class=""><details open=""><summary>Quests</summary></details></h1><div class="indented"><ul id="ea047761-a18c-41c2-963b-00786c4b8498" class="toggle"><li><details open=""><summary>Clear the ruins for the Mining Guild</summary><ul id="37b61e8a-4bbb-44de-b9fa-30b459d23b55" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">They should speak with <a href="https://www.notion.so/Foreman-Drisk-e0b315f5d8c9406daa3a4a002a21c8e2">Foreman Drisk</a> at the camp outside the mine</span></li></ul><ul id="aa67a541-00f1-4d81-8271-10bf8cb3e2d9" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">They should speak with the <a href="https://www.notion.so/Arcanosmith-Doblass-1661eee422834b988d18bdaaad14c226">Arcanosmith Doblass</a> at the camp outside the mine</span></li></ul><ul id="2ab35762-4ae4-41bc-9cda-82bb5e833c1b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Ambushed by Kruthiks</span></li></ul><ul id="01661fe5-5794-489c-b8ad-4a6f46321daf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Clear out the Forge &amp; find the shrine from the Age of Dragons</span></li></ul><ul id="abb24f05-6c2b-4bef-9e73-341694560362" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>Reward:</strong> 1000g + magic items</span></li></ul></details></li></ul><ul id="27e94dd0-5626-43fc-826d-79365d1b121a" class="toggle"><li><details open=""><summary>Ancient Shrines</summary><ul id="f0a36b3a-8676-4add-8e19-4fb8b882e362" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Report back to <a href="https://www.notion.so/Loras-Elderfae-cf3af5741d5345deb2576cfa0aa9f275">Loras Elderfae</a> about the Shrine in the Mine’s Forge</span></li></ul><ul id="3ca8ce45-b03a-4fb2-a5a6-cf2d5f834b10" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><strong>Reward:</strong> 500g per shrine</span></li></ul></details></li></ul><ul id="8f680c03-db25-4eb1-993d-eb02148d89f0" class="toggle"><li><details open=""><summary>Rescue Quarth, Vertheg &amp; Marianna</summary><ul id="47b7fecd-7bd7-4748-9903-9d2062b0afc3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Quarth &amp; Vertheg are being transported by Duergar Collectors through <a href="https://www.notion.so/The-Greatwood-549caaeb478840e0b2a124714fb5f880">The Greatwood</a> and will pass through <a href="https://www.notion.so/The-Grove-a50e90dc463d40568ab3b54892fd400a">The Grove</a> before moving on to <a href="https://www.notion.so/New-Trai-vier-83b1681df7dd4af68a928dfb4c27b5d3">New Trai&#x27;vier</a> </span></li></ul><ul id="520f1423-bcf1-4267-b474-9e11b7114a88" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://www.notion.so/Marianna-Brightwave-2f4aaf8c2f66433c8fd509f64164851b">Marianna Brightwave</a> needs to be returned to <a href="https://www.notion.so/Palma-Flora-199d991f718e4df0aa06fb4d49a67c76">Palma Flora</a>, and <a href="https://www.notion.so/Vertheg-525dfd0dea144b0b82afc01575fde9fe">Vertheg</a> is able to suggest he takes her</span></li></ul></details></li></ul><ul id="0160a087-5593-4e7b-a8ff-91e4673c772c" class="toggle"><li><details open=""><summary>Rescue Korrick</summary><ul id="610b36e8-ff24-4cf3-b0e6-5f0ed4cc0538" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Sending reveals he’s on the move northward from Ulrok, through the Havok Fields, to Bess where he’ll be weaponised as part of the war effort</span></li></ul><ul id="878638df-af7a-4f5f-b675-e1b24d782c00" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Has been transferred into a cage in a workshop on Bess</span></li></ul></details></li></ul><ul id="cd3234dd-dc38-477c-b6c2-974a911b291d" class="toggle"><li><details open=""><summary>Cure Dorxif</summary><ul id="04091080-376b-4bde-9249-737719d25de5" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Sending reveals he’s been transformed into a Wererat</span></li></ul><ul id="6f9ad9b7-7ad8-41e5-99c5-bc31f3f2c7fd" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">He’s working with the goblins willingly (until he tries to leave)</span></li></ul><ul id="c9b95bfe-440b-4db7-b9ad-500ecc5f66b9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Putting curing the dwarves ahead of his own needs, hoping it might provide answers along the way</span></li></ul></details></li></ul><ul id="53f9ebd3-711f-465d-a1c1-c77fde432c04" class="toggle"><li><details open=""><summary>Track down Wilfur Crimsoncloak</summary><ul id="f79a8e37-ebf0-4028-82d9-506c192ffa12" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Quarth’s patron tells him to meet up with another thrall: <a href="https://www.notion.so/Helrek-9e64cb14bdc34e239806c395d6b4cf48">Helrek</a></span></li></ul><ul id="a069b10d-c6f7-4919-8091-db9dae1f9c40" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Helrek knows that while the Tieflings are the primary traffickers in these parts, there’s a Duergar collector that deals in that business on the far side of the river</span></li></ul><ul id="8a41ab70-12d9-4a53-839d-2329ad508e22" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Quarth’s patron warns him to keep his identity secret, lest he be found out</span></li></ul></details></li></ul><ul id="dac166e1-171f-40da-a2de-3a15aea57c88" class="toggle"><li><details open=""><summary>Defending New Trai’vier against Naruz</summary><ul id="6f4df2da-84c4-40a0-bed1-8f5460d212e3" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">A human recruiter is in town trying to rally people to the city’s defense</span></li></ul><ul id="54b7fe5b-59ce-4e92-80ee-4ca35ac962be" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">An overwhelming amount of Orc Scouts are in the mountains of Haera Ungorr, but are potentially attacked by Giants or a Bullette</span></li></ul></details></li></ul><ul id="2b479be6-ace6-4472-baf9-a7f48a071b79" class="toggle"><li><details open=""><summary>Mystery at Runestone Isle</summary><ul id="5b75c127-3637-46ef-a64c-45a1b6240139" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Large pillars of stone, covered in runes, arranged in an eight-sided star</span></li></ul></details></li></ul></div><h1 id="db388a5f-8557-4ee8-91c1-725278d6a2bb" class=""><details open=""><summary>Notes</summary></details></h1><div class="indented"><h2 id="d7a5028d-d3bd-463c-8c1b-e09b0f47285a" class=""><details open=""><summary>Ad Hoc Scenes</summary></details></h2><div class="indented"><h3 id="70aacac0-b541-424c-80c4-96d19c0768b1" class=""><details open=""><summary><mark class="highlight-gray">Quarth’s Patron</mark></summary></details></h3><div class="indented"><ul id="1b6ee7da-9a0c-4d8d-b6f0-37078082c3a1" class="bulleted-list"><li style="list-style-type:disc">Detecting his thoughts This One knows he’s after Wilfur Crimsoncloak and hot on the trail, and now has the ability to cast Sending through Numwick</li></ul><ul id="c7dad936-9b35-4c99-8eec-0fae81ab998b" class="bulleted-list"><li style="list-style-type:disc">Encourage him to keep his identity secret if he can, warning that if Xandarin figures out he’s on to him, there’s great power in a name and he could be putting himself and his friends in danger</li></ul><blockquote id="ad193889-809c-4d34-b5cf-e7659f4a3574" class="">Your thoughts are racing Quarth. I can taste your eagerness. Your desire for revenge. It is within your grasp. But I wanted to share with you a word of caution, and some advice. You are at an advantage knowing the names of those you seek. There is great power in that. Many powerful and dark magics rely on that knowledge, that familiarity. Powerful arcanists can your name to spy on you, to mark you, to curse you.</blockquote><blockquote id="e89ecb45-a2d4-473a-9c1a-3a5fafbd121f" class="">I freed myself of this knowledge long ago, removing the shackles of identity, and for it I am protected. My thralls are protected. You are protected.</blockquote><blockquote id="32c65c03-fd93-4c9d-9c0a-79c71e8bbb60" class="">Do not give up your advantage, for you do not know what your enemy is capable of doing, should they learn you are hunting them. It may be tempting to reach out, to lure them to you, but remain humble, remain in control. Keep yourself safe Quarth. The enemy has many eyes, many servants. Disguise yourself, hide, use the darkness, lie if you need to. Maintain your edge, protect yourself and your friends, and ensure your success when you find your quarry.</blockquote><blockquote id="21c9f8a7-af04-41c1-a409-3dcd4660752c" class="">You are not without a lead. I have another thrall for you to meet where you are headed. He can help you find the missing girl <a href="https://www.notion.so/Marianna-Brightwave-2f4aaf8c2f66433c8fd509f64164851b">Marianna Brightwave</a> and pick up the trail. Seek out <a href="https://www.notion.so/Helrek-9e64cb14bdc34e239806c395d6b4cf48">Helrek</a> in town - I will let him know to expect you.</blockquote><p id="a29020d9-9e7c-4140-9c14-39c3b07e6ddb" class="">
+	</p></div><h3 id="7c2728e6-e936-4c61-b195-f209e306af1e" class=""><details open=""><summary>Sending</summary></details></h3><div class="indented"><p id="6110f14d-3db4-4b54-8093-6846fc3e92ea" class="">Make sure somebody is ready to count out the 25 words</p><ul id="26c67a59-19e4-4903-8e01-963388852e72" class="toggle"><li><details open=""><summary><strong>Quarth</strong></summary><p id="a8a7af46-e09e-4a54-b403-f706e93e68ca" class="">Numwick! Judging by the sun, and the dappled light, we’re headed east through the Greatwood. Maybe the Grove? Or New Trai’vier?</p></details></li></ul><ul id="7c107886-c7a3-4982-855f-f097b8382108" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Dorxif-Quickwaddle-b69d4b402207431489ac323b7a4b3662">Dorxif Quickwaddle</a> </summary><p id="5d93b48e-07a8-4e69-9b2d-59139287ef0b" class="">See the Story Arc for <a href="https://www.notion.so/Numwick-Quickwaddle-2b7f638d1d3944818524b81fb4b42454"><img class="icon" src="Session%2022%20Crossroads%20048195437957478b8caa65e4079dcdc6/Numwick-headshot.png"/>Numwick Quickwaddle</a> </p></details></li></ul><ul id="01352575-55f7-4692-8bcb-6ad26976eeda" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Felziver-Quickwaddle-e1da2569c5914f78b4757b8b37a93319">Felziver Quickwaddle</a> </summary><p id="1e8ddfcc-56e1-488f-8e77-50b2a6518cbe" class="">See the Story Arc for <a href="https://www.notion.so/Numwick-Quickwaddle-2b7f638d1d3944818524b81fb4b42454"><img class="icon" src="Session%2022%20Crossroads%20048195437957478b8caa65e4079dcdc6/Numwick-headshot.png"/>Numwick Quickwaddle</a> </p></details></li></ul><ul id="b68236e5-b321-47d3-bae5-e8ca77e65a66" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Zinny-Quickwaddle-08c329a1a61f467986cd09b0113efb85">Zinny Quickwaddle</a> </summary><p id="28c76b83-6572-4fc9-8bfa-a3edfc80d6b7" class="">Has a new job working for the Ministry of Golemancy, after their grandfather “pulled some strings”, when in reality he’s using her like he did Dorxif</p></details></li></ul><ul id="c4a2e343-3aa4-407e-9486-7b3d07ec1226" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Ah-Reij-Copperclaw-e20d3a56143b426ea512b04a09cdf5e8">Ah’Reij Copperclaw</a> </summary><p id="47bcd83e-6975-4d93-b59b-dd30abc4ec03" class="">Argonian locals are quite mad about what happened, and have put a modest bounty on their heads</p></details></li></ul><ul id="a710a221-b158-4383-bc0d-8e1890fc7e6f" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Manta-2106fa3238224d1293a053adc646a2dd">Manta</a> </summary><p id="a6a610af-5936-42df-a2c1-92ccb6ce3cec" class="">Refuses to respond in any detail: “you know what you did to me”</p></details></li></ul><ul id="b95d3f16-dfa8-4cf0-9491-4a170352b043" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Ripper-539f98c7f01c416a95542f131f04a13b">Ripper</a> </summary><p id="6b7bd3e8-85d1-4ed0-908e-454dea7da7f8" class="">Is miffed that Quarth bailed on his contract. Manta reported back as planned, but she’s hurt that he hasn’t reached out in weeks: “I have information”</p><p id="9c0e4fa0-a557-441f-a546-f9add0b66376" class="">She could share that she’s identified the Guard Captain of New Trai’vier, <a href="https://www.notion.so/Wilfur-Crimsoncloak-cdfcde8062e54b5bb47ef197dfc8eeb2">Wilfur Crimsoncloak</a> fits the description he gave.</p></details></li></ul><ul id="749f4dcd-e92d-41ca-8a4e-295d5f7b6985" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Incandescence-4fce4014b9d949e998f3368f71753e5d">Incandescence</a> </summary><p id="25c14784-07bb-4b2d-92ab-d9f78d113e27" class="">Ah Quarth, if he’s game he should come by my store in <a href="https://www.notion.so/N-r-Dagr-3293b3486a5d4226bab53eec12bb4343">Nýr Dagr</a> and we can have a rematch</p></details></li></ul><ul id="9857d511-e2e5-4237-8283-1b6e611dea51" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Volantis-3247b90cd16a4552a0aa5c86d5bfeab4">Volantis</a> </summary><p id="7c36d9ba-9670-4bd0-a533-a7bdf6c83930" class="">This should fail, not because he’s dead, but because he has a ward against Divination magic</p></details></li></ul><ul id="6aff714e-c6ec-4d46-bc56-d140c9a6fdb7" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Xandarin-the-Collector-176967d7fe71461f95008023e9b9e222">Xandarin the Collector</a> </summary><p id="92b9b8ec-e7af-4c30-88e1-8840cc24abfc" class="">The spell fails. Something is protecting him.</p></details></li></ul><ul id="e58316dd-e73c-4708-b250-5d5e024896d6" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Sif-of-the-Valenspire-da71472b66044ab597320a635d6652ae">Sif of the Valenspire</a> </summary><p id="e8db2126-d876-41f8-bc50-1b233ca1181c" class="">I’d be eager to spend some time catching up over a few drinks, last time was less than ideal circumstances</p></details></li></ul><ul id="4c96a61f-b059-42a4-9f01-890b123808d0" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Tummult-Brine-ddda0bbe2d0d4cdba209c7666327a417">Tummult Brine</a> </summary><p id="77c7f942-52c9-407a-b533-36108ccfc44f" class="">Badger! Badger buddy! I’m just in Scoundrel’s Mire - big ol’ payout for me last job. Had this fucken scroll that made it a fucken cakewalk. </p><p id="5cb55989-30ce-4909-aae9-c92f8e365058" class="">Barely got the thing to … Mithrandir after being assaulted by Orcs in the mountains.</p></details></li></ul><ul id="c60f07e7-1a97-4b2c-9a8d-deee99ee5344" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Korrick-Hogsmeddow-8eaa9342ea82430ba1f50c2009f97151">Korrick Hogsmeddow</a> </summary><p id="86c74d5c-0150-4f6a-b995-be341b814e80" class="">Sending reveals he’s on the move northward from Ulrok, through the Havok Fields, to Bess where he’ll be weaponised as part of the war effort</p><p id="4b6976da-ef56-4af2-945c-4af722e76a87" class="">
+	</p><p id="8354fd31-2786-4728-a459-06bfba45bb1d" class="">
+	</p><p id="648d221e-6a3f-4c57-89e5-0b3404865b43" class="">
+	</p></details></li></ul><ul id="2409dc6c-6502-4164-9c6c-37595bab5262" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Naruz-fe37109f4253497eb859c484a7b40cea">Naruz</a> </summary><p id="f6226f7f-ec2e-497a-9cf3-6d8cf99648d8" class="">The spell fails. Something is protecting him.</p></details></li></ul><ul id="488e9ae5-55d3-4048-ae3b-c51238dd92e3" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Aelin-5d31e8d4edc34228a00148b30728c012">Aelin</a> </summary></details></li></ul><ul id="eb2839ab-427a-4cdf-8e02-646d55c13783" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/Undille-Elderfae-40d85be7af6d4efd9cc1d5d87009d707">Undille Elderfae</a> </summary></details></li></ul></div></div><h2 id="dfa087f6-6f66-404d-8bc4-8d3302c160fd" class=""><details open=""><summary>Ability Reference</summary></details></h2><div class="indented"><h3 id="f3ae97a9-aa3c-4202-a7c5-a11e71a527b7" class=""><details open=""><summary>Badger</summary></details></h3><div class="indented"><p id="13996250-0e47-4cb4-aa62-6fee6191a580" class=""><strong>6E Unarmed Strike</strong></p><ul id="f3d3e7c3-5b5a-4e86-85d4-379bca0c2ecc" class="bulleted-list"><li style="list-style-type:disc"><strong>Grapple. </strong>The target is Grappled, and the grapple’s escape DC equals 8 + your Strength modifier + your Proficiency Bonus (<strong>for Badger that is DC 11</strong>). This grapple is possible only if the target is no more than one Size larger than you and if you have <strong>a hand free to grab the target.</strong></li></ul><ul id="cf75075d-5f4c-4cc6-8981-d1dd82337fb5" class="bulleted-list"><li style="list-style-type:disc"><strong>Shove. </strong>You either push the target 5 feet away or knock the target Prone. This shove is possible only if the target is no more than one Size larger than you.</li></ul><p id="cb95023c-c6b7-4123-9443-899ac786550d" class=""><strong>6E Grapple</strong></p><ul id="6fcb56de-fe4d-4bb0-b925-6d434cb0f2e1" class="bulleted-list"><li style="list-style-type:disc">Attack roll with escape typical DC of 8 + STR + P.B.</li></ul><ul id="9c709fd7-87cb-418a-9668-7440942de770" class="bulleted-list"><li style="list-style-type:disc"><strong>Attacks Affected. </strong>You have Disadvantage on Attack Rolls against any target other than the grappler.</li></ul><ul id="d4b35db5-bbab-4b68-b84f-2e6250d5b5fe" class="bulleted-list"><li style="list-style-type:disc"><strong>Movable. </strong>The grappler can drag or carry you, but the grappler suffers the Slowed Condition while moving, unless you are Tiny or two or more Sizes smaller than the grappler.</li></ul><ul id="79c21377-04f3-406d-8e6e-18b95edf531e" class="bulleted-list"><li style="list-style-type:disc"><strong>Escape. </strong>While Grappled, you can make a <strong>Dexterity or Strength Saving Throw</strong> against the grapple’s escape DC <strong>at the end of each of your turns</strong>, ending the Condition on yourself on a success. The Condition also ends if the grappler is Incapacitated or if something moves you outside the grapple’s range without using your Speed.</li></ul><p id="5723382f-5c26-4e77-8188-8372087fa1db" class=""><strong>6E Prone (no change)</strong></p><ul id="94cf3433-7b4b-4ab7-a205-cb85b4db8179" class="bulleted-list"><li style="list-style-type:disc">Disadvantage on Attack rolls</li></ul><ul id="fb67d6b4-bc3c-4666-adfc-3cd05b5be171" class="bulleted-list"><li style="list-style-type:disc">Advantage against them</li></ul></div><h3 id="094cce6a-31a0-439b-946d-7db63f03db2e" class=""><details open=""><summary>Quarth</summary></details></h3><div class="indented"><p id="9ae2264d-a095-4d2c-aede-e1097a5575c4" class=""><strong>Hypnotic Pattern</strong><div class="indented"><ul id="69dd4ae1-8aa2-4941-8eda-9f7b6e640ed2" class="bulleted-list"><li style="list-style-type:disc">Charm effect</li></ul><ul id="8446d210-51ba-4b91-ab7d-67566cadc768" class="bulleted-list"><li style="list-style-type:disc">Incapacitated with 0 speed</li></ul><ul id="e14bcbf3-304e-45e0-a00c-7057244cbecb" class="bulleted-list"><li style="list-style-type:disc">Effects allies</li></ul><ul id="52df04ba-b331-4822-abbd-10f3a7dbb7c4" class="bulleted-list"><li style="list-style-type:disc">No repeated saves</li></ul><ul id="07f8797d-bb97-4c2b-9b08-9ba8f29ab794" class="bulleted-list"><li style="list-style-type:disc">Ends on damage, or action to shake, or dropping concentration</li></ul></div></p></div><h3 id="369e6ae0-70a5-42c7-80a9-53fc1aa0bb11" class=""><details open=""><summary>Pico</summary></details></h3><div class="indented"><p id="8cb92ae9-fcba-47f2-8a5a-63125b7bd945" class=""><strong>Umbral Sight</strong><div class="indented"><ul id="c67398bf-7cd3-47c7-9d35-b9db910b72b5" class="bulleted-list"><li style="list-style-type:disc">Invisible when relying on Darkvision to see<ul id="aad273a6-746e-4ed4-8c1a-94874a1c2ddd" class="bulleted-list"><li style="list-style-type:circle">He can be heard while moving, Perception w/ disadvantage</li></ul></li></ul><ul id="182383c0-5dc2-49a6-a10d-320f4319a4fb" class="bulleted-list"><li style="list-style-type:disc">Quarth’s Darkness is magical darkness, and as such it nullifies your Darkvision</li></ul></div></p><p id="94a2297f-8170-4d57-bd00-d1f5bead74d9" class=""><strong>Pass Without Trace</strong><div class="indented"><ul id="3ae8c6eb-37c4-41f5-8da2-650d56db8117" class="bulleted-list"><li style="list-style-type:disc">Concentration drops w/ Favoured Foe or Zephyr Strike</li></ul></div></p></div><h3 id="a449145b-e828-45ce-9c2a-07a987d92d33" class=""><details open=""><summary>Fen</summary></details></h3><div class="indented"><p id="bd45cd0c-1e22-4c58-b4b8-92070c0265eb" class=""><strong>Radiant Consumption</strong><div class="indented"><ul id="053299c8-4eae-4381-aaf9-a11f61815523" class="bulleted-list"><li style="list-style-type:disc">New version: Bonus Action to use</li></ul><ul id="ae934381-94d3-4d1f-ac53-90096c45db21" class="bulleted-list"><li style="list-style-type:disc">New version: Proficiency to single target + Proficiency each round</li></ul><ul id="2216718e-581d-4232-8ffe-0cb3e46fcc10" class="bulleted-list"><li style="list-style-type:disc">Damages friendlies within 10 ft too</li></ul><ul id="a66b12aa-be20-4895-892f-6cc10a91f271" class="bulleted-list"><li style="list-style-type:disc">Extra damage to single target is <strong>once per turn</strong>, not per attack</li></ul></div></p><p id="9d6e2d59-92a5-4904-bf99-0e12f0e32320" class=""><strong>Fighting Spirit</strong><div class="indented"><ul id="b817c672-003a-491c-b82b-ed569b164433" class="bulleted-list"><li style="list-style-type:disc">Make sure temp HP doesn’t stack</li></ul><ul id="055bb7e3-3526-4f80-ac4b-bcaf098585cc" class="bulleted-list"><li style="list-style-type:disc">Advantage is triple advantage for Fen</li></ul></div></p><p id="4747a8c1-c357-47b7-ac23-850ce7ae99ed" class=""><strong>Healing Hands</strong><div class="indented"><ul id="f901d6d8-937f-48fd-bd46-810ecd5251d5" class="bulleted-list"><li style="list-style-type:disc">New: Proficiency Bonus of d4’s</li></ul></div></p></div></div><h2 id="e378a874-504d-4b3b-a810-0dca0fce712a" class=""><details open=""><summary>Background Info</summary></details></h2><div class="indented"><p id="ace63a9c-0a3a-4f08-9b41-7bb30affd0b8" class="">
+	</p></div><h2 id="306d41a4-78a3-44cb-9dab-3b71f390147d" class=""><details open=""><summary>Transactions</summary></details></h2><div class="indented"><p id="e41e5df4-e872-4114-969b-52453472d099" class="">If possible record immediately in D&amp;D Beyond, otherwise record below:</p><p id="160bbb27-7c03-45eb-92f5-540ae167edce" class=""><strong><a href="https://www.dndbeyond.com/characters/72868353">Badger</a></strong></p><p id="e78e6a2c-5ec9-45c4-bed6-b88747359b20" class=""><strong><a href="https://www.dndbeyond.com/characters/83009520">Fen</a></strong></p><p id="81cecec9-27ca-4d2a-bb6e-2d41395ffe67" class=""><a href="https://www.dndbeyond.com/characters/81420304"><strong>Pico</strong></a></p><p id="4c4b66bf-c9f6-4722-b171-66f93ede8c3c" class=""><strong><a href="https://www.dndbeyond.com/characters/75936428">Numwick</a></strong></p><p id="88bd6ff1-33f1-4444-909b-b40c96e3932a" class=""><a href="https://www.dndbeyond.com/profile/lilbington/characters/56998147"><strong>Quarth</strong></a></p></div></div><p id="cb7b2137-afbb-423a-b718-214e225bf92d" class="">
+	</p></div>
+		</article>
+	</body>
+</html>

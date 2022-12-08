@@ -37,8 +37,6 @@ export const getStaticProps = async () => {
         database_id: charactersDB,
     });
 
-    console.log(response);
-
     return {
         props: {
             results: response.results,

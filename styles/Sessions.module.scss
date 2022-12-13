@@ -1,0 +1,21 @@
+@import 'variables';
+
+.accordion {
+    width: 30rem;
+    background-color: $offwhite;
+
+    .accordion_item {
+        margin: 0.5rem 0;
+        padding: 1rem;
+        background-color: $grey;
+
+        .item_title {
+            background-color: $medgrey;
+            color: $offwhite;
+        }
+        .item_body {
+            background-color: $lightgrey;
+            color: $darkgrey;
+        }
+    }
+}

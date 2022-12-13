@@ -9,7 +9,7 @@ export default function Dev({ results }) {
     });
 
     const getTasksDisplay = () => {
-        let jsx = [];
+        let jsx: JSX.Element[] = [];
         results.forEach((task) => {
             jsx.push(
                 <div className="task" key={task.id}>

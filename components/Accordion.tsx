@@ -5,12 +5,12 @@ const Accordion = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="accordion-item">
-      <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
-        <div>{title}</div>
+    <div className="accordion_item">
+      <div className="item_title" onClick={() => setIsActive(!isActive)}>
+        <h2>{title}</h2>
         <div><img src={downChevron.src} alt="Open/Close" /></div>
       </div>
-      {isActive && <div className="accordion-content">{content}</div>}
+      {isActive && <div className="item_body">{content}</div>}
     </div>
   );
 };

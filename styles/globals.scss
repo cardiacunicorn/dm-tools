@@ -125,3 +125,31 @@ th {
 td {
   border: 1px solid $black;
 }
+
+.accordion {
+  width: 30rem;
+  background-color: $offwhite;
+
+  .accordion_item {
+      margin: 0.5rem 0;
+      padding: 1rem;
+      background-color: $grey;
+
+      .item_title {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: space-between;
+          background-color: $medgrey;
+          color: $offwhite;
+
+          img {
+              width: 2rem;
+          }
+      }
+      .item_body {
+          background-color: $lightgrey;
+          color: $darkgrey;
+      }
+  }
+}

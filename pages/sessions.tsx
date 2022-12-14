@@ -1,9 +1,9 @@
 import styles from '../styles/Sessions.module.scss'
 import downChevron from '../assets/icons/directional/chevron-down-thick.png'
+import Accordion from '../components/Accordion';
+import { accordionData } from '../data/sessions/session-23';
 
 export default function Sessions() {
-
-  console.log(downChevron)
 
   return (
     <div className={styles.sessions_page}>
@@ -16,6 +16,11 @@ export default function Sessions() {
               </div>
               <div className={styles.item_body}>{item.body}</div>
             </div>
+          ))}
+        </div>
+        <div className="accordion">
+          {accordionData.map(({ title, content }) => (
+            <Accordion title={title} content={content} />
           ))}
         </div>
     </div>

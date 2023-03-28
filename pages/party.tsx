@@ -9,11 +9,16 @@
 import GridLayout from 'react-grid-layout';
 import Player from '../components/players/Player'
 import { players } from '../data/players/players'
+import Button from '../components/Button'
 
 export default function Party() {
   return (
     <div>
-      <h1>Party Page</h1>
+      <h1>Soggy Donkey Boyz</h1>
+      <div className="hotbar">
+        <Button color={'green'} text="Long rest" type="button" />
+        <Button color={'blue'} text="Short rest" type="button" />
+      </div>
       <div className="party">
         {players.map((player) => (
           <Player player={player} />

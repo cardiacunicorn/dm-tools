@@ -7,6 +7,8 @@ export var players = [
         colour: '#B2C6D2',
         race: 'Duergar',
         classes: ['Monk 6 (Mercy) / Cleric 1'],
+        spellsave: 14,
+        passive_perception: 13,
         speed: 45,
         hp: {
             current: 54,
@@ -104,6 +106,8 @@ export var players = [
         colour: '#E9D554',
         race: 'Half Elf Aasimar',
         classes: ['Fighter 7 (Samurai)'],
+        spellsave: 13,
+        passive_perception: 10,
         speed: 30,
         hp: {
             current: 67,
@@ -201,6 +205,8 @@ export var players = [
         colour: '#3F7CF7',
         race: 'High Elf',
         classes: ['Wizard 7 (Evocation)'],
+        spellsave: 15,
+        passive_perception: 13,
         speed: 30,
         hp: {
             current: 46,
@@ -298,6 +304,9 @@ export var players = [
         colour: '#096340',
         race: 'Human',
         classes: ['Ranger 7 (Gloom Stalker)'],
+        spellsave: 14,
+        passive_perception: 16,
+        speed: 35,
         hp: {
             current: 60,
             current_max: 60,
@@ -394,6 +403,8 @@ export var players = [
         colour: '#6f47b5',
         race: 'Half High-Elf',
         classes: ['Warlock 7 (Great Old One)'],
+        spellsave: 17,
+        passive_perception: 14,
         speed: 30,
         hp: {
             current: 46,

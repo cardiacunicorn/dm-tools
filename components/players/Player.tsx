@@ -9,6 +9,10 @@ const Player = ({ player }) => {
   return (
     <div className={styles.player}>
       {/* Must render exact line items, not an object */}
+      <div className={styles.initiative_box}>
+        <h3>Init</h3>
+        <div className={styles.current_init}>XX</div>
+      </div>
       <div className={styles.profile}>
         <img src={player.image_path} className={styles.profile_image} />
         <h1 className={styles.name} style={{color: player.colour}}>{player.name}</h1>
@@ -34,6 +38,20 @@ const Player = ({ player }) => {
                 <div className={styles.ac_current}>{player.ac.current}</div>
             </div>
             <div className={styles.armor_note}>{player.ac.note}</div>
+        </div>
+      </div>
+      <div className={styles.secondary_stats}>
+        <h3>Spell DC</h3>
+        <div className={styles.spellsave}>
+            {player.spellsave}
+        </div>
+        <h3>Pass. Per.</h3>
+        <div className={styles.passive_perception}>
+            {player.passive_perception}
+        </div>
+        <h3>Speed</h3>
+        <div className={styles.speed}>
+            {player.speed}
         </div>
       </div>
       <div className={styles.attributes}>

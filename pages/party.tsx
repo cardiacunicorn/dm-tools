@@ -16,8 +16,9 @@ export default function Party() {
     <div>
       <h1>Soggy Donkey Boyz</h1>
       <div className="hotbar">
-        <Button color={'green'} text="Long rest" type="button" />
-        <Button color={'blue'} text="Short rest" type="button" />
+        <Button color={'green'} text="Long Rest" type="button" />
+        <Button color={'blue'} text="Short Rest" type="button" />
+        <Button color={'grey'} text="Clear Init" type="button" />
       </div>
       <div className="party">
         {players.map((player) => (

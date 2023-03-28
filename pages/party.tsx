@@ -7,9 +7,18 @@
 */
 
 import GridLayout from 'react-grid-layout';
+import Player from '../components/players/Player'
+import { players } from '../data/players/players'
 
 export default function Party() {
   return (
-    <div>Party</div>
+    <div>
+      <h1>Party Page</h1>
+      <div className="party">
+        {players.map((player) => (
+          <Player player={player} />
+        ))}
+      </div>
+    </div>
   )
 }

@@ -1,26 +1,27 @@
 import styles from '../../styles/Players.module.scss'
+import AttacksSection from './AttacksSection';
 import Feature from './Feature'
+import SpellsSection from './SpellsSection';
 
-const FirepowerSection = ({ firepower, type }) => {
 
-    var customSection;
+const FirepowerSection = ({ attacks, spells, type }) => {
+
+    var spellSection;
+    var martialSection;
     if (type == 'caster') {
-        customSection = 'Spells go here';
+        martialSection = <AttacksSection attacks={attacks} />
+        spellSection = <SpellsSection spells={spells} />;
     } else if (type == 'hybrid-caster') {
-        customSection = 'Spells and attacks go here';
+        martialSection = <AttacksSection attacks={attacks} />
+        spellSection = <SpellsSection spells={spells} />;
     } else if (type == 'martial') {
-        customSection = 'Attacks go here';
+        martialSection = <AttacksSection attacks={attacks} />
     }
 
     return (
         <div className={styles.firepower}>
-            <h3>Core Actions</h3>
-            <div>{customSection}</div>
-            <div className={styles.firepower_section}>
-                {firepower.map((item) => {
-                    return <Feature feature={item} key={item.name} />
-                })}
-            </div>
+            <div>{martialSection}</div>
+            <div>{spellSection}</div>
         </div>
     )
 }

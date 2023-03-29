@@ -17,7 +17,7 @@ const Player = ({ player }) => {
             <CoreStats hp={player.hp} ac={player.ac} />
             <SecondaryStats spellsave={player.spellsave} passive_perception={player.passive_perception} speed={player.speed} />
             <AttributesSection attributes={player.attributes} proficiencies={player.proficiencies} />
-            <FirepowerSection firepower={player.firepower} type={player.type} />
+            <FirepowerSection attacks={player.attacks} spells={player.spells} type={player.type} />
             <FeaturesSection features={player.features} />
             <Effects effects={player.effects} />
         </div>

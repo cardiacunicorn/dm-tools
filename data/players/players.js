@@ -77,14 +77,23 @@ export var players = [
                 misc: []
             }
         },
-        firepower: [
+        attacks: [
             {
-                name: 'Ki Points',
-                uses: 6,
-                recharge: 'SR'
+                name: 'Mithril Claws',
+                stat: 'dex',
+                rarity: 'Uncommon',
+                hit_bonus: 1,
+                damage_die: 'd8',
+                damage_bonus: 1
             }
         ],
         features: [
+            {
+                name: 'Ki Points',
+                uses: 6,
+                recharge: 'SR',
+                activation: 'Special'
+            },
             {
                 name: 'Enlarge',
                 uses: 1,
@@ -108,6 +117,14 @@ export var players = [
             immunities: [],
             resistances: ['Poison'],
             vulnerabilities: []
+        },
+        spells: {
+            slots: {
+                level1: {
+                    total: 2,
+                    used: 1
+                }
+            }
         }
     },
     {
@@ -188,12 +205,12 @@ export var players = [
                 misc: []
             }
         },
-        firepower: [
+        attacks: [
             {
                 name: 'Arming Sword',
-                recharge: 'NA',
                 stat: 'dex',
                 hit_bonus: 1,
+                damage_die: 'd8',
                 damage_bonus: 1
             }
         ],
@@ -320,26 +337,9 @@ export var players = [
                 misc: ['Light Crossbow', 'Dagger', 'Quarterstaff']
             }
         },
-        firepower: [
+        attacks: [
             {
-                name: 'Spellslots',
-                recharge: 'LR',
-                level1: {
-                    max: 4,
-                    current: 3
-                },
-                level2: {
-                    max: 3,
-                    current: 3
-                },
-                level3: {
-                    max: 3,
-                    current: 2
-                },
-                level4: {
-                    max: 1,
-                    current: 1
-                },
+                
             }
         ],
         features: [
@@ -372,6 +372,26 @@ export var players = [
             immunities: ['Sleep'],
             resistances: [],
             vulnerabilities: []
+        },
+        spells: {
+            slots: {
+                level1: {
+                    total: 4,
+                    used: 0
+                },
+                level2: {
+                    total: 3,
+                    used: 1
+                },
+                level3: {
+                    total: 3,
+                    used: 2
+                },
+                level4: {
+                    total: 1,
+                    used: 0
+                },
+            }
         }
     },
     {
@@ -452,18 +472,9 @@ export var players = [
                 misc: []
             }
         },
-        firepower: [
+        attacks: [
             {
-                name: 'Spellslots',
-                recharge: 'LR',
-                level1: {
-                    max: 3,
-                    current: 1
-                },
-                level2: {
-                    max: 3,
-                    current: 3
-                }
+                
             }
         ],
         features: [
@@ -480,6 +491,18 @@ export var players = [
             immunities: [],
             resistances: ['Poison'],
             vulnerabilities: []
+        },
+        spells: {
+            slots: {
+                level1: {
+                    total: 4,
+                    used: 0
+                },
+                level2: {
+                    total: 3,
+                    used: 0
+                }
+            }
         }
     },
     {
@@ -560,14 +583,13 @@ export var players = [
                 misc: ['Rapier']
             }
         },
-        firepower: [
+        attacks: [
             {
-                name: 'Spellslots',
-                recharge: 'SR',
-                level4: {
-                    max: 2,
-                    current: 2
-                }
+                name: 'Eldritch Blast',
+                stat: 'cha',
+                hit_bonus: 1,
+                damage_die: 'd10',
+                damage_bonus: 1
             }
         ],
         features: [
@@ -602,6 +624,14 @@ export var players = [
             immunities: ['Sleep'],
             resistances: [],
             vulnerabilities: []
+        },
+        spells: {
+            slots: {
+                level4: {
+                    total: 2,
+                    used: 0
+                }
+            }
         }
     }
 ];

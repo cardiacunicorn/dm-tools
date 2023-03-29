@@ -261,6 +261,10 @@
         width: 30rem;
         padding: 0 0.5rem;
         border-right: 1px solid grey;
+
+        h3 {
+            margin-top: 0;
+        }
     }
 
     .features_section {
@@ -270,6 +274,32 @@
         width: 30rem;
         padding: 0 0.5rem;
         border-right: 1px solid grey;
+
+        h3 {
+            margin-top: 0;
+        }
+
+        .features_list {
+            .feature {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: space-between;
+                margin-right: 1rem;
+
+                .uses {
+                    display: inline-block;
+                }
+                .feature_name {
+                    display: inline-block;
+                    font-size: 1.4rem;
+                }
+                .feature_effect {
+                    font-size: 1.2rem;
+                    font-style: italic;
+                }
+            }
+        }
     }
 
     .effects {

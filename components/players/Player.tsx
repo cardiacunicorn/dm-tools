@@ -1,4 +1,5 @@
 import styles from '../../styles/Players.module.scss'
+import Feature from './Feature'
 
 const Player = ({ player }) => {
 
@@ -16,7 +17,7 @@ const Player = ({ player }) => {
     }
 
   return (
-    <div className={styles.player}>
+    <div className={styles.player} key={player.name}>
       {/* Must render exact line items, not an object */}
       <div className={styles.initiative_box}>
         <h3>Init</h3>
@@ -108,34 +109,21 @@ const Player = ({ player }) => {
       <div className={styles.firepower}>
         <h3>Firepower</h3>
         <div className={styles.firepower_section}>
-            {
+            {/* {
                 Object.keys(player.firepower).map((ability) => {
                     return (
                         <div className={styles.ability}>{ability}</div>
                     )
                 })
-            }
+            } */}
         </div>
       </div>
       <div className={styles.features_section}>
         <h3>Features</h3>
         <div className={styles.features_list}>
-            {
-                Object.keys(player.features).map((feature) => {
-                    return (
-                        <div>
-                            <div>{feature}</div>
-                        </div>
-                        // Object.keys(feature).map((item, value)=>{
-                        //     return (
-                        //         <div>
-                        //             <div>{value}</div>
-                        //         </div>
-                        //     )
-                        // })
-                    )
-                })
-            }
+            {player.features.map((feature) => {
+                return <Feature feature={feature} key={player.name + '_' + feature.name} />
+            })}
         </div>
       </div>
       <div className={styles.effects}>

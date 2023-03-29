@@ -23,7 +23,7 @@ export default function Party() {
       </div>
       <div className={styles.party}>
         {players.map((player) => (
-          <Player player={player} />
+          <Player player={player} key={player.name} />
         ))}
       </div>
     </div>

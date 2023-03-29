@@ -76,15 +76,15 @@ export var players = [
                 misc: []
             }
         },
-        firepower: {
-            ki: {
+        firepower: [
+            {
                 name: 'Ki Points',
                 uses: 6,
                 recharge: 'SR'
             }
-        },
-        features: {
-            enlarge: {
+        ],
+        features: [
+            {
                 name: 'Enlarge',
                 uses: 1,
                 recharge: 'LR',
@@ -92,7 +92,7 @@ export var players = [
                 activation: 'Action',
                 concentration: true
             },
-            invisibility: {
+            {
                 name: 'Invisibility',
                 uses: 1,
                 recharge: 'LR',
@@ -100,7 +100,7 @@ export var players = [
                 activation: 'Action',
                 concentration: true
             }
-        },
+        ],
         effects: {
             advantage: [],
             disadvantage: [],
@@ -186,50 +186,50 @@ export var players = [
                 misc: []
             }
         },
-        firepower: {
-            ki: {
+        firepower: [
+            {
                 name: 'Ki Points',
                 uses: 6,
                 recharge: 'SR'
             }
-        },
-        features: {
-            action_surge: {
+        ],
+        features: [
+            {
                 name: 'Action Surge',
                 uses: 1,
                 recharge: 'SR',
-                effect: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
+                effect: 'Gain another Action to use as you see fit.',
                 activation: 'Special'
             },
-            second_wind: {
+            {
                 name: 'Second Wind',
                 uses: 1,
                 recharge: 'SR',
-                effect: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
+                effect: 'Recover 1d10 + Fighter Level Hitpoints',
                 activation: 'Bonus'
             },
-            radiant_consumption: {
+            {
                 name: 'Radiant Consumption',
                 uses: 1,
                 recharge: 'LR',
-                effect: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
+                effect: 'Once per turn deal P.B. extra Radiant on an Attack. At the end of your turn, targets within 10ft take another P.B. Radiant Damage.',
                 activation: 'Bonus'
             },
-            healing_hands: {
+            {
                 name: 'Healing Hands',
                 uses: 1,
                 recharge: 'LR',
                 effect: "Heal someone you touch for #PB d4's",
                 activation: 'Action'
             },
-            fighting_spirit: {
+            {
                 name: 'Fighting Spirit',
                 uses: 3,
                 recharge: 'LR',
                 effect: 'Give yourself Advantage on Attack Rolls this turn, and gain Temporary Hit Points.',
                 activation: 'Bonus'
             }
-        },
+        ],
         effects: {
             advantage: [],
             disadvantage: [],
@@ -315,8 +315,8 @@ export var players = [
                 misc: ['Light Crossbow', 'Dagger', 'Quarterstaff']
             }
         },
-        firepower: {
-            spellslots: {
+        firepower: [
+            {
                 name: 'Spellslots',
                 recharge: 'LR',
                 level1: {
@@ -336,16 +336,16 @@ export var players = [
                     current: 1
                 },
             }
-        },
-        features: {
-            arcane_recovery: {
+        ],
+        features: [
+            {
                 name: 'Arcane Recovery',
                 uses: 1,
                 recharge: 'LR',
                 effect: 'Recover spell slots equal to half your level, rounded up. Slot Max: 5.',
                 activation: 'Special'
             },
-            detect_magic: {
+            {
                 name: 'Detect Magic',
                 uses: 1,
                 recharge: 'LR',
@@ -353,14 +353,14 @@ export var players = [
                 activation: 'Action',
                 concentration: true
             },
-            misty_step: {
+            {
                 name: 'Misty Step',
                 uses: 1,
                 recharge: 'LR',
                 effect: 'Cast Misty Step without a slot.',
                 activation: 'Bonus'
             }
-        },
+        ],
         effects: {
             advantage: ['Charmed'],
             disadvantage: [],
@@ -446,23 +446,28 @@ export var players = [
                 misc: []
             }
         },
-        firepower: {
-            main_hand: {
-                name: 'Vicious Heavy Crossbow',
-                activation: 'Action',
-                recharge: 'NA',
-                rarity: 'Rare',
-                effect: ''
+        firepower: [
+            {
+                name: 'Spellslots',
+                recharge: 'LR',
+                level1: {
+                    max: 3,
+                    current: 1
+                },
+                level2: {
+                    max: 3,
+                    current: 3
+                }
             }
-        },
-        features: {
-            sharpshooter: {
+        ],
+        features: [
+            {
                 name: 'Sharpshooter',
                 activation: 'Option',
                 recharge: 'NA',
                 effect: '-5 to Hit, +10 extra damage. Ignore Cover.'
             }
-        },
+        ],
         effects: {
             advantage: [],
             disadvantage: [],
@@ -548,31 +553,34 @@ export var players = [
                 misc: ['Rapier']
             }
         },
-        firepower: {
-            ki: {
-                name: 'Ki Points',
-                uses: 6,
-                recharge: 'SR'
+        firepower: [
+            {
+                name: 'Spellslots',
+                recharge: 'SR',
+                level4: {
+                    max: 2,
+                    current: 2
+                }
             }
-        },
-        features: {
-            enlarge: {
-                name: 'Enlarge',
+        ],
+        features: [
+            {
+                name: 'Darkness',
                 uses: 1,
                 recharge: 'LR',
-                effect: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
+                effect: 'Cast Darkness without a spellslot',
                 activation: 'Action',
                 concentration: true
             },
-            invisibility: {
-                name: 'Invisibility',
+            {
+                name: 'Pactkeeper Spell',
                 uses: 1,
                 recharge: 'LR',
-                effect: 'Turn invisible for up to an hour.',
+                effect: 'Cast any Warlock spell without a spellslot',
                 activation: 'Action',
                 concentration: true
             }
-        },
+        ],
         effects: {
             advantage: ['Charmed'],
             disadvantage: [],

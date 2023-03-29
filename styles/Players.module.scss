@@ -1,19 +1,5 @@
 @import 'variables';
 
-// .hotbar {
-//     display: flex;
-//     flex-flow: row nowrap;
-//     align-items: flex-end;
-//     justify-content: flex-end;
-// }
-
-.party {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    border: solid 2px grey;
-}
-
 .player {
     position: relative;
     display: flex;
@@ -29,6 +15,14 @@
         position: absolute;
         left: 0;
         top: 5rem;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+            margin: 0;
+        }
 
         .current_init {
             font-size: 3rem;
@@ -278,11 +272,39 @@
         border-right: 1px solid grey;
     }
 
-    .conditions {
+    .effects {
         display: flex;
         flex-flow: column wrap;
 
         width: 30rem;
         padding: 0 0.5rem;
+
+        .vantages {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: flex-start;
+            justify-content: space-around;
+
+            > * {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .multipliers {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: flex-start;
+            justify-content: space-around;
+
+            > * {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                justify-content: center;
+            }
+        }
     }
 }

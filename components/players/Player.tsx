@@ -6,12 +6,21 @@ const Player = ({ player }) => {
     const proficientSkills = Object.entries(player.proficiencies.skills).filter(([key, value]) => value == 1);
     const trainingSkills = Object.entries(player.proficiencies.skills).filter(([key, value]) => value == 0.5);
 
+    const resistances = Object.entries(player.effects.resistances);
+    var resistances_section = '';
+    if (resistances.length > 0) {
+        resistances_section = 'Resistances';
+        resistances_section += resistances.map(([key,value]) => {
+            return <div>value</div>
+        })
+    }
+
   return (
     <div className={styles.player}>
       {/* Must render exact line items, not an object */}
       <div className={styles.initiative_box}>
         <h3>Init</h3>
-        <div className={styles.current_init}>XX</div>
+        <div className={styles.current_init}>{player.initiative.current}</div>
       </div>
       <div className={styles.profile}>
         <img src={player.image_path} className={styles.profile_image} />
@@ -98,6 +107,15 @@ const Player = ({ player }) => {
       </div>
       <div className={styles.firepower}>
         <h3>Firepower</h3>
+        <div className={styles.firepower_section}>
+            {
+                Object.keys(player.firepower).map((ability) => {
+                    return (
+                        <div className={styles.ability}>{ability}</div>
+                    )
+                })
+            }
+        </div>
       </div>
       <div className={styles.features_section}>
         <h3>Features</h3>
@@ -120,8 +138,52 @@ const Player = ({ player }) => {
             }
         </div>
       </div>
-      <div className={styles.conditions}>
-        <h3>Conditions</h3>
+      <div className={styles.effects}>
+        <div className={styles.vantages}>
+            <div className={styles.advantages}>
+                <h3>Advantages</h3>
+                <div className={styles.effects_list}>
+                    {player.effects.advantage}
+                </div>
+            </div>
+            <div className={styles.disadvantages}>
+                <h3>Disadvantages</h3>
+                <div className={styles.effects_list}>
+                    {player.effects.disadvantage}
+                </div>
+            </div>
+        </div>
+        <div className={styles.multipliers}>
+            <div className={styles.resistances}>
+                {resistances_section}
+                {/* {
+                    player.effects.resistances > 0 ?
+                        'Resistances' : null
+                } */}
+                {/* <h3>Resistances</h3>
+                <div className={styles.effects_list}>
+                    {player.effects.resistances}
+                </div> */}
+            </div>
+            <div className={styles.vulnerabilities}>
+                <h3>Vulnerabilities</h3>
+                <div className={styles.effects_list}>
+                    {player.effects.vulnerabilities}
+                </div>
+            </div>
+            <div className={styles.immunities}>
+                <h3>Immunities</h3>
+                <div className={styles.effects_list}>
+                    {player.effects.immunities}
+                </div>
+            </div>
+        </div>
+        <div className={styles.conditions_section}>
+            <h3>Conditions</h3>
+            <div className={styles.conditions}>
+
+            </div>
+        </div>
       </div>
     </div>
   )

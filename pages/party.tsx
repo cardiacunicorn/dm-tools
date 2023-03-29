@@ -9,18 +9,19 @@
 import GridLayout from 'react-grid-layout';
 import Player from '../components/players/Player'
 import { players } from '../data/players/players'
+import styles from '../styles/Party.module.scss'
 import Button from '../components/Button'
 
 export default function Party() {
   return (
     <div>
       <h1>Soggy Donkey Boyz</h1>
-      <div className="hotbar">
-        <Button color={'green'} text="Long Rest" type="button" />
-        <Button color={'blue'} text="Short Rest" type="button" />
-        <Button color={'grey'} text="Clear Init" type="button" />
+      <div className={styles.hotbar}>
+        <Button color={'$green'} text="Long Rest" type="button" />
+        <Button color={'$blue'} text="Short Rest" type="button" />
+        <Button color={'$grey'} text="Clear Init" type="button" />
       </div>
-      <div className="party">
+      <div className={styles.party}>
         {players.map((player) => (
           <Player player={player} />
         ))}

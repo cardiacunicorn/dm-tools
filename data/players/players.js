@@ -10,6 +10,10 @@ export var players = [
         spellsave: 14,
         passive_perception: 13,
         speed: 45,
+        initiative: {
+            modifier: 4,
+            current: 20
+        },
         hp: {
             current: 54,
             current_max: 54,
@@ -84,7 +88,7 @@ export var players = [
                 name: 'Enlarge',
                 uses: 1,
                 recharge: 'LR',
-                description: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
+                effect: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
                 activation: 'Action',
                 concentration: true
             },
@@ -96,6 +100,13 @@ export var players = [
                 activation: 'Action',
                 concentration: true
             }
+        },
+        effects: {
+            advantage: [],
+            disadvantage: [],
+            immunities: [],
+            resistances: ['Poison'],
+            vulnerabilities: []
         }
     },
     {
@@ -109,6 +120,10 @@ export var players = [
         spellsave: 13,
         passive_perception: 10,
         speed: 30,
+        initiative: {
+            modifier: 4,
+            current: 20
+        },
         hp: {
             current: 67,
             current_max: 67,
@@ -179,22 +194,48 @@ export var players = [
             }
         },
         features: {
-            enlarge: {
-                name: 'Enlarge',
+            action_surge: {
+                name: 'Action Surge',
                 uses: 1,
-                recharge: 'LR',
-                description: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
-                activation: 'Action',
-                concentration: true
+                recharge: 'SR',
+                effect: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
+                activation: 'Special'
             },
-            invisibility: {
-                name: 'Invisibility',
+            second_wind: {
+                name: 'Second Wind',
+                uses: 1,
+                recharge: 'SR',
+                effect: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
+                activation: 'Bonus'
+            },
+            radiant_consumption: {
+                name: 'Radiant Consumption',
                 uses: 1,
                 recharge: 'LR',
-                effect: 'Turn invisible for up to an hour.',
-                activation: 'Action',
-                concentration: true
+                effect: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
+                activation: 'Bonus'
+            },
+            healing_hands: {
+                name: 'Healing Hands',
+                uses: 1,
+                recharge: 'LR',
+                effect: "Heal someone you touch for #PB d4's",
+                activation: 'Action'
+            },
+            fighting_spirit: {
+                name: 'Fighting Spirit',
+                uses: 3,
+                recharge: 'LR',
+                effect: 'Give yourself Advantage on Attack Rolls this turn, and gain Temporary Hit Points.',
+                activation: 'Bonus'
             }
+        },
+        effects: {
+            advantage: [],
+            disadvantage: [],
+            immunities: [],
+            resistances: ['Radiant','Necrotic'],
+            vulnerabilities: []
         }
     },
     {
@@ -208,6 +249,10 @@ export var players = [
         spellsave: 15,
         passive_perception: 13,
         speed: 30,
+        initiative: {
+            modifier: 3,
+            current: 13
+        },
         hp: {
             current: 46,
             current_max: 46,
@@ -271,29 +316,57 @@ export var players = [
             }
         },
         firepower: {
-            ki: {
-                name: 'Ki Points',
-                uses: 6,
-                recharge: 'SR'
+            spellslots: {
+                name: 'Spellslots',
+                recharge: 'LR',
+                level1: {
+                    max: 4,
+                    current: 3
+                },
+                level2: {
+                    max: 3,
+                    current: 3
+                },
+                level3: {
+                    max: 3,
+                    current: 2
+                },
+                level4: {
+                    max: 1,
+                    current: 1
+                },
             }
         },
         features: {
-            enlarge: {
-                name: 'Enlarge',
+            arcane_recovery: {
+                name: 'Arcane Recovery',
                 uses: 1,
                 recharge: 'LR',
-                description: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
+                effect: 'Recover spell slots equal to half your level, rounded up. Slot Max: 5.',
+                activation: 'Special'
+            },
+            detect_magic: {
+                name: 'Detect Magic',
+                uses: 1,
+                recharge: 'LR',
+                effect: 'Cast Detect Magic without a slot.',
                 activation: 'Action',
                 concentration: true
             },
-            invisibility: {
-                name: 'Invisibility',
+            misty_step: {
+                name: 'Misty Step',
                 uses: 1,
                 recharge: 'LR',
-                effect: 'Turn invisible for up to an hour.',
-                activation: 'Action',
-                concentration: true
+                effect: 'Cast Misty Step without a slot.',
+                activation: 'Bonus'
             }
+        },
+        effects: {
+            advantage: ['Charmed'],
+            disadvantage: [],
+            immunities: ['Magical Sleep'],
+            resistances: [],
+            vulnerabilities: []
         }
     },
     {
@@ -307,6 +380,10 @@ export var players = [
         spellsave: 14,
         passive_perception: 16,
         speed: 35,
+        initiative: {
+            modifier: 7,
+            current: 21
+        },
         hp: {
             current: 60,
             current_max: 60,
@@ -370,29 +447,28 @@ export var players = [
             }
         },
         firepower: {
-            ki: {
-                name: 'Ki Points',
-                uses: 6,
-                recharge: 'SR'
+            main_hand: {
+                name: 'Vicious Heavy Crossbow',
+                activation: 'Action',
+                recharge: 'NA',
+                rarity: 'Rare',
+                effect: ''
             }
         },
         features: {
-            enlarge: {
-                name: 'Enlarge',
-                uses: 1,
-                recharge: 'LR',
-                description: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
-                activation: 'Action',
-                concentration: true
-            },
-            invisibility: {
-                name: 'Invisibility',
-                uses: 1,
-                recharge: 'LR',
-                effect: 'Turn invisible for up to an hour.',
-                activation: 'Action',
-                concentration: true
+            sharpshooter: {
+                name: 'Sharpshooter',
+                activation: 'Option',
+                recharge: 'NA',
+                effect: '-5 to Hit, +10 extra damage. Ignore Cover.'
             }
+        },
+        effects: {
+            advantage: [],
+            disadvantage: [],
+            immunities: [],
+            resistances: ['Poison'],
+            vulnerabilities: []
         }
     },
     {
@@ -406,6 +482,10 @@ export var players = [
         spellsave: 17,
         passive_perception: 14,
         speed: 30,
+        initiative: {
+            modifier: 2,
+            current: 5
+        },
         hp: {
             current: 46,
             current_max: 46,
@@ -480,7 +560,7 @@ export var players = [
                 name: 'Enlarge',
                 uses: 1,
                 recharge: 'LR',
-                description: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
+                effect: 'Size doubles, Adv. on STR Checks & Saves, +1d4 extra damage.',
                 activation: 'Action',
                 concentration: true
             },
@@ -492,6 +572,13 @@ export var players = [
                 activation: 'Action',
                 concentration: true
             }
+        },
+        effects: {
+            advantage: ['Charmed'],
+            disadvantage: [],
+            immunities: ['Magical Sleep'],
+            resistances: [],
+            vulnerabilities: []
         }
     }
 ];

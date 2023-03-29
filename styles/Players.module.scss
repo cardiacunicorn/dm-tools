@@ -313,37 +313,37 @@
         width: 30rem;
         padding: 0 0.5rem;
 
-        .vantages {
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: flex-start;
-            justify-content: space-around;
+        // .vantages {
+        //     display: flex;
+        //     flex-flow: row nowrap;
+        //     align-items: flex-start;
+        //     justify-content: space-around;
 
-            > * {
-                display: flex;
-                flex-flow: column wrap;
-                align-items: center;
-                justify-content: center;
-            }
-        }
+        //     // > * {
+        //     //     display: flex;
+        //     //     flex-flow: column wrap;
+        //     //     align-items: center;
+        //     //     justify-content: center;
+        //     // }
+        // }
 
-        .multipliers {
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: flex-start;
-            justify-content: space-around;
+        // .multipliers {
+        //     display: flex;
+        //     flex-flow: row nowrap;
+        //     align-items: flex-start;
+        //     justify-content: space-around;
 
-            > * {
-                display: flex;
-                flex-flow: column wrap;
-                align-items: center;
-                justify-content: center;
-            }
-        }
+        //     > * {
+        //         display: flex;
+        //         flex-flow: column wrap;
+        //         align-items: center;
+        //         justify-content: center;
+        //     }
+        // }
     }
 
-    .effects_list {
-        display: flex;
-        flex-flow: row wrap;
-    }
+    // .effects_list {
+    //     display: flex;
+    //     flex-flow: row wrap;
+    // }
 }

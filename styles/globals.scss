@@ -155,7 +155,16 @@ td {
 
 .tag {
   display: inline-block;
-  border: 1px solid grey;
+  margin: 0 0.3rem;
+  border-style: solid;
+  border-width: 1px;
   border-radius: 0.5rem;
   padding: 0.2rem 0.3rem;
+}
+
+.tags_list {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
 }

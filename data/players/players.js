@@ -102,7 +102,7 @@ export var players = [
             }
         ],
         effects: {
-            advantage: [],
+            advantage: ['Poisoned'],
             disadvantage: [],
             immunities: [],
             resistances: ['Poison'],

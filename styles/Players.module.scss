@@ -267,6 +267,21 @@
         }
     }
 
+    .attacks_section {
+        .attacks {
+            .attack {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: flex-start;
+
+                .attack_name {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
     .features_section {
         display: flex;
         flex-flow: column wrap;
@@ -312,38 +327,5 @@
 
         width: 30rem;
         padding: 0 0.5rem;
-
-        // .vantages {
-        //     display: flex;
-        //     flex-flow: row nowrap;
-        //     align-items: flex-start;
-        //     justify-content: space-around;
-
-        //     // > * {
-        //     //     display: flex;
-        //     //     flex-flow: column wrap;
-        //     //     align-items: center;
-        //     //     justify-content: center;
-        //     // }
-        // }
-
-        // .multipliers {
-        //     display: flex;
-        //     flex-flow: row nowrap;
-        //     align-items: flex-start;
-        //     justify-content: space-around;
-
-        //     > * {
-        //         display: flex;
-        //         flex-flow: column wrap;
-        //         align-items: center;
-        //         justify-content: center;
-        //     }
-        // }
     }
-
-    // .effects_list {
-    //     display: flex;
-    //     flex-flow: row wrap;
-    // }
 }

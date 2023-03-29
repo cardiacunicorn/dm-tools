@@ -80,10 +80,14 @@ export var players = [
         attacks: [
             {
                 name: 'Mithril Claws',
-                stat: 'dex',
-                rarity: 'Uncommon',
+                proficiency: 3,
+                attribute: 'dex',
+                rarity: 'uncommon',
+                activation: 'Action',
                 hit_bonus: 1,
+                instances: 2,
                 damage_die: 'd8',
+                damage_die_quantity: 1,
                 damage_bonus: 1
             }
         ],
@@ -119,12 +123,13 @@ export var players = [
             vulnerabilities: []
         },
         spells: {
-            slots: {
-                level1: {
+            slots: [
+                {
+                    level: 1,
                     total: 2,
                     used: 1
                 }
-            }
+            ]
         }
     },
     {
@@ -208,9 +213,14 @@ export var players = [
         attacks: [
             {
                 name: 'Arming Sword',
-                stat: 'dex',
+                proficiency: 3,
+                attribute: 'dex',
+                rarity: 'uncommon',
+                activation: 'Action',
+                instances: 2,
                 hit_bonus: 1,
                 damage_die: 'd8',
+                damage_die_quantity: 1,
                 damage_bonus: 1
             }
         ],
@@ -339,7 +349,15 @@ export var players = [
         },
         attacks: [
             {
-                
+                name: 'Fire Bolt',
+                type: 'spell',
+                level: 0,
+                attribute: 'int',
+                instances: 1,
+                hit_bonus: 0,
+                damage_die: 'd10',
+                damage_die_quantity: 2,
+                damage_bonus: 0
             }
         ],
         features: [
@@ -374,24 +392,28 @@ export var players = [
             vulnerabilities: []
         },
         spells: {
-            slots: {
-                level1: {
+            slots: [
+                {
+                    level: 1,
                     total: 4,
                     used: 0
                 },
-                level2: {
+                {
+                    level: 2,
                     total: 3,
                     used: 1
                 },
-                level3: {
+                {
+                    level: 3,
                     total: 3,
                     used: 2
                 },
-                level4: {
+                {
+                    level: 4,
                     total: 1,
                     used: 0
                 },
-            }
+            ]
         }
     },
     {
@@ -474,7 +496,17 @@ export var players = [
         },
         attacks: [
             {
-                
+                name: 'Vicious Heavy Crossbow',
+                type: 'ranged',
+                proficiency: 3,
+                attribute: 'dex',
+                rarity: 'rare',
+                instances: 2,
+                hit_bonus: 0,
+                damage_die: 'd10',
+                damage_die_quantity: 1,
+                damage_bonus: 0,
+                conditional_damage_bonus: 7
             }
         ],
         features: [
@@ -493,16 +525,18 @@ export var players = [
             vulnerabilities: []
         },
         spells: {
-            slots: {
-                level1: {
+            slots: [
+                {
+                    level: 1,
                     total: 4,
                     used: 0
                 },
-                level2: {
+                {
+                    level: 2,
                     total: 3,
                     used: 0
                 }
-            }
+            ]
         }
     },
     {
@@ -586,9 +620,13 @@ export var players = [
         attacks: [
             {
                 name: 'Eldritch Blast',
-                stat: 'cha',
+                type: 'spell',
+                level: 0,
+                attribute: 'cha',
+                instances: 2,
                 hit_bonus: 1,
                 damage_die: 'd10',
+                damage_die_quantity: 1,
                 damage_bonus: 1
             }
         ],
@@ -626,12 +664,13 @@ export var players = [
             vulnerabilities: []
         },
         spells: {
-            slots: {
-                level4: {
+            slots: [
+                {
+                    level: 4,
                     total: 2,
                     used: 0
                 }
-            }
+            ]
         }
     }
 ];

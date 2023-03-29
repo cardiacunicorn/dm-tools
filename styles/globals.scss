@@ -152,3 +152,10 @@ td {
       }
   }
 }
+
+.tag {
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.3rem;
+}

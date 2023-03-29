@@ -1,5 +1,6 @@
 import styles from '../../styles/Players.module.scss'
 import Feature from './Feature'
+import Effects from './Effects'
 
 const Player = ({ player }) => {
 
@@ -126,7 +127,8 @@ const Player = ({ player }) => {
             })}
         </div>
       </div>
-      <div className={styles.effects}>
+      <Effects effects={player.effects} />
+      {/* <div className={styles.effects}>
         <div className={styles.vantages}>
             <div className={styles.advantages}>
                 <h3>Advantages</h3>
@@ -143,7 +145,7 @@ const Player = ({ player }) => {
         </div>
         <div className={styles.multipliers}>
             <div className={styles.resistances}>
-                {resistances_section}
+                {resistances_section} */}
                 {/* {
                     player.effects.resistances > 0 ?
                         'Resistances' : null
@@ -152,7 +154,7 @@ const Player = ({ player }) => {
                 <div className={styles.effects_list}>
                     {player.effects.resistances}
                 </div> */}
-            </div>
+            {/* </div>
             <div className={styles.vulnerabilities}>
                 <h3>Vulnerabilities</h3>
                 <div className={styles.effects_list}>
@@ -172,7 +174,7 @@ const Player = ({ player }) => {
 
             </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

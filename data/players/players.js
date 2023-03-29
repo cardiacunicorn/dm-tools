@@ -364,7 +364,7 @@ export var players = [
         effects: {
             advantage: ['Charmed'],
             disadvantage: [],
-            immunities: ['Magical Sleep'],
+            immunities: ['Sleep'],
             resistances: [],
             vulnerabilities: []
         }
@@ -579,12 +579,20 @@ export var players = [
                 effect: 'Cast any Warlock spell without a spellslot',
                 activation: 'Action',
                 concentration: true
+            },
+            {
+                name: 'Sacrificial Healing',
+                uses: 35,
+                recharge: 'LR',
+                effect: 'A creature you touch regains hitpoints up to 5x your level, and you take half of the amount healed as Necrotic Damage.',
+                activation: 'Action',
+                concentration: true
             }
         ],
         effects: {
             advantage: ['Charmed'],
             disadvantage: [],
-            immunities: ['Magical Sleep'],
+            immunities: ['Sleep'],
             resistances: [],
             vulnerabilities: []
         }

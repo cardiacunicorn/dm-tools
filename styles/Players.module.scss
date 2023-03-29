@@ -289,6 +289,10 @@
 
                 .uses {
                     display: inline-block;
+
+                    input {
+                        margin: 0 0.2rem;
+                    }
                 }
                 .feature_name {
                     display: inline-block;
@@ -302,7 +306,7 @@
         }
     }
 
-    .effects {
+    .effects_section {
         display: flex;
         flex-flow: column wrap;
 
@@ -336,5 +340,10 @@
                 justify-content: center;
             }
         }
+    }
+
+    .effects_list {
+        display: flex;
+        flex-flow: row wrap;
     }
 }

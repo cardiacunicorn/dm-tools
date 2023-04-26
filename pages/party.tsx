@@ -30,11 +30,6 @@ export default function Party() {
           <NewPlayer player={player} key={player.name} />
         ))}
       </div>
-      {/* <div className={styles.party}>
-        {players.map((player) => (
-          <Player player={player} key={player.name} />
-        ))}
-      </div> */}
     </div>
   )
 }

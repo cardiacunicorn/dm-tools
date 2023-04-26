@@ -103,7 +103,9 @@ export interface Weapons {
 
 export interface Attack {
     name: string,
-    proficiency?: number,
+    type?: string,
+    range?: number,
+    level?: number,
     attribute?: string,
     rarity?: string,
     activation?: string,
@@ -111,7 +113,9 @@ export interface Attack {
     hit_bonus?: number,
     damage_die?: number,
     damage_die_quantity?: number,
-    damage_bonus?: number
+    damage_bonus?: number,
+    damage_type?: string,
+    conditional_damage_bonus?: number
 }
 
 export interface Feature {
@@ -119,7 +123,8 @@ export interface Feature {
     uses?: number,
     recharge?: string,
     effect: string,
-    activation?: string
+    activation?: string,
+    concentration?: boolean
 }
 
 export interface Effects {

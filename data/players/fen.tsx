@@ -35,7 +35,7 @@ export var Fen: Player =
     ac: {
         regular: 20,
         current: 20,
-        note: 'Mithril Plate & Shield'
+        note: 'Mithril Plate, Shield'
     },
     attributes: {
         str: 0,
@@ -90,8 +90,19 @@ export var Fen: Player =
     },
     attacks: [
         {
+            name: 'Vicious Heavy Crossbow',
+            type: 'ranged',
+            attribute: 'dex',
+            rarity: 'rare',
+            instances: 2,
+            hit_bonus: 0,
+            damage_die: 10,
+            damage_die_quantity: 1,
+            damage_bonus: 0,
+            conditional_damage_bonus: 7
+        },
+        {
             name: 'Arming Sword',
-            proficiency: 3,
             attribute: 'dex',
             rarity: 'uncommon',
             activation: 'Action',

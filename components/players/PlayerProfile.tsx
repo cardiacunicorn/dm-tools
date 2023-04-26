@@ -21,13 +21,25 @@ export default function PlayerProfile({ ...props }: PlayerProfile) {
             classesOutput += ' (' + props.classes[i].subclass + ')'
         }
     }
+    var primary = `${props.classes[0].name} ${props.classes[0].levels} (${props.classes[0].subclass})`
+
+    var secondary;
+    if (props.classes[1]) {
+        secondary = `${props.classes[1].name} ${props.classes[1].levels}`
+        if (props.classes[1].subclass) {
+            secondary += ` (${props.classes[1].subclass})`
+        }
+    }
 
     return (
         <div className={styles.profile}>
             <img src={props.image_path} className={styles.profile_image} />
             <h1 className={styles.name} style={{color: props.colour}}>{props.name}</h1>
             <h3 className={styles.race} style={{color: props.colour}}>{props.race}</h3>
-            <h3 className={styles.classes} style={{color: props.colour}}>{classesOutput}</h3>
+            <h3 className={styles.classes} style={{color: props.colour}}>
+                {primary}<br />
+                {secondary}
+            </h3>
         </div>
     )
 

@@ -69,7 +69,7 @@ export var Fen: Player =
             athletics: 1,
             deception: 0,
             history: 0,
-            insight: 1,
+            insight: 2,
             intimidation: 1,
             investigation: 0,
             medicine: 0,
@@ -79,7 +79,7 @@ export var Fen: Player =
             persuasion: 0,
             religion: 0,
             sleight_of_hand: 0,
-            stealth: 0,
+            stealth: 2,
             survival: 1
         },
         weapons: {

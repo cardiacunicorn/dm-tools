@@ -122,7 +122,7 @@ export var players = [
             resistances: ['Poison'],
             vulnerabilities: []
         },
-        spells: {
+        spellcasting: {
             slots: [
                 {
                     level: 1,
@@ -391,7 +391,7 @@ export var players = [
             resistances: [],
             vulnerabilities: []
         },
-        spells: {
+        spellcasting: {
             slots: [
                 {
                     level: 1,
@@ -524,7 +524,7 @@ export var players = [
             resistances: ['Poison'],
             vulnerabilities: []
         },
-        spells: {
+        spellcasting: {
             slots: [
                 {
                     level: 1,
@@ -663,7 +663,7 @@ export var players = [
             resistances: [],
             vulnerabilities: []
         },
-        spells: {
+        spellcasting: {
             slots: [
                 {
                     level: 4,

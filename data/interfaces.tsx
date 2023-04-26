@@ -1,7 +1,6 @@
 export interface Player {
     name: string,
     level: number,
-    // proficiency: number,
     image_path: string,
     colour: string,
     race: string,
@@ -15,14 +14,16 @@ export interface Player {
     ac: Armor,
     attributes: Attributes,
     proficiencies?: Proficiencies,
-    attacks?: Attack[],
-    spellcasting?: Spellcasting,
-    features?: Feature[],
-    effects?: Effects,
+    attacks: Attack[],
+    spellcasting: Spellcasting,
+    features: Feature[],
+    effects: Effects,
 }
 
 export interface Spellcasting {
-    slots: SpellLevel[]
+    attribute: string,
+    spellsave: number,
+    slots?: SpellLevel[]
 }
 
 export interface SpellLevel {

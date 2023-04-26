@@ -3,7 +3,7 @@ import { Player } from '../interfaces'
 export var Fen: Player =
 {
     name: 'Fen',
-    level: 7,
+    level: 8,
     image_path: 'images/players/Fen-headshot.png',
     colour: '#E9D554',
     race: 'Half Elf Aasimar',
@@ -27,9 +27,9 @@ export var Fen: Player =
         current: 20
     },
     hp: {
-        current: 67,
-        current_max: 67,
-        regular_max: 67,
+        current: 74,
+        current_max: 74,
+        regular_max: 74,
         temp: 0
     },
     ac: {
@@ -102,6 +102,10 @@ export var Fen: Player =
             damage_bonus: 1
         }
     ],
+    spellcasting: {
+        attribute: 'cha',
+        spellsave: 13
+    },
     features: [
         {
             name: 'Action Surge',

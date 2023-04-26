@@ -32,7 +32,3 @@ export default function PlayerProfile({ ...props }: PlayerProfile) {
     )
 
 }
-
-function outputClass(input) {
-    return [input.name]
-}

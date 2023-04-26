@@ -1,19 +1,18 @@
 import styles from '../../styles/Players.module.scss'
 import AttacksSection from './AttacksSection';
-import Feature from './Feature'
 import SpellsSection from './SpellsSection';
 
 
-const FirepowerSection = ({ attacks, spells, type }) => {
+const FirepowerSection = ({ attacks, spellcasting, type }) => {
 
     var spellSection;
     var martialSection;
     if (type == 'caster') {
         martialSection = <AttacksSection attacks={attacks} />
-        spellSection = <SpellsSection spells={spells} />;
+        spellSection = <SpellsSection spellcasting={spellcasting} />;
     } else if (type == 'hybrid-caster') {
         martialSection = <AttacksSection attacks={attacks} />
-        spellSection = <SpellsSection spells={spells} />;
+        spellSection = <SpellsSection spellcasting={spellcasting} />;
     } else if (type == 'martial') {
         martialSection = <AttacksSection attacks={attacks} />
     }

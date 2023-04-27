@@ -6,20 +6,45 @@ import SpellsSection from './SpellsSection';
 const FirepowerSection = ({ attacks, spellcasting, type }) => {
 
     var spellSection;
-    var martialSection;
+    var attacksSection;
     if (type == 'caster') {
-        martialSection = <AttacksSection attacks={attacks} />
-        spellSection = <SpellsSection spellcasting={spellcasting} />;
+        attacksSection = (
+            <>
+                <h3>Attacks & Cantrips</h3>
+                <AttacksSection attacks={attacks} />
+            </>
+        )
+        spellSection = (
+            <>
+                <h3>Spells</h3>
+                <SpellsSection spellcasting={spellcasting} />
+            </>
+        )
     } else if (type == 'hybrid-caster') {
-        martialSection = <AttacksSection attacks={attacks} />
-        spellSection = <SpellsSection spellcasting={spellcasting} />;
+        attacksSection = (
+            <>
+                <h3>Attacks & Cantrips</h3>
+                <AttacksSection attacks={attacks} />
+            </>
+        )
+        spellSection = (
+            <>
+                <h3>Spells</h3>
+                <SpellsSection spellcasting={spellcasting} />
+            </>
+        )
     } else if (type == 'martial') {
-        martialSection = <AttacksSection attacks={attacks} />
+        attacksSection = (
+            <>
+                <h3>Attacks</h3>
+                <AttacksSection attacks={attacks} />
+            </>
+        )
     }
 
     return (
         <div className={styles.firepower}>
-            <div>{martialSection}</div>
+            <div>{attacksSection}</div>
             <div>{spellSection}</div>
         </div>
     )

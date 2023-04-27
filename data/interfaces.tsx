@@ -122,6 +122,7 @@ export interface Feature {
     name: string,
     uses?: number,
     recharge?: string,
+    rarity?: string,
     effect: string,
     activation?: string,
     concentration?: boolean

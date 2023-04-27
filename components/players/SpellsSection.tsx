@@ -1,14 +1,16 @@
 import styles from '../../styles/Players.module.scss'
-import SpellLevel from './SpellLevel'
+import SpellLevelDisplay from './SpellLevel'
 
 const SpellsSection = ({ spellcasting }) => {
 
     return (
         <div className={styles.spellcasting}>
-            <h3>Spellcasting</h3>
-            <div className={styles.spellslots}>
+            <div className={styles.key_spells}>
+
+            </div>
+            <div className={styles.spell_levels}>
                 {spellcasting.slots.map((spellLevel) => {
-                    return <SpellLevel spellLevel={spellLevel} />
+                    return <SpellLevelDisplay spellLevel={spellLevel} />
                 })}
             </div>
         </div>

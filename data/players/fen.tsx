@@ -152,6 +152,12 @@ export var Fen: Player =
             recharge: 'LR',
             effect: 'Give yourself Advantage on Attack Rolls this turn, and gain Temporary Hit Points.',
             activation: 'Bonus'
+        },
+        {
+            name: 'Cunning Action',
+            recharge: 'NA',
+            effect: 'Dodge, Disengage or Dash',
+            activation: 'Bonus'
         }
     ],
     effects: {

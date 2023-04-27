@@ -118,6 +118,14 @@ export var Funguy: Player =
             activation: 'Action'
         },
         {
+            name: 'Staff of the Woodlands',
+            uses: 10,
+            recharge: 'LR',
+            rarity: 'rare',
+            effect: '1: Animal Friendship, Speak with Animals. 2: Locate Animals/Plants, Barkskin. 3: Speak with Plants. 5: Awaken. 6: Wall of Thorns.',
+            activation: 'Action'
+        },
+        {
             name: 'Halo of Spores',
             recharge: 'NA',
             effect: 'CON Save or take 1d6 Necrotic to one creature if within 10ft',

@@ -104,18 +104,19 @@ export var Wolfgang: Player =
     ],
     features: [
         {
-            name: 'Arcane Recovery',
-            uses: 1,
+            name: 'Sorcery Points',
+            uses: 6,
             recharge: 'LR',
-            effect: 'Recover spell slots equal to half your level, rounded up. Slot Max: 5.',
+            effect: 'You have Sorcery Points equal to your Sorcerer level for Metamagics',
             activation: 'Special'
         },
         {
-            name: 'Misty Step',
+            name: 'Bloodwell Vial',
             uses: 1,
             recharge: 'LR',
-            effect: 'Cast Misty Step without a slot.',
-            activation: 'Bonus'
+            rarity: 'uncommon',
+            effect: 'Recharge 5 Sorcery Points whenever you use a Hit Die to recover health.',
+            activation: 'Special'
         }
     ],
     effects: {
@@ -131,7 +132,7 @@ export var Wolfgang: Player =
         slots: [
             {
                 level: 1,
-                total: 4,
+                total: 5,
                 used: 0
             },
             {

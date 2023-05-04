@@ -15,16 +15,16 @@ export interface PlayerDisplay {
 
 export function Player({ player, ...props }: PlayerDisplay) {
 
-    var proficiency = Math.round((player.level + 5) / 4);
+    var pb = Math.round((player.level + 5) / 4);
 
     return (
-        <div className={styles.player}>
+        <div className={styles.player} id={player.name}>
             <InitiativeBox initiative={player.initiative} />
             <PlayerProfile name={player.name} race={player.race} classes={player.classes} colour={player.colour} image_path={player.image_path} />
             <CoreStats hp={player.hp} ac={player.ac} />
             <SecondaryStats spellsave={player.spellcasting.spellsave} passive_perception={player.passive_perception} speed={player.speed} />
             <AttributesSection attributes={player.attributes} proficiencies={player.proficiencies} />
-            <FirepowerSection attacks={player.attacks} spellcasting={player.spellcasting} type={player.type} />
+            <FirepowerSection pb={pb} attacks={player.attacks} spellcasting={player.spellcasting} type={player.type} />
             <FeaturesSection features={player.features} />
             <Effects effects={player.effects} />
         </div>

@@ -3,7 +3,7 @@ import AttacksSection from './AttacksSection';
 import SpellsSection from './SpellsSection';
 
 
-const FirepowerSection = ({ attacks, spellcasting, type }) => {
+const FirepowerSection = ({ pb, attacks, spellcasting, type }) => {
 
     var spellSection;
     var attacksSection;
@@ -11,33 +11,33 @@ const FirepowerSection = ({ attacks, spellcasting, type }) => {
         attacksSection = (
             <>
                 <h3>Attacks & Cantrips</h3>
-                <AttacksSection attacks={attacks} />
+                <AttacksSection pb={pb} attacks={attacks} />
             </>
         )
         spellSection = (
             <>
                 <h3>Spells</h3>
-                <SpellsSection spellcasting={spellcasting} />
+                <SpellsSection pb={pb} spellcasting={spellcasting} />
             </>
         )
     } else if (type == 'hybrid-caster') {
         attacksSection = (
             <>
                 <h3>Attacks & Cantrips</h3>
-                <AttacksSection attacks={attacks} />
+                <AttacksSection pb={pb} attacks={attacks} />
             </>
         )
         spellSection = (
             <>
                 <h3>Spells</h3>
-                <SpellsSection spellcasting={spellcasting} />
+                <SpellsSection pb={pb} spellcasting={spellcasting} />
             </>
         )
     } else if (type == 'martial') {
         attacksSection = (
             <>
                 <h3>Attacks</h3>
-                <AttacksSection attacks={attacks} />
+                <AttacksSection pb={pb} attacks={attacks} />
             </>
         )
     }

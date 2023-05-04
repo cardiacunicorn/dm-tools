@@ -43,7 +43,7 @@ export var Quarth: Player =
     proficiencies: {
         armor: {
             light: 1,
-            medium: 0,
+            medium: 1,
             heavy: 0,
             shields: 0
         },

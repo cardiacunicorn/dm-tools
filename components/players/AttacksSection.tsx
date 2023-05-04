@@ -1,13 +1,13 @@
 import styles from '../../styles/Players.module.scss'
 import Attack from './Attack'
 
-const AttacksSection = ({ attacks }) => {
+const AttacksSection = ({ pb, attacks }) => {
 
     return (
         <div className={styles.attacks_section}>
             <div className={styles.attacks}>
                 {attacks.map((attack) => {
-                    return <Attack key={attack.name} attack={attack} />
+                    return <Attack key={attack.name} pb={pb} attack={attack} />
                 })}
             </div>
         </div>

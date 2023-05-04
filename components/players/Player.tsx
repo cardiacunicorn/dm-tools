@@ -24,7 +24,7 @@ export function Player({ player, ...props }: PlayerDisplay) {
             <CoreStats hp={player.hp} ac={player.ac} />
             <SecondaryStats spellsave={player.spellcasting.spellsave} passive_perception={player.passive_perception} speed={player.speed} />
             <AttributesSection attributes={player.attributes} proficiencies={player.proficiencies} />
-            <FirepowerSection pb={pb} attacks={player.attacks} spellcasting={player.spellcasting} type={player.type} />
+            <FirepowerSection pb={pb} attributes={player.attributes} attacks={player.attacks} spellcasting={player.spellcasting} type={player.type} />
             <FeaturesSection features={player.features} />
             <Effects effects={player.effects} />
         </div>

@@ -1,7 +1,7 @@
 import styles from '../../styles/Players.module.scss'
 import SpellLevelDisplay from './SpellLevel'
 
-const SpellsSection = ({ pb, spellcasting }) => {
+const SpellsSection = ({ pb, attributes, spellcasting }) => {
 
     return (
         <div className={styles.spellcasting}>

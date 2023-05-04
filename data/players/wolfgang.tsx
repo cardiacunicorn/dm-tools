@@ -16,7 +16,6 @@ export var Wolfgang: Player =
         {
             name: 'Warlock',
             levels: 1,
-            subclass: 'Hexblade'
         }
     ],
     type: 'caster',
@@ -40,9 +39,9 @@ export var Wolfgang: Player =
     },
     attributes: {
         str: -1,
-        dex: 2,
+        dex: 3,
         con: 2,
-        int: 0,
+        int: -1,
         wis: -1,
         cha: 5,
     },
@@ -91,7 +90,7 @@ export var Wolfgang: Player =
     },
     attacks: [
         {
-            name: 'Sacred Flame',
+            name: 'Pact Blade of Nox',
             type: 'spellsave',
             level: 0,
             attribute: 'cha',
@@ -120,10 +119,10 @@ export var Wolfgang: Player =
         }
     ],
     effects: {
-        advantage: ['Concentration'],
+        advantage: [],
         disadvantage: [],
         immunities: [],
-        resistances: [],
+        resistances: ['Lightning'],
         vulnerabilities: []
     },
     spellcasting: {
@@ -132,7 +131,7 @@ export var Wolfgang: Player =
         slots: [
             {
                 level: 1,
-                total: 5,
+                total: 4,
                 used: 0
             },
             {
@@ -144,6 +143,11 @@ export var Wolfgang: Player =
                 level: 3,
                 total: 3,
                 used: 2
+            },
+            {
+                level: 4,
+                total: 1,
+                used: 0
             },
         ]
     }

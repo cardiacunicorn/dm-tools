@@ -5,7 +5,7 @@ const Attack = ({ attack }) => {
   return (
       <div className={styles.attack} key={attack.name}>
         <div className={styles.attack_name + ' ' + attack.rarity}>
-            {attack.name}
+            {attack.name}:&nbsp;
         </div>
         <div className={styles.hit}>
             Hit: {attack.attribute} {attack.hit_bonus == 0 ? '' : '+ '+(attack.proficiency+attack.hit_bonus)}

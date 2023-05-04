@@ -13,7 +13,7 @@ export interface PlayerDisplay {
     player: Player
 }
 
-export function NewPlayer({ player, ...props }: PlayerDisplay) {
+export function Player({ player, ...props }: PlayerDisplay) {
 
     var proficiency = Math.round((player.level + 5) / 4);
 

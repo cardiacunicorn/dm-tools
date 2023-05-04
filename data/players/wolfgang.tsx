@@ -27,15 +27,15 @@ export var Wolfgang: Player =
         current: 13
     },
     hp: {
-        current: 45,
-        current_max: 45,
-        regular_max: 45,
+        current: 51,
+        current_max: 51,
+        regular_max: 51,
         temp: 0
     },
     ac: {
         regular: 20,
         current: 20,
-        note: 'Mithril Halfplate, Shield'
+        note: 'Bracers of Defence'
     },
     attributes: {
         str: -1,
@@ -50,7 +50,7 @@ export var Wolfgang: Player =
             light: 1,
             medium: 1,
             heavy: 0,
-            shields: 1
+            shields: 0
         },
         tools: ['Dragonchess'],
         languages: ['Giant', 'Orc'],

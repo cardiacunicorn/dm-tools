@@ -222,9 +222,13 @@
             font-size: small;
 
             .save {
-                border: 1px solid grey;
+                border: 1px solid $grey;
                 border-radius: 0.5rem;
                 padding: 0.2rem 0.3rem;
+
+                &.proficient {
+                    border: 1px solid $green;
+                }
             }
         }
 
@@ -236,7 +240,7 @@
 
             > * {
                 margin: 0.3rem;
-                border: 1px solid grey;
+                border: 1px solid $grey;
                 border-radius: 0.5rem;
                 padding: 0.2rem 0.3rem;
             }

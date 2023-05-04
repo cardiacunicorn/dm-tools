@@ -7,7 +7,7 @@ const AttacksSection = ({ attacks }) => {
         <div className={styles.attacks_section}>
             <div className={styles.attacks}>
                 {attacks.map((attack) => {
-                    return <Attack attack={attack} />
+                    return <Attack key={attack.name} attack={attack} />
                 })}
             </div>
         </div>

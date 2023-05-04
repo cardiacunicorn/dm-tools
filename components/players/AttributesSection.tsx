@@ -5,6 +5,8 @@ const AttributesSection = ({ attributes, proficiencies }) => {
     const expertSkills = Object.entries(proficiencies.skills).filter(([key, value]) => value > 1);
     const proficientSkills = Object.entries(proficiencies.skills).filter(([key, value]) => value == 1);
     const trainingSkills = Object.entries(proficiencies.skills).filter(([key, value]) => value == 0.5);
+    
+    const saves = Object.entries(proficiencies.saves);
 
     return (
         <div className={styles.attributes}>
@@ -25,27 +27,30 @@ const AttributesSection = ({ attributes, proficiencies }) => {
                 <div className={styles.charisma}>{attributes.cha}</div>
             </div>
             <div className={styles.saves}>
-                <div className={styles.save}>Save</div>
-                <div className={styles.save}>Save</div>
-                <div className={styles.save}>Save</div>
-                <div className={styles.save}>Save</div>
-                <div className={styles.save}>Save</div>
-                <div className={styles.save}>Save</div>
+                {saves.map(([atr, prof]) => {
+                    let proficient;
+                    if (prof == 1) {
+                        proficient = styles.proficient
+                    }
+                    return (
+                        <div className={`${styles.save} ${proficient}`}>Save</div>
+                    )
+                })}
             </div>
             <h3>Skill Proficiencies</h3>
             <div className={styles.skill_list}>
                 {expertSkills.map(([skill, value]) => (
-                    <div className={styles.expert_skill}>{skill}</div>
+                    <div key={skill} className={styles.expert_skill}>{skill}</div>
                 ))}
             </div>
             <div className={styles.skill_list}>
                 {proficientSkills.map(([skill, value]) => (
-                    <div className={styles.proficient_skill}>{skill}</div>
+                    <div key={skill} className={styles.proficient_skill}>{skill}</div>
                 ))}
             </div>
             <div className={styles.skill_list}>
                 {trainingSkills.map(([skill, value]) => (
-                    <div className={styles.half_proficient_skill}>{skill}</div>
+                    <div key={skill} className={styles.half_proficient_skill}>{skill}</div>
                 ))}
             </div>
         </div>

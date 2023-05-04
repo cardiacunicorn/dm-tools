@@ -32,7 +32,7 @@ export var Funguy: Player =
     ac: {
         regular: 20,
         current: 20,
-        note: 'Natural Armor, Bracers'
+        note: 'Natural Armor, Shield'
     },
     attributes: {
         str: 1,

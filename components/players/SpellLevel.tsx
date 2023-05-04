@@ -12,9 +12,9 @@ export default function SpellLevelDisplay ({ spellLevel }) {
   for (let i = 1; i <= spellLevel.total; i++) {
     if (i <= spellLevel.used) {
       // checkboxes.push(<Checkbox id={spellLevel.level + '-' + i} value={true} />)
-      checkboxes.push(<SpellSlot id={spellLevel.level + '-' + i} type={spellLevel.level} value={true} />)
+      checkboxes.push(<SpellSlot key={spellLevel.level + '-' + i} id={spellLevel.level + '-' + i} type={spellLevel.level} value={true} />)
     } else {
-      checkboxes.push(<SpellSlot id={spellLevel.level + '-' + i} type={spellLevel.level} value={false} />)
+      checkboxes.push(<SpellSlot key={spellLevel.level + '-' + i} id={spellLevel.level + '-' + i} type={spellLevel.level} value={false} />)
     }
   }
 

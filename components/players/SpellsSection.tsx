@@ -10,7 +10,7 @@ const SpellsSection = ({ spellcasting }) => {
             </div>
             <div className={styles.spell_levels}>
                 {spellcasting.slots.map((spellLevel) => {
-                    return <SpellLevelDisplay spellLevel={spellLevel} />
+                    return <SpellLevelDisplay key={spellLevel.level} spellLevel={spellLevel} />
                 })}
             </div>
         </div>

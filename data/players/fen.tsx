@@ -59,7 +59,7 @@ export var Fen: Player =
             dex: 0,
             con: 1,
             int: 0,
-            wis: 1,
+            wis: 0,
             cha: 0
         },
         skills: {

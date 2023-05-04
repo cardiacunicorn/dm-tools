@@ -14,7 +14,6 @@ export default function PlayerProfile({ ...props }: PlayerProfile) {
     var classesOutput = "";
     for (let i = 0; i < props.classes.length; i++) {
         classesOutput += props.classes[i].name + ' ' + props.classes[i].levels
-        console.log(props.classes.length)
         if (i+1 < props.classes.length) {
             classesOutput += ' / '
         } else if (props.classes[i].subclass) {

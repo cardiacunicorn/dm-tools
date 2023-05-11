@@ -96,11 +96,6 @@ export var Pico: Player =
             type: 'Ranged Attack',
             range: 400,
             instances: 2,
-            hit_bonus: 0,
-            damage_die: 10,
-            damage_die_quantity: 1,
-            damage_bonus: 0,
-            conditional_damage_bonus: 7,
             hit: {
                 attribute: true
             },

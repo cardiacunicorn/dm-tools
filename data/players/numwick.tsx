@@ -88,7 +88,6 @@ export var Numwick: Player =
             name: 'Fire Bolt',
             activation: 'Action',
             attribute: 'int',
-            instances: 1,
             range: 120,
             rarity: 'common',
             type: 'Ranged Spell Attack',

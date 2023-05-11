@@ -88,7 +88,6 @@ export var Funguy: Player =
             name: 'Chill Touch',
             activation: 'Action',
             attribute: 'wis',
-            instances: 1,
             level: 0,
             range: 120,
             rarity: 'common',
@@ -105,7 +104,6 @@ export var Funguy: Player =
             name: 'Staff of the Woodlands',
             activation: 'Action',
             attribute: 'wis',
-            instances: 1,
             rarity: 'rare',
             type: 'Melee Attack',
             hit: {

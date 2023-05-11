@@ -88,7 +88,6 @@ export var Dorxif: Player =
             name: 'Fire Bolt',
             activation: 'Action',
             attribute: 'int',
-            instances: 1,
             range: 120,
             rarity: 'common',
             type: 'Ranged Spell Attack',
@@ -103,7 +102,6 @@ export var Dorxif: Player =
         {
             name: 'Arcane Firearm',
             activation: 'Special',
-            instances: 1,
             rarity: 'common',
             type: 'Conditional',
             damage: [{
@@ -114,7 +112,6 @@ export var Dorxif: Player =
             name: 'Force Ballista',
             activation: 'Bonus',
             attribute: 'int',
-            instances: 1,
             rarity: 'common',
             type: 'Ranged Spell Attack',
             hit: {

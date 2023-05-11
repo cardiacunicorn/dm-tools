@@ -99,11 +99,6 @@ export var Fen: Player =
             rarity: 'rare',
             type: 'Melee Attack',
             instances: 2,
-            hit_bonus: 1,
-            damage_die: 8,
-            damage_die_quantity: 1,
-            damage_bonus: 1,
-            conditional_damage_bonus: 5,
             hit: {
                 attribute: true,
                 modifier: 1
@@ -134,11 +129,6 @@ export var Fen: Player =
             type: 'Ranged Attack',
             range: '100/400ft',
             instances: 2,
-            hit_bonus: 0,
-            damage_die: 10,
-            damage_die_quantity: 1,
-            damage_bonus: 0,
-            conditional_damage_bonus: 7,
             hit: {
                 attribute: true
             },
@@ -161,11 +151,6 @@ export var Fen: Player =
             rarity: 'common',
             type: 'Ranged Attack',
             instances: 2,
-            hit_bonus: 0,
-            damage_die: 10,
-            damage_die_quantity: 1,
-            damage_bonus: 0,
-            conditional_damage_bonus: 7,
             hit: {
                 attribute: true
             },

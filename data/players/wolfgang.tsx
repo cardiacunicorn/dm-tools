@@ -92,7 +92,6 @@ export var Wolfgang: Player =
             name: 'Pact Blade of Nox',
             activation: 'Action',
             attribute: 'cha',
-            instances: 1,
             notes: [
                 {label: 'Vex', text: 'Once per turn, on a hit, get Adv. on your next attack against that target.'}
             ],
@@ -110,7 +109,6 @@ export var Wolfgang: Player =
             name: 'Shocking Grasp',
             activation: 'Action',
             attribute: 'cha',
-            instances: 1,
             range: '5ft',
             rarity: 'common',
             type: 'Melee Spell Attack',

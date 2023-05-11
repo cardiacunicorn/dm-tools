@@ -98,6 +98,22 @@ export var Quarth: Player =
     ],
     features: [
         {
+            name: 'Pactkeeper Spell',
+            uses: 1,
+            recharge: 'LR',
+            effect: 'Cast any Warlock spell without a spellslot',
+            activation: 'Action',
+            attunement: true
+        },
+        {
+            name: 'Faerie Fire',
+            uses: 1,
+            recharge: 'LR',
+            effect: 'Cast Faerie Fire without a spellslot',
+            activation: 'Action',
+            concentration: true
+        },
+        {
             name: 'Darkness',
             uses: 1,
             recharge: 'LR',
@@ -106,21 +122,27 @@ export var Quarth: Player =
             concentration: true
         },
         {
-            name: 'Pactkeeper Spell',
-            uses: 1,
-            recharge: 'LR',
-            effect: 'Cast any Warlock spell without a spellslot',
-            activation: 'Action',
-            concentration: true
-        },
-        {
             name: 'Sacrificial Healing',
             uses: 35,
             recharge: 'LR',
             effect: 'A creature you touch regains hitpoints up to 5x your level, and you take half of the amount healed as Necrotic Damage.',
-            activation: 'Action',
-            concentration: true
-        }
+            activation: 'Action'
+        },
+        {
+            name: 'Masquerade Tattoo',
+            uses: 1,
+            recharge: 'LR',
+            attunement: true,
+            effect: 'Cast Disguise Self once per day for free, DC 13 for creatures to identify the disguise.',
+            activation: 'Action'
+        },
+        {
+            name: 'Entropic Ward',
+            uses: 1,
+            recharge: 'SR',
+            effect: 'Give Disadvantage to an Attack Roll against you, and gain Advantage on your next Attack Roll against that creature.',
+            activation: 'Reaction'
+        },
     ],
     effects: {
         advantage: ['Charmed'],

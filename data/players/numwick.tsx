@@ -1,17 +1,17 @@
 import { Player } from '../interfaces'
 
-export var Funguy: Player =
+export var Numwick: Player =
 {
-    name: 'Funguy',
-    level: 7,
-    image_path: 'images/players/Funguy-headshot.png',
-    colour: '#096340',
-    race: 'Tortle',
+    name: 'Numwick',
+    level: 8,
+    image_path: 'images/players/Numwick-headshot.png',
+    colour: '#3F7CF7',
+    race: 'High Elf',
     classes: [
         {
-            name: 'Druid',
-            levels: 7,
-            subclass: 'Spores'
+            name: 'Wizard',
+            levels: 8,
+            subclass: 'Evocation'
         }
     ],
     type: 'caster',
@@ -86,54 +86,39 @@ export var Funguy: Player =
     },
     attacks: [
         {
-            name: 'Chill Touch',
-            type: 'spell',
-            level: 0,
-            attribute: 'wis',
+            name: 'Fire Bolt',
+            type: 'Spell Attack',
+            range: 120,
+            attribute: 'int',
             instances: 1,
-            hit_bonus: 2,
-            damage_die: 8,
+            hit_bonus: 0,
+            damage_die: 10,
             damage_die_quantity: 2,
-            damage_bonus: 0
-        },
-        {
-            name: 'Staff of the Woodlands',
-            type: 'Melee',
-            attribute: 'wis',
-            rarity: 'rare',
-            instances: 1,
-            hit_bonus: 2,
-            damage_die: 8,
-            damage_die_quantity: 1,
-            damage_bonus: 2
+            damage_type: 'Fire'
         },
     ],
     features: [
         {
-            name: 'Wild Shape',
-            uses: 2,
-            recharge: 'SR',
-            effect: 'Transform into a CR1 Beast for up to 3 hours.',
-            activation: 'Action'
-        },
-        {
-            name: 'Staff of the Woodlands',
-            uses: 10,
+            name: 'Chronosphere',
+            uses: 1,
             recharge: 'LR',
-            rarity: 'rare',
-            effect: '1: Animal Friendship, Speak with Animals. 2: Locate Animals/Plants, Barkskin. 3: Speak with Plants. 5: Awaken. 6: Wall of Thorns.',
+            rarity: 'legendary',
+            effect: 'Take 1 point of damage, and gain a Legendary Action',
             activation: 'Action'
         },
         {
-            name: 'Halo of Spores',
-            effect: 'CON Save or take 1d6 Necrotic to one creature if within 10ft',
-            activation: 'Reaction'
-        }
+            name: 'Masquerade Tattoo',
+            uses: 1,
+            recharge: 'LR',
+            attunement: true,
+            effect: 'Cast Disguise Self once per day for free, DC 13 for creatures to identify the disguise.',
+            activation: 'Action'
+        },
     ],
     effects: {
-        advantage: ['Concentration'],
+        advantage: ['Charmed'],
         disadvantage: [],
-        immunities: [],
+        immunities: ['Sleep'],
         resistances: [],
         vulnerabilities: []
     },
@@ -149,16 +134,16 @@ export var Funguy: Player =
             {
                 level: 2,
                 total: 3,
-                used: 1
+                used: 0
             },
             {
                 level: 3,
                 total: 3,
-                used: 2
+                used: 0
             },
             {
                 level: 4,
-                total: 1,
+                total: 2,
                 used: 0
             },
         ]

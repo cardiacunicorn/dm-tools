@@ -103,14 +103,33 @@ export var Dorxif: Player =
             damage_die: 8,
             damage_die_quantity: 1
         },
+        {
+            name: 'Force Ballista',
+            type: 'Ranged Spell Attack',
+            activation: 'Bonus',
+            instances: 1,
+            damage_die: 8,
+            damage_die_quantity: 2,
+            hit: {
+                attribute: 'int',
+                proficiency: true,
+                modifier: 0
+            },
+            damage: [{
+                attribute: false,
+                type: 'Force',
+                dice: '2d8',
+                modifier: 0
+            }]
+        },
     ],
     features: [
         {
             name: 'Eldritch Cannon',
             uses: 35,
             recharge: 'LR',
-            effect: 'A creature you touch regains hitpoints up to 5x your level, and you take half of the amount healed as Necrotic Damage.',
-            activation: 'Bonus'
+            effect: 'Once per long rest you can spend a spell slot to create an Eldritch Cannon.',
+            activation: 'Action'
         },
         {
             name: 'Flash of Genius',

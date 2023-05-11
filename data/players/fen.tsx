@@ -11,7 +11,7 @@ export var Fen: Player =
         {
             name: 'Fighter',
             levels: 6,
-            subclass: 'Samurai'
+            subclass: 'Champion'
         },
         {
             name: 'Rogue',
@@ -90,7 +90,39 @@ export var Fen: Player =
     },
     attacks: [
         {
+            name: 'Moarri',
+            activation: 'Action',
+            attribute: 'dex',
+            rarity: 'rare',
+            type: 'Melee Attack',
+            instances: 2,
+            hit_bonus: 1,
+            damage_die: 8,
+            damage_die_quantity: 1,
+            damage_bonus: 1,
+            conditional_damage_bonus: 5,
+            hit: {
+                attribute: true,
+                proficiency: true,
+                modifier: 1
+            },
+            damage: [
+                {
+                    attribute: true,
+                    type: 'Piercing',
+                    dice: '1d8',
+                    modifier: 1
+                },
+                {
+                    attribute: false,
+                    type: 'Cold',
+                    dice: '1d6'
+                }
+            ]
+        },
+        {
             name: 'Vicious Heavy Crossbow',
+            activation: 'Action',
             type: 'ranged',
             attribute: 'dex',
             rarity: 'rare',
@@ -103,14 +135,26 @@ export var Fen: Player =
         },
         {
             name: 'Arming Sword',
+            activation: 'Action',
             attribute: 'dex',
             rarity: 'uncommon',
-            activation: 'Action',
             instances: 2,
             hit_bonus: 1,
             damage_die: 8,
             damage_die_quantity: 1,
             damage_bonus: 1
+        },
+        {
+            name: 'Sneak Attack',
+            activation: 'Special',
+            attribute: 'dex',
+            damage: [
+                {
+                    attribute: false,
+                    type: 'Piercing',
+                    dice: '1d6'
+                }
+            ]
         }
     ],
     spellcasting: {
@@ -147,15 +191,7 @@ export var Fen: Player =
             activation: 'Action'
         },
         {
-            name: 'Fighting Spirit',
-            uses: 3,
-            recharge: 'LR',
-            effect: 'Give yourself Advantage on Attack Rolls this turn, and gain Temporary Hit Points.',
-            activation: 'Bonus'
-        },
-        {
             name: 'Cunning Action',
-            recharge: 'NA',
             effect: 'Dodge, Disengage or Dash',
             activation: 'Bonus'
         }

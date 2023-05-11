@@ -7,11 +7,8 @@ export default function SpellLevelDisplay ({ spellLevel }) {
 
   var checkboxes: JSX.Element[] = [];
 
-  // checkboxes.push(<SpellSlot id={spellLevel.level + '-' + i} type={spellLevel.level} value={true} />)
-
   for (let i = 1; i <= spellLevel.total; i++) {
     if (i <= spellLevel.used) {
-      // checkboxes.push(<Checkbox id={spellLevel.level + '-' + i} value={true} />)
       checkboxes.push(<SpellSlot key={spellLevel.level + '-' + i} id={spellLevel.level + '-' + i} type={spellLevel.level} value={true} />)
     } else {
       checkboxes.push(<SpellSlot key={spellLevel.level + '-' + i} id={spellLevel.level + '-' + i} type={spellLevel.level} value={false} />)
@@ -24,7 +21,7 @@ export default function SpellLevelDisplay ({ spellLevel }) {
           {checkboxes}
         </div>
         <div className={styles.spell_level}>
-          {/* L{spellLevel.level} */}
+          {spellLevel.level}
         </div>
       </div>
   )

@@ -1,9 +1,11 @@
 import { Player } from '../interfaces'
 
+import { Pico } from './pico'
 import { Fen } from './fen'
-import { Dorxif } from './dorxif'
+import { Numwick } from './numwick'
 import { Wolfgang } from './wolfgang'
+import { Dorxif } from './dorxif'
 import { Funguy } from './funguy'
 import { Quarth } from './quarth'
 
-export var party: Player[] = [Fen, Dorxif, Wolfgang, Funguy, Quarth]
+export var party: Player[] = [Pico, Fen, Numwick, Wolfgang, Dorxif, Funguy, Quarth]

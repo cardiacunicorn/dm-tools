@@ -180,6 +180,39 @@ export var Funguy: Player =
                 total: 1,
                 used: 0
             },
+        ],
+        spells: [
+            {
+                name: 'Cure Wounds',
+                activation: 'Action',
+                level: 1,
+                damage: [{
+                    attribute: true,
+                    dice: '1d8',
+                    type: 'Healing'
+                }]
+            },
+            {
+                name: 'Blindness/Deafness',
+                activation: 'Action',
+                level: 2,
+                range: 30,
+                save: 'con'
+            },
+            {
+                name: 'Call Lightning',
+                activation: 'Action',
+                concentration: true,
+                level: 3,
+                range: 120,
+                save: 'dex',
+                shape: 'Cylinder',
+                damage: [{
+                    attribute: false,
+                    dice: '3d10',
+                    type: 'Lightning'
+                }]
+            }
         ]
     }
 }

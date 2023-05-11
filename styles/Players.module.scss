@@ -307,7 +307,13 @@
         margin-top: 0.5rem;
 
         .spellcasting {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            
             .spells {
+                display: inline-block;
                 .spell {
 
                 }

@@ -22,7 +22,8 @@ export interface Player {
 export interface Spellcasting {
     attribute: string,
     spellsave: number,
-    slots?: SpellLevel[]
+    slots?: SpellLevel[],
+    spells?: any
 }
 
 export interface SpellLevel {

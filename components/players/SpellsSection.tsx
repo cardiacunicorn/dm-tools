@@ -3,10 +3,21 @@ import SpellLevelDisplay from './SpellLevel'
 
 const SpellsSection = ({ pb, attributes, spellcasting }) => {
 
+    console.log(spellcasting)
+
+    var featuredSpells: JSX.Element = <></>;
+    if (spellcasting.spells) {
+        featuredSpells = spellcasting.spells.map((spell) => {
+            return (
+                <div>{spell.name}</div>
+            )
+        })
+    }
+
     return (
         <div className={styles.spellcasting}>
-            <div className={styles.key_spells}>
-
+            <div className={styles.spells}>
+                {featuredSpells}
             </div>
             <div className={styles.spell_levels}>
                 {spellcasting.slots.map((spellLevel) => {

@@ -15,7 +15,6 @@ export var Dorxif: Player =
         }
     ],
     type: 'hybrid-caster',
-    spellsave: 16,
     passive_perception: 10,
     speed: 30,
     initiative: {
@@ -87,29 +86,35 @@ export var Dorxif: Player =
     attacks: [
         {
             name: 'Fire Bolt',
-            type: 'Spell Attack',
-            range: 120,
             attribute: 'int',
             instances: 1,
-            hit_bonus: 0,
-            damage_die: 10,
-            damage_die_quantity: 2,
-            damage_type: 'Fire'
+            range: 120,
+            rarity: 'common',
+            type: 'Ranged Spell Attack',
+            hit: {
+                attribute: true
+            },
+            damage: [{
+                dice: '2d10',
+                type: 'Fire'
+            }]
         },
         {
             name: 'Arcane Firearm',
-            type: 'Spell Attack',
+            activation: 'Special',
             instances: 1,
-            damage_die: 8,
-            damage_die_quantity: 1
+            rarity: 'common',
+            type: 'Conditional',
+            damage: [{
+                dice: '1d8'
+            }]
         },
         {
             name: 'Force Ballista',
-            type: 'Ranged Spell Attack',
             activation: 'Bonus',
             instances: 1,
-            damage_die: 8,
-            damage_die_quantity: 2,
+            type: 'Ranged Spell Attack',
+            rarity: 'common',
             hit: {
                 attribute: 'int',
                 proficiency: true,
@@ -129,6 +134,20 @@ export var Dorxif: Player =
             uses: 35,
             recharge: 'LR',
             effect: 'Once per long rest you can spend a spell slot to create an Eldritch Cannon.',
+            activation: 'Action'
+        },
+        {
+            name: 'Dorxif\'s Majestic Rod',
+            rarity: 'uncommon',
+            effect: '+1 Bonus to Spell Attack rolls, and ignore half cover.',
+            activation: 'Always'
+        },
+        {
+            name: 'Signet Ring',
+            uses: 1,
+            rarity: 'uncommon',
+            recharge: 'LR',
+            effect: 'Once per long rest you can recover one spell slot up to 3rd level.',
             activation: 'Action'
         },
         {

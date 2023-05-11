@@ -4,7 +4,7 @@ const Attack = ({ pb, ab, attack }) => {
 
   const hit = pb + ab + attack.hit_bonus
   let hitSection: JSX.Element = <></>;
-  if (hit > -5) {
+  if (hit > -20) {
     hitSection = (
       <div className={styles.hit}>
         +{hit} to hit;&nbsp;
@@ -26,6 +26,24 @@ const Attack = ({ pb, ab, attack }) => {
     </div>
   )
 
+  let notesSection: JSX.Element = <></>;
+  if (attack.notes) {
+    notesSection = (
+      <div className={styles.attack_notes}>
+        {attack.notes.map((note) => {
+          return (
+            <div className={styles.attack_note}>
+              <strong>{note.label}: </strong>
+              {note.text}
+            </div>
+          )
+        })}
+      </div>
+    )
+  }
+
+  console.log(attack.notes);
+
   return (
       <div className={styles.attack} key={attack.name}>
         <div className={styles.attack_name+' '+attack.rarity}>
@@ -33,6 +51,7 @@ const Attack = ({ pb, ab, attack }) => {
         </div>
         {hitSection}
         {damageSection}
+        {notesSection}
       </div>
   )
 }

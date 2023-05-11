@@ -6,7 +6,6 @@ export interface Player {
     race: string,
     classes: Class[],
     type: string,
-    spellsave: number,
     passive_perception: number,
     speed: number,
     initiative: Initiative,
@@ -15,7 +14,7 @@ export interface Player {
     attributes: Attributes,
     proficiencies?: Proficiencies,
     attacks: Attack[],
-    spellcasting: Spellcasting,
+    spellcasting?: Spellcasting,
     features: Feature[],
     effects: Effects,
 }
@@ -29,7 +28,7 @@ export interface Spellcasting {
 export interface SpellLevel {
     level: number,
     total: number,
-    used?: number
+    used: number
 }
 
 export interface Class {
@@ -51,7 +50,7 @@ export interface Health {
 }
 
 export interface Armor {
-    current?: number,
+    current: number,
     regular: number,
     note?: string
 }
@@ -103,12 +102,15 @@ export interface Weapons {
 
 export interface Attack {
     name: string,
-    type?: string,
-    range?: number,
-    level?: number,
-    attribute?: string,
-    rarity?: string,
     activation?: string,
+    attribute?: string,
+    damage?: any,
+    hit?: any,
+    level?: number,
+    notes?: any,
+    range?: any,
+    rarity?: string,
+    type?: string,
     instances?: number,
     hit_bonus?: number,
     damage_die?: number,
@@ -120,12 +122,13 @@ export interface Attack {
 
 export interface Feature {
     name: string,
-    uses?: number,
+    activation?: string,
+    attunement?: boolean,
+    concentration?: boolean,
+    effect: string,
     recharge?: string,
     rarity?: string,
-    effect: string,
-    activation?: string,
-    concentration?: boolean
+    uses?: number
 }
 
 export interface Effects {

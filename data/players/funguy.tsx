@@ -15,7 +15,6 @@ export var Funguy: Player =
         }
     ],
     type: 'caster',
-    spellsave: 15,
     passive_perception: 17,
     speed: 30,
     initiative: {
@@ -87,45 +86,66 @@ export var Funguy: Player =
     attacks: [
         {
             name: 'Chill Touch',
-            type: 'spell',
-            level: 0,
+            activation: 'Action',
             attribute: 'wis',
             instances: 1,
-            hit_bonus: 2,
-            damage_die: 8,
-            damage_die_quantity: 2,
-            damage_bonus: 0
+            level: 0,
+            rarity: 'common',
+            type: 'Ranged Spell Attack',
+            hit: {
+                attribute: true
+            },
+            damage: [{
+                dice: '2d10',
+                type: 'Fire'
+            }]
         },
         {
             name: 'Staff of the Woodlands',
-            type: 'Melee',
+            activation: 'Action',
             attribute: 'wis',
-            rarity: 'rare',
             instances: 1,
-            hit_bonus: 2,
-            damage_die: 8,
-            damage_die_quantity: 1,
-            damage_bonus: 2
+            rarity: 'rare',
+            type: 'Melee Attack',
+            hit: {
+                attribute: true
+            },
+            damage: [{
+                dice: '2d10',
+                type: 'Fire'
+            }]
         },
     ],
     features: [
         {
             name: 'Wild Shape',
-            uses: 2,
-            recharge: 'SR',
+            activation: 'Action',
             effect: 'Transform into a CR1 Beast for up to 3 hours.',
-            activation: 'Action'
+            recharge: 'SR',
+            uses: 2
         },
         {
             name: 'Staff of the Woodlands',
-            uses: 10,
-            recharge: 'LR',
-            rarity: 'rare',
+            activation: 'Action',
             effect: '1: Animal Friendship, Speak with Animals. 2: Locate Animals/Plants, Barkskin. 3: Speak with Plants. 5: Awaken. 6: Wall of Thorns.',
-            activation: 'Action'
+            rarity: 'rare',
+            recharge: 'LR',
+            uses: 10
         },
         {
             name: 'Halo of Spores',
+            effect: 'CON Save or take 1d6 Necrotic to one creature if within 10ft',
+            activation: 'Reaction'
+        },
+        {
+            name: 'Fungal Infestation',
+            activation: 'Reaction',
+            effect: 'If a best or humanoid dies within 10ft, you can animate it as a Zombie with 1hp and can Attack after each of your turns.',
+            recharge: 'LR',
+            uses: 4
+        },
+        {
+            name: 'Shell Defense',
             effect: 'CON Save or take 1d6 Necrotic to one creature if within 10ft',
             activation: 'Reaction'
         }
@@ -149,12 +169,12 @@ export var Funguy: Player =
             {
                 level: 2,
                 total: 3,
-                used: 1
+                used: 0
             },
             {
                 level: 3,
                 total: 3,
-                used: 2
+                used: 0
             },
             {
                 level: 4,

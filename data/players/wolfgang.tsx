@@ -19,7 +19,6 @@ export var Wolfgang: Player =
         }
     ],
     type: 'caster',
-    spellsave: 15,
     passive_perception: 13,
     speed: 30,
     initiative: {
@@ -85,21 +84,44 @@ export var Wolfgang: Player =
         weapons: {
             simple: 1,
             martial: 1,
-            misc: ['Light Crossbow', 'Dagger', 'Quarterstaff']
+            misc: []
         }
     },
     attacks: [
         {
             name: 'Pact Blade of Nox',
-            type: 'spellsave',
-            level: 0,
+            activation: 'Action',
             attribute: 'cha',
             instances: 1,
-            hit_bonus: 0,
-            damage_die: 8,
-            damage_die_quantity: 2,
-            damage_bonus: 0
-        }
+            notes: [
+                {label: 'Vex (1/T)', text: 'On a hit, get Adv. on next attack'}
+            ],
+            rarity: 'common',
+            type: 'Melee Attack',
+            hit: {
+                attribute: true
+            },
+            damage: [{
+                dice: '2d8',
+                type: 'Lightning'
+            }]
+        },
+        {
+            name: 'Shocking Grasp',
+            activation: 'Action',
+            attribute: 'cha',
+            instances: 1,
+            range: '5ft',
+            rarity: 'common',
+            type: 'Melee Spell Attack',
+            hit: {
+                attribute: true
+            },
+            damage: [{
+                dice: '2d8',
+                type: 'Lightning'
+            }]
+        },
     ],
     features: [
         {
@@ -137,12 +159,12 @@ export var Wolfgang: Player =
             {
                 level: 2,
                 total: 3,
-                used: 1
+                used: 0
             },
             {
                 level: 3,
                 total: 3,
-                used: 2
+                used: 0
             },
             {
                 level: 4,

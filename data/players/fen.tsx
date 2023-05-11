@@ -19,7 +19,6 @@ export var Fen: Player =
         }
     ],
     type: 'martial',
-    spellsave: 13,
     passive_perception: 10,
     speed: 30,
     initiative: {
@@ -93,6 +92,10 @@ export var Fen: Player =
             name: 'Moarri',
             activation: 'Action',
             attribute: 'dex',
+            notes: [
+                {label: 'Vex (1/T)', text: 'On a hit, get Adv. on next attack'},
+                {label: 'Crit', text: '5 Cold dmg to enemies within 5ft'}
+            ],
             rarity: 'rare',
             type: 'Melee Attack',
             instances: 2,
@@ -103,7 +106,6 @@ export var Fen: Player =
             conditional_damage_bonus: 5,
             hit: {
                 attribute: true,
-                proficiency: true,
                 modifier: 1
             },
             damage: [
@@ -123,31 +125,63 @@ export var Fen: Player =
         {
             name: 'Vicious Heavy Crossbow',
             activation: 'Action',
-            type: 'ranged',
             attribute: 'dex',
+            notes: [
+                {label: 'Push (1/T)', text: 'Creature pushed 10ft, if not Huge'},
+                {label: 'Crit', text: '+7 damage'}
+            ],
             rarity: 'rare',
+            type: 'Ranged Attack',
+            range: '100/400ft',
             instances: 2,
             hit_bonus: 0,
             damage_die: 10,
             damage_die_quantity: 1,
             damage_bonus: 0,
-            conditional_damage_bonus: 7
+            conditional_damage_bonus: 7,
+            hit: {
+                attribute: true
+            },
+            damage: [
+                {
+                    attribute: true,
+                    type: 'Piercing',
+                    dice: '1d10'
+                }
+            ]
         },
         {
-            name: 'Arming Sword',
+            name: 'Dagger',
             activation: 'Action',
             attribute: 'dex',
-            rarity: 'uncommon',
+            notes: [
+                {label: 'Nick (1/T)', text: 'Make an extra Dagger attack'}
+            ],
+            range: '20/60ft',
+            rarity: 'common',
+            type: 'Ranged Attack',
             instances: 2,
-            hit_bonus: 1,
-            damage_die: 8,
+            hit_bonus: 0,
+            damage_die: 10,
             damage_die_quantity: 1,
-            damage_bonus: 1
+            damage_bonus: 0,
+            conditional_damage_bonus: 7,
+            hit: {
+                attribute: true
+            },
+            damage: [
+                {
+                    attribute: true,
+                    type: 'Piercing',
+                    dice: '1d4'
+                }
+            ]
         },
         {
             name: 'Sneak Attack',
             activation: 'Special',
             attribute: 'dex',
+            rarity: 'common',
             damage: [
                 {
                     attribute: false,

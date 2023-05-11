@@ -6,15 +6,18 @@ const Feature = ({ feature }) => {
     const recharge = feature.recharge;
 
     var uses;
+    var quantity: JSX.Element = <></>;
 
     if (feature.uses) {
         if (feature.uses > 5) {
             uses = feature.uses;
-            var quantity = uses + '/' + uses;
+            quantity = (
+                <div>{`${uses}/${uses}`}</div>
+            );
         } else {
             // Create an Array from Uses number
             uses = Array.from(Array(feature.uses).keys());
-            var quantity = uses.map(( use ) => {
+            quantity = uses.map(( use ) => {
                 return <Checkbox key={feature.name + '_' + use} id={feature.name + '_' + use} value={false} />
             })
         }
@@ -45,9 +48,9 @@ const Feature = ({ feature }) => {
         <div className={styles.uses}>
             {quantity}
         </div>
-        {/* <div className={styles.feature_effect}>
+        <div className={styles.feature_effect}>
             {feature.effect}
-        </div> */}
+        </div>
       </div>
   )
 }

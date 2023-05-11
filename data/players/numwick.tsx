@@ -15,7 +15,6 @@ export var Numwick: Player =
         }
     ],
     type: 'caster',
-    spellsave: 15,
     passive_perception: 17,
     speed: 30,
     initiative: {
@@ -29,27 +28,27 @@ export var Numwick: Player =
         temp: 0
     },
     ac: {
-        regular: 20,
-        current: 20,
-        note: 'Natural Armor, Shield'
+        regular: 13,
+        current: 16,
+        note: 'Mage Armor'
     },
     attributes: {
-        str: 1,
-        dex: 0,
-        con: 3,
-        int: 0,
-        wis: 4,
-        cha: 0,
+        str: -2,
+        dex: 3,
+        con: 2,
+        int: 5,
+        wis: 0,
+        cha: 1,
     },
     proficiencies: {
         armor: {
-            light: 1,
-            medium: 1,
+            light: 0,
+            medium: 0,
             heavy: 0,
-            shields: 1
+            shields: 0
         },
-        tools: ['Alchemist\'s Supplies','Herbalism Kit'],
-        languages: ['Druidic', 'Elvish', 'Primordial'],
+        tools: ["Alchemist's Supplies","Smith's Tools","Cobbler's Tools","Instruments"],
+        languages: ['Gnomish', 'Elvish', 'Dwarvish'],
         saves: {
             str: 0,
             dex: 0,
@@ -61,40 +60,44 @@ export var Numwick: Player =
         skills: {
             acrobatics: 0,
             animal_handling: 0,
-            arcana: 0,
+            arcana: 1,
             athletics: 0,
             deception: 0,
             history: 0,
             insight: 1,
             intimidation: 0,
             investigation: 1,
-            medicine: 1,
+            medicine: 0,
             nature: 0,
             perception: 1,
             performance: 0,
-            persuasion: 0,
-            religion: 1,
+            persuasion: 2,
+            religion: 0,
             sleight_of_hand: 0,
             stealth: 0,
             survival: 0
         },
         weapons: {
-            simple: 1,
+            simple: 0,
             martial: 0,
-            misc: ['Quarterstaff']
+            misc: ['Quarterstaff', 'Light Crossbow', 'Dagger']
         }
     },
     attacks: [
         {
             name: 'Fire Bolt',
-            type: 'Spell Attack',
-            range: 120,
             attribute: 'int',
             instances: 1,
-            hit_bonus: 0,
-            damage_die: 10,
-            damage_die_quantity: 2,
-            damage_type: 'Fire'
+            range: 120,
+            rarity: 'common',
+            type: 'Ranged Spell Attack',
+            hit: {
+                attribute: true
+            },
+            damage: [{
+                dice: '2d10',
+                type: 'Fire'
+            }]
         },
     ],
     features: [
@@ -123,13 +126,13 @@ export var Numwick: Player =
         vulnerabilities: []
     },
     spellcasting: {
-        spellsave: 15,
-        attribute: 'wis',
+        spellsave: 17,
+        attribute: 'int',
         slots: [
             {
                 level: 1,
                 total: 4,
-                used: 0
+                used: 1
             },
             {
                 level: 2,

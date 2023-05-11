@@ -6,7 +6,7 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     width: 90vw;
-    border-bottom: solid 2px grey;
+    border-bottom: solid 2px $grey;
     padding: 1rem;
 
     font-family: $sans;
@@ -35,7 +35,7 @@
         align-items: center;
         justify-content: center;
 
-        border-right: solid 1px grey;
+        border-right: solid 1px $grey;
         width: 25rem;
 
         .profile_image {
@@ -55,7 +55,7 @@
         align-items: center;
         justify-content: center;
 
-        border-right: solid 1px grey;
+        border-right: solid 1px $grey;
         width: 16rem;
 
         font-size: 3.2rem;
@@ -166,7 +166,7 @@
         align-items: center;
         justify-content: center;
 
-        border-right: solid 1px grey;
+        border-right: solid 1px $grey;
         width: 10rem;
 
         h3 {
@@ -183,7 +183,7 @@
         flex-flow: column;
         width: 30rem;
         padding: 0.5rem;
-        border-right: 1px solid grey;
+        border-right: 1px solid $grey;
 
         font-family: $sans;
 
@@ -279,10 +279,19 @@
                 flex-flow: row wrap;
                 align-items: center;
                 justify-content: flex-start;
-                height: 2.5rem;
+                margin-bottom: 0.5rem;
 
                 .attack_name {
                     font-weight: bold;
+                }
+
+                .attack_notes {
+                    text-indent: 1.5rem;;
+                    .attack_note {
+                        strong {
+                            color: $white;
+                        }
+                    }
                 }
             }
         }
@@ -384,7 +393,7 @@
 
         width: 30rem;
         padding: 0 0.5rem;
-        border-right: 1px solid grey;
+        border-right: 1px solid $grey;
 
         h3 {
             margin-top: 0;
@@ -392,6 +401,7 @@
 
         .features_list {
             .feature {
+                position: relative;
                 display: flex;
                 flex-flow: row nowrap;
                 align-items: center;
@@ -435,11 +445,27 @@
                 }
                 .feature_name {
                     display: inline-block;
+                    cursor: pointer;
                     font-size: 1.4rem;
+
+                    &:hover {
+                        ~ .feature_effect {
+                            display: block;
+                        }
+                    }
                 }
                 .feature_effect {
-                    font-size: 1.2rem;
+                    position: absolute;
+                    top: 3rem;
+                    z-index: 1;
+                    width: 50rem;
+                    display: none;
+                    background-color: $grey;
+                    border: 4px solid $orange;
+                    padding: 1rem;
+                    font-size: 1.6rem;
                     font-style: italic;
+                    color: $white;
                 }
             }
         }

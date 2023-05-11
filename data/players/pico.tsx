@@ -15,7 +15,6 @@ export var Pico: Player =
         }
     ],
     type: 'hybrid-caster',
-    spellsave: 14,
     passive_perception: 16,
     speed: 35,
     initiative: {
@@ -87,24 +86,47 @@ export var Pico: Player =
     attacks: [
         {
             name: 'Vicious Heavy Crossbow',
+            activation: 'Action',
+            attribute: 'dex',
+            notes: [
+                {label: 'Push (1/T)', text: 'Creature pushed 10ft, if not Huge'},
+                {label: 'Crit', text: '+7 damage'}
+            ],
             rarity: 'rare',
             type: 'Ranged Attack',
             range: 400,
-            attribute: 'dex',
             instances: 2,
-            hit_bonus: -3,
+            hit_bonus: 0,
             damage_die: 10,
             damage_die_quantity: 1,
-            damage_type: 'Piercing',
-            damage_bonus: 10,
-            conditional_damage_bonus: 7
+            damage_bonus: 0,
+            conditional_damage_bonus: 7,
+            hit: {
+                attribute: true
+            },
+            damage: [
+                {
+                    attribute: true,
+                    type: 'Piercing',
+                    dice: '1d10'
+                }
+            ]
         },
         {
-            name: 'Arcane Firearm',
-            type: 'Spell Attack',
-            instances: 1,
-            damage_die: 8,
-            damage_die_quantity: 1
+            name: 'Shortsword',
+            rarity: 'common',
+            type: 'Melee Attack',
+            attribute: 'dex',
+            instances: 2,
+            hit: {
+                attribute: true
+            },
+            damage: [
+                {
+                    attribute: true,
+                    dice: '1d6'
+                }
+            ]
         },
     ],
     features: [
@@ -145,8 +167,8 @@ export var Pico: Player =
         vulnerabilities: []
     },
     spellcasting: {
-        spellsave: 16,
-        attribute: 'int',
+        spellsave: 14,
+        attribute: 'wis',
         slots: [
             {
                 level: 1,

@@ -86,12 +86,13 @@ export var Quarth: Player =
     attacks: [
         {
             name: 'Eldritch Blast',
-            type: 'Ranged Spell Attack',
-            level: 0,
+            activation: 'Action',
             attribute: 'cha',
             instances: 2,
+            level: 0,
             range: 120,
             rarity: 'rare',
+            type: 'Ranged Spell Attack',
             hit: {
                 attribute: true,
                 modifier: 1
@@ -99,7 +100,8 @@ export var Quarth: Player =
             damage: [
                 {
                     attribute: true,
-                    dice: '1d10'
+                    dice: '1d10',
+                    type: 'Force'
                 }
             ]
         }

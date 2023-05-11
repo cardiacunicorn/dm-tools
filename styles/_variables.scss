@@ -24,6 +24,7 @@ $gold: $dnd-legendary;
 $orange: orange;
 $pink: #cc527a;
 $darkpink: #e8175d;
+$cyan: #4e9ac7;
 
 /* Helpers */
 .red { color: $red; }
@@ -52,6 +53,29 @@ $darkpink: #e8175d;
 .border-rare { border-color: $dnd-rare; }
 .border-very-rare { border-color: $dnd-veryrare; }
 .border-legendary { border-color: $dnd-legendary; }
+
+$physical: $grey;
+.Bludgeoning { background-color: $physical; border-color: $physical; color: $white; }
+.Piercing { background-color: $physical; border-color: $physical; color: $white; }
+.Slashing { background-color: $physical; border-color: $physical; color: $white; }
+$acid: $green;
+.Acid { background-color: $acid; border-color: $acid; }
+$cold: $white;
+.Cold { background-color: $cold; border-color: $cold; color: $black; }
+$fire: $red;
+.Fire { background-color: $fire; border-color: $fire; color: $white; }
+$force: $pink;
+.Force { background-color: $force; border-color: $force; color: $white; }
+$lightning: $blue;
+.Lightning { background-color: $lightning; border-color: $lightning; }
+$poison: $green;
+.Poison { background-color: $poison; border-color: $poison; }
+$psychic: $purple;
+.Psychic { background-color: $psychic; border-color: $psychic; }
+$radiant: $gold;
+.Radiant { background-color: $radiant; border-color: $radiant; }
+$necrotic: $black;
+.Necrotic { background-color: $necrotic; border-color: $necrotic; color: $white; }
 
 /* Theme Colours */
 

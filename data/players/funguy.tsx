@@ -90,6 +90,7 @@ export var Funguy: Player =
             attribute: 'wis',
             instances: 1,
             level: 0,
+            range: 120,
             rarity: 'common',
             type: 'Ranged Spell Attack',
             hit: {
@@ -97,7 +98,7 @@ export var Funguy: Player =
             },
             damage: [{
                 dice: '2d10',
-                type: 'Fire'
+                type: 'Necrotic'
             }]
         },
         {

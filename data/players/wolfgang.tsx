@@ -102,8 +102,8 @@ export var Wolfgang: Player =
                 attribute: true
             },
             damage: [{
-                dice: '2d8',
-                type: 'Lightning'
+                dice: '1d8',
+                type: 'Piercing'
             }]
         },
         {

@@ -279,18 +279,40 @@
                 flex-flow: row wrap;
                 align-items: center;
                 justify-content: flex-start;
-                margin-bottom: 0.5rem;
+                margin-top: 0.5rem;
 
                 .attack_name {
                     font-weight: bold;
                 }
+            }
 
-                .attack_notes {
-                    text-indent: 1.5rem;;
-                    .attack_note {
-                        strong {
-                            color: $white;
+            .attack_notes {
+                text-indent: 3rem;
+                .attack_note {
+                    position: relative;
+
+                    strong {
+                        color: $white;
+
+                        &:hover {
+                            ~ .tooltip {
+                                display: block;
+                            }
                         }
+                    }
+
+                    .tooltip {
+                        position: absolute;
+                        top: 3rem;
+                        z-index: 1;
+                        width: 50rem;
+                        display: none;
+                        background-color: $grey;
+                        border: 4px solid $orange;
+                        padding: 1rem;
+                        font-size: 1.6rem;
+                        font-style: italic;
+                        color: $white;
                     }
                 }
             }
@@ -406,41 +428,23 @@
                 flex-flow: row nowrap;
                 align-items: center;
                 justify-content: space-between;
-                height: 3rem;
-                margin-right: 1rem;
-
-                .activation {
-                    border-width: 1px;
-                    border-style: solid;
-                    border-radius: 2rem;
-                    padding: 0.1rem 0.5rem;
-                    text-align: center;
-                    color: $white;
-
-                    &.red {
-                        background-color: $red;
-                        border-color: $red;
-                    }
-                    &.blue {
-                        background-color: $blue;
-                        border-color: $blue;
-                    }
-                    &.orange {
-                        background-color: $orange;
-                        border-color: $orange;
-                    }
-                    &.purple {
-                        background-color: $purple;
-                        border-color: $purple;
-                    }
-                }
+                height: 2.5rem;
 
                 .uses {
-                    display: inline-block;
+                    display: inline-flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    justify-content: flex-end;
 
                     input {
+                        cursor: pointer;
                         width: 1.4rem;
                         margin: 0 0.2rem;
+                    }
+
+                    span {
+                        margin-left: 0.4rem;
+                        height: 100%;
                     }
                 }
                 .feature_name {
@@ -480,8 +484,48 @@
     }
 }
 
+.hit_button {
+    padding: 0.3rem 0.5rem;
+    font-size: 1.4rem;
+}
+
 .damage_button {
     margin-left: 0.3rem;
     padding: 0.3rem 0.5rem;
     font-size: 1.4rem;
+}
+
+.activation {
+    margin-right: 0.3rem;
+    border-radius: 2rem;
+    padding: 0.1rem 0.5rem;
+    text-align: center;
+    color: $white;
+
+    &.red {
+        background-color: $red;
+        border-color: $red;
+    }
+    &.blue {
+        background-color: $blue;
+        border-color: $blue;
+    }
+    &.orange {
+        background-color: $orange;
+        border-color: $orange;
+    }
+    &.purple {
+        background-color: $purple;
+        border-color: $purple;
+    }
+}
+
+.long_recharge, .short_recharge {
+    margin-left: 0.3rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2rem;
+    padding: 0.1rem 0.5rem;
+    text-align: center;
+    color: $white;
 }

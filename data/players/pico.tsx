@@ -89,8 +89,8 @@ export var Pico: Player =
             activation: 'Action',
             attribute: 'dex',
             notes: [
-                {label: 'Push (1/T)', text: 'Creature pushed 10ft, if not Huge'},
-                {label: 'Crit', text: '+7 damage'}
+                {label: 'Push', text: 'Once per turn, push a creature 10ft away from you, if not more than one size larger than you.'},
+                {label: 'Vicious Criticals', text: 'After calculating crit damage, add +7 Piercing Dmg to the total.'}
             ],
             rarity: 'rare',
             type: 'Ranged Attack',
@@ -111,23 +111,7 @@ export var Pico: Player =
                     dice: '1d10'
                 }
             ]
-        },
-        {
-            name: 'Shortsword',
-            rarity: 'common',
-            type: 'Melee Attack',
-            attribute: 'dex',
-            instances: 2,
-            hit: {
-                attribute: true
-            },
-            damage: [
-                {
-                    attribute: true,
-                    dice: '1d6'
-                }
-            ]
-        },
+        }
     ],
     features: [
         {

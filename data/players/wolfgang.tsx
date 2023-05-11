@@ -94,7 +94,7 @@ export var Wolfgang: Player =
             attribute: 'cha',
             instances: 1,
             notes: [
-                {label: 'Vex (1/T)', text: 'On a hit, get Adv. on next attack'}
+                {label: 'Vex', text: 'Once per turn, on a hit, get Adv. on your next attack against that target.'}
             ],
             rarity: 'common',
             type: 'Melee Attack',

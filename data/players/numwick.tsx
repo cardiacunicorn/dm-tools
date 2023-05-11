@@ -86,6 +86,7 @@ export var Numwick: Player =
     attacks: [
         {
             name: 'Fire Bolt',
+            activation: 'Action',
             attribute: 'int',
             instances: 1,
             range: 120,

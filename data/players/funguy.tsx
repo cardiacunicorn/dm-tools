@@ -112,8 +112,8 @@ export var Funguy: Player =
                 attribute: true
             },
             damage: [{
-                dice: '2d10',
-                type: 'Fire'
+                dice: '1d8',
+                type: 'Bludgeoning'
             }]
         },
     ],
@@ -134,9 +134,9 @@ export var Funguy: Player =
             uses: 10
         },
         {
-            name: 'Halo of Spores',
-            effect: 'CON Save or take 1d6 Necrotic to one creature if within 10ft',
-            activation: 'Reaction'
+            name: 'Shell Defense',
+            effect: '+4 to AC, Adv. on STR and CON Saves. No speed, Disadv. on DEX Saves and only action is to emerge.',
+            activation: 'Action'
         },
         {
             name: 'Fungal Infestation',
@@ -146,7 +146,7 @@ export var Funguy: Player =
             uses: 4
         },
         {
-            name: 'Shell Defense',
+            name: 'Halo of Spores',
             effect: 'CON Save or take 1d6 Necrotic to one creature if within 10ft',
             activation: 'Reaction'
         }

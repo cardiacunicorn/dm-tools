@@ -93,8 +93,8 @@ export var Fen: Player =
             activation: 'Action',
             attribute: 'dex',
             notes: [
-                {label: 'Vex (1/T)', text: 'On a hit, get Adv. on next attack'},
-                {label: 'Crit', text: '5 Cold dmg to enemies within 5ft'}
+                {label: 'Vex', text: 'Once per turn, on a hit, get Adv. on your next attack against that target.'},
+                {label: 'Ice Blast Criticals', text: '5 Cold dmg to enemies within 5ft'}
             ],
             rarity: 'rare',
             type: 'Melee Attack',
@@ -127,8 +127,8 @@ export var Fen: Player =
             activation: 'Action',
             attribute: 'dex',
             notes: [
-                {label: 'Push (1/T)', text: 'Creature pushed 10ft, if not Huge'},
-                {label: 'Crit', text: '+7 damage'}
+                {label: 'Push', text: 'Once per turn, push a creature 10ft away from you, if not more than one size larger than you.'},
+                {label: 'Vicious Criticals', text: 'After calculating crit damage, add +7 Piercing Dmg to the total.'}
             ],
             rarity: 'rare',
             type: 'Ranged Attack',
@@ -155,7 +155,7 @@ export var Fen: Player =
             activation: 'Action',
             attribute: 'dex',
             notes: [
-                {label: 'Nick (1/T)', text: 'Make an extra Dagger attack'}
+                {label: 'Nick', text: 'Once per turn, make an extra Dagger attack'}
             ],
             range: '20/60ft',
             rarity: 'common',

@@ -3,7 +3,22 @@ import Checkbox from '../Checkbox'
 
 const Feature = ({ feature }) => {
     
-    const recharge = feature.recharge;
+    var recharge: JSX.Element = <></>;
+    if (feature.recharge) {
+        if (feature.recharge == "LR") {
+            recharge = (
+                <span className={styles.long_recharge}>
+                    L
+                </span>
+            )
+        } else if (feature.recharge == "SR") {
+            recharge = (
+                <span className={styles.short_recharge}>
+                    S
+                </span>
+            )
+        }
+    }
 
     var uses;
     var quantity: JSX.Element = <></>;
@@ -43,10 +58,10 @@ const Feature = ({ feature }) => {
   return (
       <div className={styles.feature} key={feature.name}>
         <div className={styles.feature_name+ ' ' + feature.rarity}>
-            {activation} {feature.name} ({feature.recharge})
+            {activation}{feature.name}
         </div>
         <div className={styles.uses}>
-            {quantity}
+            {quantity}{recharge}
         </div>
         <div className={styles.feature_effect}>
             {feature.effect}

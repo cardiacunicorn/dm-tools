@@ -86,6 +86,7 @@ export var Dorxif: Player =
     attacks: [
         {
             name: 'Fire Bolt',
+            activation: 'Action',
             attribute: 'int',
             instances: 1,
             range: 120,
@@ -112,19 +113,17 @@ export var Dorxif: Player =
         {
             name: 'Force Ballista',
             activation: 'Bonus',
+            attribute: 'int',
             instances: 1,
-            type: 'Ranged Spell Attack',
             rarity: 'common',
+            type: 'Ranged Spell Attack',
             hit: {
-                attribute: 'int',
-                proficiency: true,
-                modifier: 0
+                attribute: true
             },
             damage: [{
                 attribute: false,
-                type: 'Force',
                 dice: '2d8',
-                modifier: 0
+                type: 'Force',
             }]
         },
     ],

@@ -133,12 +133,6 @@ export var Dorxif: Player =
             activation: 'Action'
         },
         {
-            name: 'Dorxif\'s Majestic Rod',
-            rarity: 'uncommon',
-            effect: '+1 Bonus to Spell Attack rolls, and ignore half cover.',
-            activation: 'Always'
-        },
-        {
             name: 'Signet Ring',
             uses: 1,
             rarity: 'uncommon',
@@ -152,7 +146,13 @@ export var Dorxif: Player =
             recharge: 'LR',
             effect: 'Add +5 to any failed Ability Check within 30ft of you.',
             activation: 'Reaction'
-        }
+        },
+        {
+            name: 'Dorxif\'s Majestic Rod',
+            rarity: 'uncommon',
+            effect: '+1 Bonus to Spell Attack rolls, and ignore half cover.',
+            activation: 'Always'
+        },
     ],
     effects: {
         advantage: ['INT Saves','WIS Saves','CHA Saves'],

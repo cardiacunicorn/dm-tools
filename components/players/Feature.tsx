@@ -63,8 +63,8 @@ const Feature = ({ feature }) => {
         <div className={styles.uses}>
             {quantity}{recharge}
         </div>
-        <div className={styles.feature_effect}>
-            {feature.effect}
+        <div className={`${styles.tooltip} ${feature.rarity}`}>
+            <strong className={feature.rarity}>{feature.name}:</strong> {feature.effect}
         </div>
       </div>
   )

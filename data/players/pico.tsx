@@ -118,11 +118,6 @@ export var Pico: Player =
             recharge: 'LR',
         },
         {
-            name: 'Umbral Sight',
-            effect: 'Invisible to creatuues relying on darkvision.',
-            activation: 'Special',
-        },
-        {
             name: 'Sharpshooter',
             effect: 'No long range penalty. Option for -5 to hit for +10 damage.',
             activation: 'Special'
@@ -130,7 +125,12 @@ export var Pico: Player =
         {
             name: 'Crossbow Expert',
             effect: 'No short range penalty. Ignore half and three-quarters cover.',
-            activation: 'Special'
+            activation: 'Always'
+        },
+        {
+            name: 'Umbral Sight',
+            effect: 'Invisible to creatures relying on darkvision. Giving Adv. to your Attacks, and Disadv. to theirs.',
+            activation: 'Always'
         },
         {
             name: 'Lockpicking Expertise',

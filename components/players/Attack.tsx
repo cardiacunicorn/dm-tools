@@ -63,7 +63,9 @@ const Attack = ({ pb, ab, attack }) => {
           return (
             <div className={styles.attack_note}>
               <strong>{note.label}</strong>
-              <div className={styles.tooltip}>{note.text}</div>
+              <div className={styles.tooltip}>
+                <strong>{note.label}:</strong> {note.text}
+              </div>
             </div>
           )
         })}

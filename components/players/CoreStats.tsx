@@ -8,10 +8,12 @@ const CoreStats = ({ hp, ac }) => {
                 <div className={styles.health_pool}>
                     <div className={styles.hp}>
                         <img className={styles.number_icon} src="images/icons/heart-red.png" alt="HP" />
-                        <div className={styles.hp_current}>{hp.current}</div>
+                        {/* <div className={styles.hp_current}>{hp.current}</div> */}
+                        <input type="number" className={styles.hp_current} placeholder={hp.current_max} />
                     </div>
                     <div className={styles.pool_modifiers}>
                         <div className={styles.temp}>+ {hp.temp}</div>
+                        {/* <div className={styles.temp}><span>+&nbsp;</span><input type="number" placeholder={hp.temp} /></div> */}
                         <div className={styles.max}><span>MAX:&nbsp;</span>{hp.current_max}</div>
                     </div>
                 </div>

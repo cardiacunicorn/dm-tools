@@ -170,6 +170,34 @@ export var Quarth: Player =
                 total: 2,
                 used: 0
             }
+        ],
+        spells: [
+            {
+                name: 'Faerie Fire',
+                activation: 'Action',
+                concentration: true,
+                free_uses: {
+                    total: 1,
+                    used: 0
+                },
+                level: 1,
+                range: 60,
+                save: 'dex',
+                shape: '20ft Cube'
+            },
+            {
+                name: 'Darkness',
+                activation: 'Action',
+                concentration: true,
+                free_uses: {
+                    total: 1,
+                    used: 0
+                },
+                level: 1,
+                range: 60,
+                save: 'dex',
+                shape: '15ft Sphere'
+            },
         ]
     }
 }

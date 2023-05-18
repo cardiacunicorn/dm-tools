@@ -8,8 +8,31 @@
     width: 90vw;
     border-bottom: solid 2px $grey;
     padding: 1rem;
-
     font-family: $sans;
+
+    input {
+        display: inline-block;
+        border: none;
+        outline: none;
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: inherit;
+        text-align: center;
+        width: auto;
+
+        &::placeholder {
+            color: inherit;
+        }
+
+        &[type="number"] {
+            -moz-appearance: textfield;
+            &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+    }
 
     .initiative_box {
         position: absolute;
@@ -72,9 +95,12 @@
             position: relative;
             display: flex;
             flex-flow: column wrap;
+            max-width: 100%;
             .health_pool {
                 display: flex;
                 flex-flow: row nowrap;
+                justify-content: space-between;
+                gap: 1rem;
                 .hp {
                     position: relative;
                     width: 6rem;
@@ -103,10 +129,23 @@
                     display: flex;
                     flex-flow: column wrap;
                     align-items: flex-end;
-                    margin-left: 1rem;
+                    // margin-left: 1rem;
                     .temp {
-                        // margin-left: 1rem;
+                        display: flex;
+                        flex-flow: row nowrap;
+                        align-items: center;
+                        justify-content:flex-end;
                         color: $blue;
+
+                        input {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            align-items: center;
+                            justify-content: flex-end;
+
+                            // max-width: 6rem;
+                            text-align: right;
+                        }
                     }
 
                     .max {
@@ -122,8 +161,6 @@
             }
 
             .max {
-                // position: absolute;
-                // bottom: 1.5rem;
                 font-size: 2rem;
             }
         }

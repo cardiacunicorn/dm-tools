@@ -23,9 +23,15 @@ export default function Party() {
         <Button color={'$grey'} text="Clear Init" type="button" />
       </div>
       <div className={styles.party}>
-        {party.filter(player => player.display).map((player) => (
+        {party.filter(player => player.display).sort((a,b) => a.level - b.level).map((player) => (
           <Player player={player} key={player.name} />
         ))}
+        {/* {party.filter(player => player.display).sort(initiativeOrder()).map((player) => (
+          <Player player={player} key={player.name} />
+        ))} */}
+        {/* {party.filter(player => player.display).map((player) => (
+          <Player player={player} key={player.name} />
+        ))} */}
       </div>
       <h2>Toggle Display</h2>
       <h3>Players</h3>
@@ -54,4 +60,14 @@ export default function Party() {
       </div>
     </div>
   )
+}
+
+function initiativeOrder(a, b) {
+  if (a.initiative.current < b.initiative.current) {
+    return -1
+  } else if (a.initiative.current > b.initiative.current) {
+    return 1
+  } else {
+    return 0
+  }
 }

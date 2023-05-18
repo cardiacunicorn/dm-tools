@@ -23,15 +23,9 @@ export default function Party() {
         <Button color={'$grey'} text="Clear Init" type="button" />
       </div>
       <div className={styles.party}>
-        {party.filter(player => player.display).sort((a,b) => a.level - b.level).map((player) => (
+        {party.filter(player => player.display).sort((a,b) => b.initiative.current - a.initiative.current).map((player) => (
           <Player player={player} key={player.name} />
         ))}
-        {/* {party.filter(player => player.display).sort(initiativeOrder()).map((player) => (
-          <Player player={player} key={player.name} />
-        ))} */}
-        {/* {party.filter(player => player.display).map((player) => (
-          <Player player={player} key={player.name} />
-        ))} */}
       </div>
       <h2>Toggle Display</h2>
       <h3>Players</h3>

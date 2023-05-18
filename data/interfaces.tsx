@@ -41,7 +41,7 @@ export interface Class {
 
 export interface Initiative {
     modifier: number,
-    current?: number
+    current: number
 }
 
 export interface Health {

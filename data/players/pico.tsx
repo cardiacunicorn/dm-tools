@@ -3,6 +3,7 @@ import { Player } from '../interfaces'
 export var Pico: Player =
 {
     name: 'Pico',
+    display: true,
     level: 7,
     image_path: 'images/players/Pico-headshot.png',
     colour: '#096340',

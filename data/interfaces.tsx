@@ -1,5 +1,6 @@
 export interface Player {
     name: string,
+    display: boolean,
     level: number,
     image_path: string,
     colour: string,

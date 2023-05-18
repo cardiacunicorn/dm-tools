@@ -3,6 +3,7 @@ import { Player } from '../interfaces'
 export var Numwick: Player =
 {
     name: 'Numwick',
+    display: false,
     level: 8,
     image_path: 'images/players/Numwick-headshot.png',
     colour: '#3F7CF7',

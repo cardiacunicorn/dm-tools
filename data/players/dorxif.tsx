@@ -3,6 +3,7 @@ import { Player } from '../interfaces'
 export var Dorxif: Player =
 {
     name: 'Dorxif',
+    display: true,
     level: 7,
     image_path: 'images/players/Dorxif-headshot.png',
     colour: '#3F7CF7',

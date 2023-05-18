@@ -3,6 +3,7 @@ import { Player } from '../interfaces'
 export var Quarth: Player =
 {
     name: 'Quarth',
+    display: false,
     level: 7,
     image_path: 'images/players/Quarth-headshot.png',
     colour: '#6f47b5',

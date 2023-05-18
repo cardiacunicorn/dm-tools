@@ -3,6 +3,7 @@ import { Player } from '../interfaces'
 export var Funguy: Player =
 {
     name: 'Funguy',
+    display: true,
     level: 7,
     image_path: 'images/players/Funguy-headshot.png',
     colour: '#096340',

@@ -23,9 +23,34 @@ export default function Party() {
         <Button color={'$grey'} text="Clear Init" type="button" />
       </div>
       <div className={styles.party}>
-        {party.map((player) => (
+        {party.filter(player => player.display).map((player) => (
           <Player player={player} key={player.name} />
         ))}
+      </div>
+      <h2>Toggle Display</h2>
+      <h3>Players</h3>
+      <div className={styles.toggles}>
+        {party.map((player) => {
+          return (
+            <label key={player.name} htmlFor={player.name}>
+              <input type="checkbox" name={player.name} checked />
+              <span className={styles.checkmark}></span>
+              {player.name}
+            </label>
+          )
+        })}
+      </div>
+      <h3>Creatures</h3>
+      <div className={styles.toggles}>
+        {/* {party.map((player) => {
+          return (
+            <label key={player.name} htmlFor={player.name}>
+              <input type="checkbox" name={player.name} checked />
+              <span className={styles.checkmark}></span>
+              {player.name}
+            </label>
+          )
+        })} */}
       </div>
     </div>
   )

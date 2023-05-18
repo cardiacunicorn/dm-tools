@@ -3,6 +3,7 @@ import { Player } from '../interfaces'
 export var Fen: Player =
 {
     name: 'Fen',
+    display: false,
     level: 8,
     image_path: 'images/players/Fen-headshot.png',
     colour: '#E9D554',

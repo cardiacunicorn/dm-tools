@@ -11,6 +11,21 @@
     }
 }
 
+.toggles {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    label {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 0.3rem;
+        font-size: 1.6rem;        
+    }
+}
+
 .party {
     display: flex;
     flex-flow: column;

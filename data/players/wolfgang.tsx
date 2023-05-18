@@ -3,6 +3,7 @@ import { Player } from '../interfaces'
 export var Wolfgang: Player =
 {
     name: 'Wolfgang',
+    display: true,
     level: 7,
     image_path: 'images/players/Wolfgang-headshot.png',
     colour: '#72638D',
